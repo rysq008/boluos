@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <EditText 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+		android:hint="请输入您的姓名"        
+		android:textSize="14sp"
+		android:textColor="@color/gggggg"
+        android:layout_marginLeft="20dp"
+        />
+	<View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginLeft="10dp"
+       android:background="#f2f2f2" />
+	<EditText 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+		android:hint="请输入您的身份证号"        
+		android:textSize="14sp"
+		android:textColor="@color/gggggg"
+        android:layout_marginLeft="20dp"
+        />
+	<View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginLeft="10dp"
+       android:background="#f2f2f2" />
+	<EditText 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+		android:hint="请输入您的银行卡号"        
+		android:textSize="14sp"
+		android:textColor="@color/gggggg"
+        android:layout_marginLeft="20dp"
+        />
+	
+	
+</LinearLayout>

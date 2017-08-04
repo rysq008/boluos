@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+     xmlns:zhushp="http://schemas.android.com/apk/res-auto"  
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical"
+    tools:context=".MyZichanActivity" >
+     <View 
+    android:id="@+id/statusBarview"
+    style="@style/statusBar"
+    />
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_denglu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+    </com.delevin.boluolcs.view.TitleView>
+
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+      
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:background="#fff" >
+
+            <LinearLayout
+                android:id="@+id/linearLa_seller_description"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/textV_seller_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="密码登录"
+                    android:textColor="#FFF39A1C" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLa_purchase_process"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/textV_purchase_process"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="验证码登录" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgV_line"
+            android:layout_width="80dp"
+            android:layout_height="2dp"
+            android:contentDescription="@string/app_name"
+            android:src="#FFF39A1C" />
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewpagerS"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+      
+        
+</LinearLayout>

@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">菠萝理财</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="boluos_touzi_string">账户</string>
+    <string name="boluos_faxian_string">发现</string>
+    <string name="boluos_my_string">我的投资</string>
+	<string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <!-- Gesture code starting -->
+    <string name="setup_gesture_code">设置手势密码</string>
+    <string name="setup_gesture_pattern">绘制解锁图案</string>
+    <string name="setup_gesture_pattern_again">再次绘制解锁图案</string>
+    <string name="forget_gesture_code">忘记手势密码?</string>
+    <string name="use_other_account_login">用其他账号登录</string>
+    <string name="set_gesture_pattern">绘制解锁图案</string>
+    <string name="set_gesture_pattern_reason">设置手势密码，防止他人未经授权查看</string>
+    <string name="reset_gesture_code">重新设置手势密码</string>
+    <!-- End -->
+    
+    <string name="byAnquan">菠萝理财安全输入</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">0</string>
+    <string name="pay_content">充值金额：</string>
+    <string name="pay_title">请设置密码</string>
+    <string name="pay_sure">确认支付</string>
+    <string name="pay_cancel">取消</string>
+    
+    <string name="fuwu">\n1、关注“菠萝理财”微信公众号，联系微信客服提出解绑申请；也可拨打400-032-0596联系客服。
+	\n2、提供您的邮箱地址，我们会把您需要准备的资料发送到您的邮箱。请您更具邮件内容提交内容提交相应资料。
+	\n3、资料审核通过后，一个工作日内为您办理成功。
+	\n
+	\n提示：如果卡片注销或遗失，请到银行开具证明，并将原件邮寄给我们，更换同行银行卡需开具“换卡证明”，异行需开具“注销证明”。</string>
+	<string name="www_boluo_com">菠萝理财(www.boluo.com)隶属于北京朴素磐石投资管理有限公司。菠萝理财基于互联网技术结合金融生态，为广大中小企业主、金领和白领客户提供安全、短期、高收益的固定收益互联网理财服务，力求为客户创造极致的互联网金融体验。我们会在官网首页发布项目，展示借款人的借款需求，投资人进行投资后获得利息收益。</string>
+	<string name="safe_string">一、菠萝理财平台声明
+    \n
+\n1、菠萝理财平台是为平台用户提供信息中介服务的互联网金融平台，即为投资人提供借贷信息的采集整理、甄别筛选、网上发布及资信评估、信息交互等服务，实现出借人以小额的方式参与网络借贷。
+\n
+\n2、为了充分保障您的合法权益，您在注册使用菠萝理财平台前，必须仔细阅读并充分理解知悉《菠萝理财平台服务务协议》的所有条款。一经注册或使用菠萝理财平台提供的服务即视为对您本服务协议的充分理解和接受，如有违反而导致任何法律后果的发生，您将以本人的名义独立承担相应的法律责任。
+\n
+\n3、菠萝理财平台对于您的通知（包括但不限于任何其他的协议、告示或其他关于您使用会员账户及服务的通知），通过菠萝理财平台公告、电子邮件、手机短信等方式进行传递或公布，该等通知于发送之日视为已送达收件人。因信息传输等原因导致您未在前述通知发出当日收到该等通知的，菠萝理财平台不承担任何责任。
+\n
+\n二、风险告知
+\n
+\n菠萝理财平台向您提供的理财产品是菠萝理财依据平台核心风控原理为您精心设计的低风险理财产品，但您理解，任何通过互联网平台进行的交易并不能避免以下风险的产生：
+\n
+\n1、宏观经济风险：因宏观经济形势变化，可能引起价格等方面的异常波动，您有可能遭受损失；
+\n
+\n2、政策风险：有关法律、法规及相关政策、规则发生变化，可能引起价格等方面异常波动，您有可能遭受损失；
+\n
+\n3、违约风险：因其他交易方无力或无意愿按时足额履约，您有可能遭受损失；
+\n
+\n4、利率风险：市场利率变化可能对购买或持有产品的实际收益产生影响；
+\n
+\n5、不可抗力因素导致的风险及第三方恶意攻击产生的风险；
+\n
+\n6、因您的过错导致的任何损失 ，该过错包括但不限于：决策失误、操作不当、遗忘或泄露密码、密码被他人破解、您使用的计算机系统被第三方侵入、您委托他人代理交易时他人恶意或不当操作而造成的损失。
+\n
+\n因此，菠萝理财平台不对您的任何投资交易提供任何担保，无论是明示、默示或法定的。菠萝理财不能也不试图对您发布的信息进行控制，对该等信息，菠萝理财不承担任何形式的证明、鉴定服务。此外，菠萝理财平台也不能完全保证平台内容的真实性、充分性、可靠性、准确性、完整性和有效性，并且无需承担任何由此引起的法律责任。您依赖于您的独立判断进行交易，您应对其作出的判断承担全部责任。
+\n
+\n以上并不能揭示您通过菠萝理财平台进行交易的全部风险及市场的全部情形。您确认，在做出交易决策前，已全面了解相关交易风险，谨慎并自行承担全部风险。
+ \n                                     
+\n北京朴素磐石投资管理有限公司
+\n
+\n年    月    日</string>
+
+<string name="xieyi">菠萝理财平台（网址：https://www. boluolc.com ）及其已经开发及将来开发的实现部分或全部菠萝理财平台功能的移动终端软件（即网站、APP，包括但不限于手机客户端软件或工具）（以下统称为“菠萝理财平台”）系由北京朴素磐石投资管理有限公司（以下简称“菠萝理财”）负责运营的网络借贷信息中介服务平台。菠萝理财平台依据本协议为注册用户（以下简称“会员”或“您”）提供服务。
+        \n
+\n在您注册成为菠萝理财平台会员前请务必仔细阅读以下条款。若您一旦提交注册申请,即表示您已阅读本协议所有条款，并对本协议条款的含义及相应的法律后果已全部通晓并充分理解，同意受本协议约束。 
+\n
+\n第一条 会员注册 
+\n
+\n1.1菠萝理财平台会员应当具有完全民事行为能力和民事责任能力（自然人年满十八周岁）。若您不符合上述条件的，请立即停止注册或停止使用本服务。
+\n
+\n1.2您根据菠萝理财平台的注册规定，成功注册之后，即建立了您在菠萝理财平台的唯一会员账户（以下简称“平台账户”），您可以登录会员账户，使用网站服务。
+\n
+\n1.3您有义务在注册时提供自己的真实、最新、有效及完成的信息资料，并保证诸如电子邮件地址、联系电话、联系地址、邮政编码等内容的真实性、有效性及安全性，以及菠萝理财平台及其他会员可以通过上述联系方式与您进行联系。若您提供任何不真实、不准确、不完整或不能反映当前实际情况的资料，或菠萝理财平台有合理理由怀疑该等资料不真实、不准确、不完整或不能反映当前情况，菠萝理财平台均有权拒绝您的申请或者撤销您的会员资格，并拒绝您在目前或将来以任何形式使用菠萝理财平台提供的服务，且不承担任何赔偿责任。
+\n
+\n1.4若您冒用、盗用或以其他未经授权方式使用他人资料进行注册登记的，由此引起的一切后果概由您独立承担。菠萝理财平台获悉或怀疑您未经授权使用他人资料注册的,可以采取立即注销您的会员账户、暂停或者终止为您提供服务等措施而无须承担任何责任。
+\n
+\n1.5您保证您在参与网络借贷之前，应当拥有非保本类金融产品投资的经历并熟悉互联网。
+\n
+\n第二条 会员账户使用
+\n
+\n2.1您通过您的平台账户登陆菠萝理财平台后的一切行为均视为您的真实意思表示并由您承担相应的法律后果。您应妥善保管您的账户密码及其他相关信息，因保管不善导致经济损失的，由会员承担责任。 
+\n
+\n2.2您可随时更改您的用户名和密码，但任何更改均须经菠萝理财接受，方为有效。
+\n
+\n2.3您应妥善保管您的平台账户，除您有效授权的代理人外，您不得以借用、租用或其他任何方式提供给第三方使用。菠萝理财在此郑重提醒您，无论是您还是您的代理人或其他第三方（包括但不限于您的用户名、密码泄露导致），以您的平台账户登录菠萝理财后的一切行为和言论均视为您本人的行为，并应由您承担相应的法律后果。
+\n  
+\n第三条 服务 
+\n
+\n3.1 菠萝理财服务内容主要包括根据会员需求发布交易信息、提供交易管理服务、提供客户服务等，具体详情以菠萝理财平台当时提供的服务内容为准。菠萝理财服务的部分内容需要会员根据菠萝理财要求完成身份认证及银行卡认证，未进行身份认证及/或银行卡认证的会员将无法使用该部分菠萝理财服务。因未能完成认证而无法享受菠萝理财服务造成的损失，菠萝理财不承担任何责任。
+\n
+\n3.2 发布交易信息
+\n
+\n3.2.1 菠萝理财同意向会员提供交易信息，会员同意接受菠萝理财提供的该项服务。双方同意，菠萝理财向会员提供信息应按如下范围和规则进行： 
+\n
+\n(1) 菠萝理财应对在菠萝理财上 展示的各项借款人基本信息，在适用法律和技术手段允许和合理的范围内进行必要的查验，以供会员在决定是否向借款人借款时参考。在会员与借款人之间债权债务关系尚未完全清偿前，菠萝理财如获知其提供的借款人联络信息发生变更或存在不真实、不准确的情形，应及时以电子邮件的方式通知会员。 
+\n
+\n(2) 菠萝理财可以选择是否通过菠萝理财向会员提供其自行收集或从其他第三方合作机构获得的除借款人联络信息之外的其他借款人信息，如借款人的工作情况、收入情况、家庭情况、信用报告、历史偿债情况等，以供会员在自行决定是否向借款人借款时参考。会员应自行判断该等信息的真实性、准确性和完整性。在会员与借款人之间债权债务关系尚未完全清偿前，菠萝理财如获知其提供的相关借款人信息发生变更或存在不真实、不准确的情形，应及时以电子邮件的方式通知会员。 
+\n
+\n3.2.2 双方同意并确认，菠萝理财根据本协议的约定向会员提供的交易信息仅供会员决定是否出借资金时予以参考，无论会员通过菠萝理财形成的借贷关系是否存在第三方担保，在任何情况下均不应视为菠萝理财及其关联方对借款人偿还能力及借款协议的履行作出了任何明示或默示的担保，亦不应视为菠萝理财及其关联方对会员的本金和/或收益作出了明示或默示的担保或保证。会员应自行判断相关信息的真实性、准确性、及时性，自主决定是否出借，并承担由此 而导致的一切损失或责任，菠萝理财将其所知的借款人信息的变更情况或所在其能力范围内所了解的借款人信息不真实、不准确的情形通知会员，在任何情况下均不视为菠萝理财对借款人信息的真实、准确、及时和完整性做出任何保证或承诺。
+\n
+\n3.3 资金管理
+\n
+\n3.3.1 银行卡认证：为使用菠萝理财或菠萝理财委托的第三方机构提供的充值、取现、代扣等服务，会员应按照菠萝理财平台规定的流程提交以会员本人名义登记的有效银行借记卡等信息，经由菠萝理财审核通过后，菠萝理财会将会员的账户与前述银行账户进行绑定。如会员未按照菠萝理财规定提交相关信息或提交的信息错误、虚假、过时或不完整，或者菠萝理财有合理的理由怀疑会员提交的信息为错误、虚假、过时或不完整，菠萝理财有权拒绝为会员提供银行卡认证服务，会员因此未能使用充值、取现、代扣等服务而产生的损失自行承担。
+\n
+\n3.3.2充值：会员可以使用菠萝理财指定的方式向会员账户充入资金，用于通过菠萝理财平台进行交易。
+\n
+\n3.3.3 代收/代付：菠萝理财按照其平台当时向会员开放的功能提供代收/代付服务，自行或委托第三方机构代为收取其他会员或菠萝理财合作的担保公司等第三方向会员的账户支付的本息、代偿金等各类款项，或者，将会员账户里的款项支付给会员指定的其他方。菠萝理财不保证提供的前述服务符合会员的期望。
+\n
+\n3.3.4 取现：当会员通过菠萝理财平台向菠萝理财做出提现指令时，菠萝理财将于收到指令1个工作日内，将相应的款项汇入会员银行卡账户（该账户须以会员为开户人，并在中国大陆境 内），根据会员提供的银行不同，会产生到账时间上的差异，菠萝理财不对到账时间做任何承诺，不承担因延迟到账相关的责任。除本条约定外，菠萝理财平台不接受会员提供的其它受领方式
+\n
+\n3.3.5 查询：菠萝理财将对会员在菠萝理财平台的所有操作进行记录，不论该操作之目的最终是否实现。会员可以通过会员账户实时查询会员账户名下的交易记录。会员理 解并同意会员最终收到款项的服务是由会员经过认证的银行卡对应的银行提供的，需向该银行请求查证。会员理解并同意通过菠萝理财平台查询的任何信息仅作为参考，不作为相关操作或交易的证据或依据；如该等信息与菠萝理财记录存在任何不一致，应以菠萝理财提供的书面记录为准。
+\n
+\n3.4会员了解，上述充值、代收/代付及取现服务涉及菠萝理财与银行、担保公司、第三方支付机构等第三方的合作。会员同意：(a) 受银行、担保公司、第三方支付机构等第三方仅在工作日进行资金代扣及划转的现状等各种原因所限，菠萝理财不对前述服务的资金到账时间做任何承诺，也不承担与此相关的责任，包括但不限于 由此产生的利息、货币贬值等损失；(b) 一经会员使用前述服务，即表示会员不可撤销地授权菠萝理财进行相关操作，且该等操作是不可逆转的，会员不能以任何理由拒绝付款或要求取消交易。就前述服务，菠萝理财暂不会向会员收取费用，但会员应按照第三方的规定向第三方支付费用。与第三方之间就费用支付事项产生的争议或纠纷，与菠萝理财无关。
+\n
+\n第四条 会员信息的搜集、使用
+\n
+\n4.1关于您的个人资料
+\n
+\n4.1.1菠萝理财平台收集个人资料的主要目的在于向您提供一个顺利、有效和度身订造的交易经历。菠萝理财平台仅收集菠萝理财平台认为就此目的及达成该目的所必须的关于您的个人资料。
+\n
+\n4.1.2 菠萝理财对于个人会员提供的、菠萝理财自行收集的、经认证的个人信息将按照本协议予以保护、使用或者披露。
+\n
+\n4.1.3  菠萝理财可能自公开及私人资料来源收集个人会员的额外资料，以更好地掌握个人会员情况，并为会员度身订造菠萝理财服务、解决争议并有助确保在菠萝理财平台进行安全交易。
+\n
+\n4.1.4 菠萝理财按照会员在菠萝理财平台上的行为自动追踪关于会员的某些资料。在不透露会员的隐私资料的前提下，菠萝理财有权对整个会员数据库进行分析并对会员数据库进行商业上的利用。
+\n
+\n4.1.5  菠萝理财平台在菠萝理财平台的某些网页上使用诸如“Cookies”的资料收集装置。“Cookies”是设置在您的硬盘上的小档案，以协助菠萝理财平台为您提供度身订造的服务。菠萝理财平台亦提供某些只能通过使用“Cookies”才可得到的功能。菠萝理财平台还利用“Cookies”使您能够在某段期间内减少输入密码的次数。“Cookies”还可以协助菠萝理财平台提供专门针对您的兴趣而提供的资料。
+\n
+\n4.2关于您个人资料的使用
+\n
+\n4.2.1 会员同意菠萝理财可使用会员的相关资料（包括但不限于菠萝理财持有的有关会员的档案中的资料，菠萝理财从会员目前及以前在菠萝理财平台上的活动所获取的其他资料以及菠萝理财通过其他方式自行收集的资料）以解决争议、对纠纷进行调停。会员同意菠萝理财可通过人工或自动程序对个人会员的资料进行评价。
+\n
+\n4.2.2 会员授权菠萝理财，除法律另有规定之外，将本人提供给菠萝理财的信息、享受菠萝理财服务产生的信息，以及菠萝理财根据本条约定查询、收集的信息，用于菠萝理财及其因服务必要委托的合作伙伴为本人提供服务、推荐产品、开展市场调查与信息数据分析。
+\n
+\n4.2.3会员授权菠萝理财，除法律另有规定之外，基于为会员提供更优质服务和产品的目的，向菠萝理财服务必要开展合作的伙伴提供、查询、收集本人的信息。为确保本人信息的安全，菠萝理财及其合作伙伴对上述信息负有保密义务，并采取各种措施保证信息安全。
+\n
+\n4.3 合理使用
+\n
+\n菠萝理财采用行业标准惯例以保护会员的资料。会员因履行本协议提供给菠萝理财的信息，菠萝理财不会恶意出售或免费共享给任何第三方，以下情况除外：
+\n
+\n4.3.1提供独立服务且仅要求服务相关的必要信息的供应商，如印刷厂、邮递公司等；
+\n
+\n4.3.2具有合法调阅信息权限并从合法渠道调阅信息的政府部门或其他机构，如公安机关、法院；
+\n
+\n4.3.3菠萝理财的关联实体；
+\n
+\n4.3.4经平台使用方或平台使用方授权代表同意的第三方。
+\n
+\n4.3.5 在您未能按照与菠萝理财平台签订的服务协议、居间协议或者与菠萝理财平台企业用户签订的借款（担保）协议的约定履行自己应尽的义务时，菠萝理财平台有权根据自己的判断或者与该笔交易有关的其他用户的请求披露您的个人资料，并作出评论，菠萝理财平台不需要承担任何责任。
+
+\n第五条 禁止条款 
+\n
+\n会员在接受菠萝理财平台服务时，必须遵守中华人民共和国相关法律法规的规定，会员同意将不会于菠萝理财平台进行违法或不正当的活动，包括但不限于下列行为： 
+\n
+\n5.1 上传、下载、张贴、以电子邮件发送、传输、存储或以其他方式提供任何非法、有害、胁迫、骚扰、侵权、中伤、粗俗、猥亵、诽谤、淫秽、暴力、侵害他人隐私、 种族歧视或其他令人不快的包括但不限于资讯、资料、文字、软件、音乐、照片、图形、信息或其他资料（以下简称内容）。 
+\n
+\n5.2以任何方式危害未成年人。 
+\n
+\n5.3冒充任何人或机构，或以虚伪不实的方式谎称或使人误认为与任何人或任何机构有关。 
+\n
+\n5.4伪造标题或以其他方式操控识别资料，使他人产生误解。 
+\n
+\n5.5上传、张贴、发送电子邮件或以其他方式传送无权传送的内容。 
+\n
+\n5.6侵犯他人著作权或其他知识产权，或违反保密、雇佣或不披露协议披露他人商业秘密或保密信息。 
+\n
+\n5.7张贴、发送、传输或以其他方式提供任何未经收件人请求或授权的电子邮件信息、广告、促销资料、垃圾邮件等，包括但不限于大批量的商业广告和信息公告。 
+\n
+\n5.8上传、张贴、以电子邮件发送、传输、存储或以其他方式提供包含病毒或包含旨在危害、干扰、破坏或限制有关服务（或其任何部分）或任何其他计算机软件、硬件或通讯设备之正常运行的任何其他计算机代码、文档或程序的任何资料。 
+\n
+\n5.9干扰或破坏有关服务，或与有关服务连接的任何服务器或网络，或与有关服务连接之网络的任何政策、要求或规定。 
+\n
+\n5.10采集并存储涉及有关服务任何其他用户的个人信息，以用于任何上述被禁止的活动。 
+\n
+\n5.11故意或非故意违反任何相关的中国法律、法规、规章、条例等其他具有法律效力的规范。 
+\n
+\n第六条 平台免责与追偿
+\n
+\n6.1对于本网站合理控制范围以外的原因，包括但不限于自然灾害、罢工或骚乱、物资短缺或定量配给、暴动、战争行为、政府行为、通讯或其他设施故障或严重伤亡事故等，致使本网站延迟或未能履约的，本网站不赔偿因此造成的损失。 
+\n
+\n6.2 鉴于目前网络技术、国际电子商务环境均未成熟，会员应具备网络自我保护能力、具备网络安全基本常识，因会员自身原因（将用户名、密码等告知他人或与他人共 享注册账户，未合理保管用户名密码等）导致损失的，会员应承担因此受到的损失。同时，可能存在不法分子利用网络技术盗取会员用户名密码等个人信息进行违法犯罪活动，损害会员利益的，应视为不法分子的侵权行为，本网站不存在过错的，对上述侵权行为所造成的损失本网站不承担赔偿责任。 
+\n
+\n6.3 责任追偿 
+\n
+\n由于会员违反本协议及规则或违反法律、法规侵害第三方的权利而产生任何纠纷，导致本网站及母公司、 子公司、关联公司、高级职员、董事、代理人和雇员损失的，上述主体有权依法向该会员进行追偿。 
+\n
+\n第七条 涉及第三方网站 
+\n
+\n菠萝理财平台在运营过程中可能链接第三方网站，但菠萝理财平台不能保证第三方网站上的信息的真实性和有效性。会员应按照第三方网站的服务协议使用第三方网站。第三方网站的内容、产品、广告和其他任何信息均由会员自行判断并承担风险。 
+\n
+\n第八条 账户的暂停、注销、拒绝使用或终止 
+\n
+\n8.1 您若发现有第三人冒用或盗用会员账户及密码，或其他任何未经合法授权的情形，应立即以有效方式通知菠萝理财平台，要求菠萝理财平台暂停相关服务，否则由此产生的责任 由会员自行承担。接到通知后，菠萝理财平台将第一时间进行处理。同时，会员理解菠萝理财平台对会员的请求采取行动需要合理期限，在此之前，菠萝理财平台对第三人使用该服务所 导致的损失不承担责任。 
+\n
+\n8.2 您决定不再使用会员账户时，应首先清偿所有应付款项（包括但不限于借款本金、利息、罚息、违约金、服务费、管理费等），再将会员账户中的可用款项全部提现或者向菠萝理财平台发出其它合法的支付指令，并向菠萝理财平台申请注销该会员账户，经菠萝理财平台审核同意后可正式注销会员账户。 
+会员死亡或被宣告死亡的，其在本协议项下的各项权利义务由其已由有权部门确认的继承人承继。若会员丧失全部或部分民事权利能力或民事行为能力，菠萝理财平台或其授权的主体有权根据有效法律文书或其法定监护人的指示处置与会员账户相关的款项。 
+\n
+\n8.3菠萝理财平台有权基于单方独立判断，在其认为可能发生危害交易安全等情形时，不经通知而先行暂停、中断或终止向会员提供本协议项下的全部或部分会员服务（包括收费服务），并将注册资料移除或删除，且无需对会员或任何第三方承担任何责任。前述情形包括但不限于： 
+\n
+\n8.3.1菠萝理财平台认为会员提供的个人资料不具有真实性、有效性或完整性； 
+\n
+\n8.3.2菠萝理财平台发现异常交易或有疑义或有违法嫌疑时； 
+\n
+\n8.3.3菠萝理财平台认为会员的账户涉嫌洗钱、套现、传销、被冒用或其他菠萝理财平台认为有风险之情形； 
+\n
+\n8.3.4菠萝理财平台认为会员已经违反本协议中规定的各类规则； 
+\n
+\n8.3.5会员在使用菠萝理财平台收费服务时未按规定向菠萝理财平台支付相应的服务费用； 
+\n
+\n8.3.6会员的账户已连续三年内未实际使用（账户中有余额的，菠萝理财平台在终止本协议前会通知会员提现）； 
+\n
+\n8.3.7菠萝理财平台基于交易安全等原因，根据其单独判断需先行暂停、中断或终止向会员提供本协议项下的全部或部分会员服务，并将注册资料移除或删除的其他情形。 
+\n
+\n8.4会员同意，会员账户的暂停、中断或终止不代表会员责任的终止，会员仍应对会员使用菠萝理财平台服务期间的行为承担可能的违约或损害赔偿责任，同时菠萝理财平台仍可保有会员的相关信息。 
+\n
+\n8.5会员账户终止时，于菠萝理财平台电子账户中的现金少于提现手续费时，经会员同意，该金额可作为慈善捐款，并于菠萝理财平台中公布捐款细节。 
+\n
+\n第九条 法律适用、条款有效性及管辖 
+\n
+\n9.1菠萝理财对本协议拥有最终解释权，因本协议发生纠纷的，适用中华人民共和国法律。 
+\n
+\n9.2若本协议的部分条款被认定为无效或者无法实施时，本协议中的其他条款仍然有效。 
+\n
+\n9.3因履行本协议产生纠纷的，首先应友好协商解决。协商不成的，您在此完全同意将纠纷提交菠萝理财所在地有管辖权的人民法院诉讼解决。 
+\n
+\n第十条 本协议的生效、变更
+\n
+\n10.1您接受本协议通过网络界面以电子文本的方式签订，只要您点击页面中的“我已阅读并同意”《菠萝理财注册协议》 并按照菠萝理财平台规定的注册程序成功注册为会员，您的行为即表示同意并签署了本服务协议。本协议自您点击确认之日起生效。
+\n
+\n10.2 您同意菠萝理财平台有权随时更改本服务协议及相关规则。修改本服务协议时，菠萝理财平台将于相关页面公告修改的内容，会员应该在每次登录菠萝理财平台前查询菠萝理财平台的相关公告，以了解本服务协议及服务规则的变化。若会员不同意本服务协议或相关服务规则的修改，会员有权停止使用菠萝理财平台提供的服务。如果在菠萝理财平台修改协议或服务规则后，会员仍继续使用菠萝理财平台提供的服务，即表示会员同意菠萝理财平台对本服务协议及相关服务规则所做的所有修改，并愿意承担相应的法律后果。    
+\n
+\n十一条 其他
+\n
+\n11.1菠萝理财平台经营的各类规则为菠萝理财平台的运营规则，为本协议的一部分，与本协议有同等法律效力。
+\n
+\n11.2本服务协议不涉及您与菠萝理财的其他用户之间因网上交易而产生的法律关系及法律纠纷，但您在此同意将全面接受和履行与菠萝理财平台的其他用户在菠萝理财平台签订的任何电子法律文本，并承诺按该法律文本享有和/或放弃相应的权利、承担和/或豁免相应的义务。
+\n
+\n11.3您已经阅读、理解并接受本协议的全部条款及各类规则，并承诺遵守中国现的法律、法规、规章及其他政府规定，如有违反而导致任何法律后果的发生，您将以自己的名义独立承担所有相应的法律责任。</string>
+<string name="soft_update_no">已经是最新版本</string>
+    <string name="soft_update_title">软件更新</string>
+    <string name="soft_update_info">检测到新版本，立即更新吗</string>
+    <string name="soft_update_updatebtn">更新</string>
+    <string name="soft_update_later">稍后更新</string>
+    <string name="soft_updating">正在更新</string>
+    <string name="soft_update_cancel">取消</string>
+    <string name="my_pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="my_pull_to_refresh_release_label">松开刷新</string>
+    <string name="my_pull_to_refresh_refreshing_label">正在刷新\u2026</string>
+    <string name="my_pull_to_refresh_footer_release_label">松开加载更多</string>
+    <string name="my_pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="my_pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+    
+    
+    
+    
+    
+    
+    <!-- 环信 -->
+    <string name="button_pushtotalk">Hold to talk</string>
+    <string name="button_send">Send</string>
+    <string name="attach_take_pic">Capture</string>
+    <string name="attach_picture">Image</string>
+    <string name="attach_location">Location</string>
+    <string name="attach_video">Video</string>
+    <string name="attach_file">File</string>
+    <string name="attach_voice_call">Voice call</string>
+    <string name="attach_video_call">Video call</string>
+    <string name="move_up_to_cancel">手指上划，取消发送</string>
+    <string name="voice">Voice</string>
+    <string name="picture">[Picture]</string>
+    <string name="voice_call">[Voice call]</string>
+    <string name="text_ack_msg">已读</string>
+    <string name="text_delivered_msg">Delivered</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="release_to_cancel">松开手指，取消发送</string>
+    <string name="send_fail">发送失败！</string>
+    <string name="delete_message">删除消息</string>
+    <string name="delete_conversation_messages">Delete conversation and messages</string>
+    <string name="delete_conversation">Delete conversation</string>
+    <string name="copy_message">复制消息</string>
+    <string name="delete_voice">删除语音</string>
+    <string name="delete_video">Delete video</string>
+    <string name="delete">删除</string>
+    <string name="resend">重新发送</string>
+    <string name="confirm_resend">确定重新发送？</string>
+    <string name="connect_failuer_toast">请检查网络或稍后再试。</string>
+    <string name="network_unavailable">The network connection is not available, please check the network</string>
+    <string name="copy">Copy</string>
+    <string name="forward">Forward</string>
+    <string name="button_logout">Logout</string>
+    <string name="button_uploadlog">Upload the log</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="prompt">Prompt</string>
+    <string name="clear_records">Clear conversation?</string>
+    <string name="clear_all_records">Clear all conversations？</string>
+    <string name="location_recv">[%1$s location]</string>
+    <string name="location_message">The location information</string>
+    <string name="recording_video">Record video</string>
+    <string name="location_prefix">[my location]</string>
+    <string name="video">[Video]</string>
+    <string name="file">[file]</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_save">Save</string>
+    <string name="button_search">Find</string>
+    <string name="button_add">Add</string>
+    <string name="search_header">Search</string>
+    <string name="network_isnot_available">The network is not available</string>
+    <string name="recoding_fail">The recording failure, please try again！</string>
+    <string name="select_contacts">Select the contact</string>
+    <string name="confirm_forward_to">Confirm to forward to：%1$s ?</string>
+    <string name="logout">Logout</string>
+    <string name="logout_hint">Logout will never clear the chat history, this account can be used on next login</string>
+    <string name="exit_group_hint">The group messages will not be received after exiting the group</string>
+    <string name="dissolution_group_hint">The group will be dismissed after exiting</string>
+    <string name="exit_group">Exit</string>
+    <string name="connect_conflict">The same account was loggedin in other device</string>
+    <string name="em_user_remove">This user has been removed</string>
+    <string name="set">Settings</string>
+    <string name="notify">New message notification</string>
+    <string name="newnotify">Receiving a new message</string>
+    <string name="shake">Shake</string>
+    <string name="chatset">Chat settings</string>
+    <string name="yangshengqi">Use speaker</string>
+    <string name="book_black">Black list</string>
+    <string name="session">Conversation</string>
+    <string name="address_book">Address book</string>
+    <string name="setting">Settings</string>
+    <string name="now_refresh_list">Refreshing contact list</string>
+    <string name="Application_and_notify">Invitation and notification</string>
+    <string name="save_new_nickname">Save new nickname</string>
+    <string name="group_chat">Group chat</string>
+    <string name="add_friend">Add friends</string>
+    <string name="search">Search</string>
+    <string name="black_item">Black list</string>
+    <string name="diagnose">Diagnose</string>
+    <string name="push_nick">IOS offline push nick</string>
+    <string name="Current_version">Current version</string>
+    <string name="Not_Set">Not set</string>
+    <string name="Upload_the_log">Uploading the log</string>
+    <string name="The_new_group_chat">Create new group</string>
+    <string name="group_name">Group name</string>
+    <string name="Group_chat_profile">Group profile</string>
+    <string name="Whether_the_public">Is public</string>
+    <string name="Open_group_members_invited">Allow members to invite</string>
+    <string name="Open_group_chat">Public group</string>
+    <string name="blacklist">Black list</string>
+    <string name="Empty_the_chat_record">Clear conversation</string>
+    <string name="Shielding_of_the_message">Block message</string>
+    <string name="Select_the_contact">Select the contact</string>
+    <string name="Group_chat_information">The group description</string>
+    <string name="Group_of_Lord">The group owner</string>
+    <string name="Introduction">Brief</string>
+    <string name="To_join_the_chat">Join the group</string>
+    <string name="login">Login</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="confirmpassword">Confirm password</string>
+    <string name="downwaiting">Downloading the file, please try again later</string>
+    <string name="mute">Mute</string>
+    <string name="Hands_free">Hands free</string>
+    <string name="hang_up">Hang up</string>
+    <string name="answer">Answer</string>
+    <string name="unable_to_connect">Unable to connect to the server</string>
+    <string name="newchat">Create new group</string>
+    <string name="agree">Agree</string>
+    <string name="Group_chat">Group chat</string>
+    <string name="chat_room">Chat room</string>
+    <string name="not_download">Did not download:</string>
+    <string name="is_down_please_wait">Downloading video, please try again later</string>
+    <string name="Exit_the_group_chat">Exit the group</string>
+    <string name="Please_enter_a_username">Please enter a username</string>
+    
+    <string name="not_add_myself">"Can't add myself"</string>
+    <string name="This_user_is_already_your_friend">This user is already your friend</string>
+    <string name="Add_a_friend">Let me to be your friend!</string>
+    <string name="send_successful">Request was sent, waiting for the peer to accept</string>
+    <string name="Request_add_buddy_failure">Request add buddy failure:</string>
+    <string name="Network_error">Network error</string>
+    <string name="Making_sure_your_location">Making sure your location..</string>
+    <string name="please_check">key validation error!Please on AndroidManifest.xml file check the key set</string>
+    <string name="expression">[expression]</string>
+    <string name="Removed_from_the_failure">Removed fail</string>
+    <string name="be_removing">Be removing</string>
+    <string name="call_duration">call duration</string>
+    <string name="Refused">Refused</string>
+    <string name="The_other_party_has_refused_to">Call was refused</string>
+    <string name="The_other_is_not_online">The peer is not online</string>
+    <string name="The_other_is_on_the_phone">The peer is on the phone</string>
+    <string name="The_other_party_did_not_answer">The peer did not answer</string>
+    <string name="did_not_answer">did not answer</string>
+    <string name="Has_been_cancelled">Cancelled</string>
+    <string name="unable_to_get_loaction">Unable to get to your location information!</string>
+    <string name="not_connect_to_server">Not connect to server, please try again later</string>
+    <string name="sd_card_does_not_exist">"SD card does not exist, can't take pictures"</string>
+    <string name="cant_find_pictures">"Can't find pictures"</string>
+    <string name="File_does_not_exist">File does not exist</string>
+    <string name="The_file_is_not_greater_than_10_m">The file is not greater than 10 m</string>
+    <string name="Whether_to_empty_all_chats">是否清空所有聊天记录？</string>
+    <string name="Send_voice_need_sdcard_support">Send voice need sdcard support</string>
+    <string name="Recording_without_permission">Recording without permission</string>
+    <string name="The_recording_time_is_too_short">说话时间太短</string>
+    <string name="send_failure_please">Send failure, please test whether the server connection</string>
+    <string name="Move_into_blacklist_success">Move into blacklist success</string>
+    <string name="Move_into_blacklist_failure">Move into blacklist failure</string>
+    <string name="you_are_group">You have been kicked off from the group</string>
+    <string name="the_current_group">The current group has been dismissed</string>
+    <string name="Cant_chat_with_yourself">cannot chat with yourself</string>
+    <string name="deleting">Deleting..</string>
+    <string name="Delete_failed">Failed to delete</string>
+    <string name="Is_moved_into_blacklist">Moving to blacklist..</string>
+    <string name="Log_uploaded_successfully">Log was uploaded successfully</string>
+    <string name="Log_Upload_failed">Failed to upload the log</string>
+    <string name="get_failed_please_check">Failed to retrieve, please check the network or try again later</string>
+    <string name="people">people</string>
+    <string name="being_added">added</string>
+    <string name="is_quit_the_group_chat">Exiting group</string>
+    <string name="chatting_is_dissolution">Dismissing group</string>
+    <string name="are_empty_group_of_news">Clearing messages</string>
+    <string name="is_modify_the_group_name">Modifying the group name..</string>
+    <string name="Modify_the_group_name_successful">Modify the group name successful</string>
+    <string name="change_the_group_name_failed_please">Failed to change the group name, please check the network or try again later</string>
+    <string name="Are_moving_to_blacklist">Moving to blacklist</string>
+    <string name="failed_to_move_into">Failed to move to the blacklist, please check the network or try again later</string>
+    <string name="Exit_the_group_chat_failure">Failed to exit the group:</string>
+    <string name="Dissolve_group_chat_tofail">Failed to dismiss the group:</string>
+    <string name="Add_group_members_fail">Add group members fail:</string>
+    <string name="Is_unblock">Unblocking group</string>
+    <string name="remove_group_of">Remove group of shielding failure, please check the network or try again later</string>
+    <string name="group_is_blocked">Blocking the group..</string>
+    <string name="group_of_shielding">Group of shielding failure, please check the network or try again later</string>
+    <string name="sure_to_empty_this">Clear all messages?</string>
+    <string name="The_delete_button_is_clicked">The delete button is clicked</string>
+    <string name="Add_a_button_was_clicked">Add a button was clicked</string>
+    <string name="not_delete_myself">Cannot delete myself</string>
+    <string name="Are_removed">Removing</string>
+    <string name="confirm_the_members">Move this member to group blacklist?</string>
+    <string name="Failed_to_get_group_chat_information">Failed to get group information:</string>
+    <string name="Is_sending_a_request">Sending the request..</string>
+    <string name="Request_to_join">Apply to join</string>
+    <string name="send_the_request_is">The request was sent and waiting for owner approval</string>
+    <string name="Join_the_group_chat">Join the group</string>
+    <string name="Failed_to_join_the_group_chat">Failed to join the group</string>
+    <string name="temporary_does_not">Currently the video size greater than 10M is not supported!</string>
+    <string name="Video_footage">Video record</string>
+    <string name="User_name_cannot_be_empty">User name cannot be empty!</string>
+    <string name="Password_cannot_be_empty">Password cannot be empty!</string>
+    <string name="please_set_the_current">"Please set the current user's nickname \ n to ios offline push not userid but Nick, see comments"</string>
+    <string name="Is_landing">logining..</string>
+    <string name="list_is_for">Retrieving the groups and contacts</string>
+    <string name="login_failure_failed">Logon failure: failed to retrieve contacts or groups</string>
+    <string name="Login_failed">Login failed:</string>
+    <string name="receive_the_passthrough">Receive cmd message : action：</string>
+    <string name="have_you_removed">Have you removed from his buddy list</string>
+    <string name="can_not_connect_chat_server_connection">Cannot connect to server</string>
+    <string name="the_current_network">The current network is not available, please check the network Settings</string>
+    <string name="Invite_you_to_join_a_group_chat"> Invite you to join this group</string>
+    <string name="Agreed_to_your_group_chat_application">Accepted your group application</string>
+    <string name="Logoff_notification">Logoff notification</string>
+    <string name="Remove_the_notification">Remove the notification</string>
+    <string name="Group_name_cannot_be_empty">Group name cannot be empty</string>
+    <string name="Is_to_create_a_group_chat">Creating the group</string>
+    <string name="Failed_to_create_groups">Failed to create groups</string>
+    <string name="The_video_to_start">The video to start</string>
+    <string name="Whether_to_send">Are you sure to send?</string>
+    <string name="Open_the_equipment_failure">Open the equipment failure!</string>
+    <string name="Confirm_password_cannot_be_empty">Confirm password cannot be empty!</string>
+    <string name="Two_input_password">Inconsistent password, please enter again!</string>
+    <string name="Is_the_registered">Registering..</string>
+    <string name="Registered_successfully">Registered successfully</string>
+    <string name="network_anomalies">Network is not available, please check the network!</string>
+    <string name="User_already_exists">User already existed!</string>
+    <string name="registration_failed_without_permission">Registration failed, without permission!</string>
+    <string name="Registration_failed">Registration failed:</string>
+    <string name="Are_logged_out">Logging out</string>
+    <string name="Download_the_pictures">图片加载中: 0%</string>
+    <string name="Download_the_pictures_new">图片加载中:</string>
+    <string name="Failed_to_download_file">Failed to download file:</string>
+    <string name="Version_number_is_wrong">Version number is wrong</string>
+    <string name="Are_connected_to_each_other">Connecting to peer..</string>
+    <string name="Is_not_yet_connected_to_the_server">Not connect to server</string>
+    <string name="have_connected_with">Connected to the peer and waiting for the peer to accept</string>
+    <string name="In_the_call">In the call..</string>
+    <string name="The_other_party_refused_to_accept">The call was refused</string>
+    <string name="Connection_failure">Connection failed!</string>
+    <string name="The_other_party_is_not_online">The peer is not online now, please try later</string>
+    <string name="The_other_is_on_the_phone_please">The peer is busy now, please try later</string>
+    <string name="The_other_is_hang_up">The peer has ended the call</string>
+    <string name="The_other_party_did_not_answer_new">The peer did not answer</string>
+    <string name="Into_the_blacklist">Move to the blacklist?</string>
+    <string name="Have_downloaded">Already downloaded</string>
+    <string name="Did_not_download">Not yet downloaded</string>
+    <string name="Has_agreed_to_your_friend_request">Accepted your request</string>
+    <string name="Request_to_add_you_as_a_friend">You got a friend request</string>
+    <string name="Apply_to_the_group_of">Apply to join the group</string>
+    <string name="Has_agreed_to">Accepted</string>
+    <string name="Has_refused_to">Refused</string>
+    <string name="Are_agree_with">Accepting</string>
+    <string name="direct_call">Direct</string>
+    <string name="relay_call">Relay</string>
+    <string name="Agree_with_failure">Failed to accept</string>
+    <string name="Is_download_voice_click_later">Downloading the voice message, click later</string>
+    <string name="Send_the_following_pictures">Send the following pictures?</string>
+    <string name="search_new">Search</string>
+    
+    <string name="Delete_the_contact">Delete the contact</string>
+    <string name="Move_into_the_blacklist_new">Move into the blacklist</string>
+    <string name="Change_the_group_name">Change group name</string>
+    <string name="dismiss_group">Dismiss group</string>
+    <string name="add_public_group_chat">Add public group</string>
+    <string name="gorup_not_found">Can not find this group</string>
+    <string name= "no_more_messages">没有更多的消息了</string>
+    <string name="join_public_group">Join public group</string>
+    <string name="chatroom_allow_owner_leave">Allow chatroom owner leave</string>
+    <string name="group_id">Group ID</string>
+    <string name="move_out_backlist">Remove from blacklist</string>
+    <string name="input_new_nick_hint">Input a new nick</string>
+    <string name="search_pubic_group">Search public group</string>
+    <string name="group_not_existed">The group does not exist</string>
+    <string name="group_search_failed">Search failed</string>
+    <string name="nickname_description">Once this nick is set, this nick will be used in push notification (by default this is HuanXin ID ) when the receiver is using the IOS device.</string>
+    <string name="error_send_invalid_content">The message content is not allowed to be sent!</string>
+    <string name="error_send_not_in_the_group">You already were not in the group</string>
+    <string name="refreshing_group_list">Refreshing group list</string>
+    <string name="failed_to_load_data">Failed to load data, please check network or try again later</string>
+    <string name="searching">searching</string>
+    <string name="hanging_up">Hanging up..</string>
+    <string name="illegal_user_name">Illegal user name</string>
+    
+    
+</resources>
+

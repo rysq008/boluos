@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+  <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_addNumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+    
+<com.delevin.boluolcs.view.LayoutEditText
+        android:id="@+id/addNumber_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.LayoutEditText>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="请绑定您本人的银行卡并输入姓名、身份证号码进行验证。在绑卡时需要完成一笔1元的充值进行确认，之后可用于投资或提现。"
+            android:textSize="14sp" />
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    
+    <Button 
+        android:id="@+id/bt_add_number"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        style="@style/shape_bt_niu"
+        android:text="下一步"
+        />
+    
+</LinearLayout>

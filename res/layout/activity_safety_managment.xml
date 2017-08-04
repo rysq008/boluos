@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#f3f3f3" >
+    
+    <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_safety_managment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+
+    <RelativeLayout
+        android:id="@+id/safety_manament_rl_dianji"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:background="#fff" >
+        
+
+        <ImageView
+            android:id="@+id/safety_manament_img_suo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            android:src="@drawable/jiyimima_one" />
+
+        <TextView
+            android:id="@+id/safety_manament_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/safety_manament_img_suo"
+            android:text="交易密码"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/safety_manament_img_into"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_enter_into" />
+
+        <TextView
+            android:id="@+id/safety_manament_tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/safety_manament_img_into"
+            android:text=""
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+        <RelativeLayout
+        android:id="@+id/safety_shoushi_rl_dianji"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:background="#fff" >
+        
+
+        <ImageView
+            android:id="@+id/safety_shoushi_img_suo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+             android:visibility="gone"
+            android:src="@drawable/jiyimima_one" />
+
+        <TextView
+            android:id="@+id/safety_shoushi_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/safety_shoushi_img_suo"
+            android:text="修改手势密码"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/safety_shoushi_img_into"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/img_enter_into" />
+
+
+    </RelativeLayout>
+</LinearLayout>

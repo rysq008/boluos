@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/paf_list_titleView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+
+    <RelativeLayout
+        android:id="@+id/paf_list_rl_jiekuanhetong"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/paf_list_tv_jiekuanhetong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="#333"
+            android:text="借款合同" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/paf_list_rl_danbaohetong"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+        <TextView
+            android:id="@+id/paf_list_tv_danbaohetong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="#333"
+            android:text="质押反担保合同" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/paf_list_rl_danbaohan"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+        <TextView
+            android:id="@+id/paf_list_tv_danbaohan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="#333"
+            android:text="同意担保函" />
+    </RelativeLayout>
+
+</LinearLayout>

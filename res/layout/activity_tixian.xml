@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="@color/gray_bg"
+    	android:orientation="vertical" >
+
+    <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_tixian"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="银行卡"
+        android:textColor="@color/wwwwww"
+        android:textSize="17sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#fff" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:background="#fff" >
+
+            <ImageView
+                android:id="@+id/tixian_img_bank_icon"
+                android:layout_width="85dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/boluo_center"
+                android:layout_marginLeft="17dp" />
+
+            <TextView
+                android:id="@+id/tixian_tv_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@+id/tixian_img_bank_icon"
+                android:text="****"
+                android:textColor="#666"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tixian_tv_bank"
+                android:layout_alignBottom="@+id/tixian_tv_bank"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/tixian_tv_bank"
+                android:text="借记卡"
+                android:textColor="#666" />
+
+            <TextView
+                android:id="@+id/tixian_bankCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tixian_img_bank_icon"
+                android:text="************"
+                android:textColor="#666"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_marginLeft="10dp"
+            android:background="#f2f2f2" />
+
+        <RelativeLayout
+            android:id="@+id/tixian_relativeLayout_zhanghuyue"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView4" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17dp"
+                android:text="账户余额"
+                android:textColor="#333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tixian_remain_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tixian_img_gone"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/ff8b0f"
+                android:textSize="15sp" 
+                android:text="***(元)" />
+
+            <ImageView
+                android:id="@+id/tixian_img_gone"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"                
+                android:layout_centerVertical="true"
+                android:layout_marginRight="17dp"
+                android:src="@drawable/icon_right" />
+
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="@+id/tixian_rl_gone"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tixian_relativeLayout_zhanghuyue"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:background="#f2f2f2" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="17dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:text="未投资金额：" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_below="@+id/textView3"
+                android:layout_marginTop="19dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:text="已投资金额：" />
+
+            <TextView
+                android:id="@+id/tixian_tv_weitouzi_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="37dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:text="***(元)" />
+
+            <TextView
+                android:id="@+id/tixian_tv_yitouzi_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView6"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="37dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:text="***(元)" />
+            
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#fff" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17dp"
+                android:text="提现金额 "
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+            <EditText
+                 android:id="@+id/tixian_money"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_centerVertical="true"
+                 android:background="@null"
+                    android:hint="请输入提现金额 (元)"
+                    android:layout_toRightOf="@+id/textView7"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+                    android:numeric="decimal"
+                    android:textColor="#666"
+                    android:textSize="16sp" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_below="@+id/relativeLayout2"
+            android:background="#f2f2f2" />
+        <RelativeLayout
+            android:id="@id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView8" >
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17dp"
+                android:text="提现手续费"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/tixian_tv_shouxufei"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="17dp"
+                android:text="未投资金额*0.01(元)"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_below="@+id/relativeLayout1"
+            android:background="#f2f2f2" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView10" >
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17dp"
+                android:text="实提金额"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/tixian_tv_shiti"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="17dp"
+                android:text="***(元)"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tixian_tv_quchuguize"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:layout_marginRight="17dp"
+        android:background="@drawable/shape_bt_white"
+        android:textSize="15sp"
+        android:textColor="@color/boluo_Yellow"
+        android:text="取出规则" />
+    <Button
+        android:id="@+id/bt_tixian"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/boluo_Yellow"
+        android:paddingLeft="10dip"
+        android:text="下一步"
+        android:textColor="#fff"
+        android:textSize="15sp" />
+
+</LinearLayout>
+
+
+<LinearLayout
+        android:id="@+id/tixian_lin_later"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone"
+        android:background="#4b000000"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/tixian_img_later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/jiazai" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:text="请稍后"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    </FrameLayout>

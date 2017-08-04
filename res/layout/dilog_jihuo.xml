@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dilog_jihuo"
+        />
+<TextView 
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:text="为了保障您的资金安全，需先激活账户"
+     android:background="@color/white"
+    android:textSize="15sp"
+    android:textColor="@color/wwwwww"
+    android:paddingTop="26dp"
+    />
+<TextView 
+    android:paddingTop="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="您是否激活账户？"
+    android:gravity="center"
+     android:background="@color/white"
+    android:textSize="15sp"
+    android:textColor="@color/wwwwww"
+    android:paddingBottom="26dp"
+    />
+<View 
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/huise"
+    
+    />
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:gravity="center"
+    >
+    <Button 
+        android:id="@+id/dilog_jihuo_dismiss"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:text="取消"
+        android:textColor="#fece00"
+        android:textSize="15sp"
+        android:gravity="center"
+        />
+    <View 
+       android:layout_width="1dp"
+       android:layout_height="wrap_content"
+      android:background="@color/huise"
+        />
+    
+     <Button 
+         android:id="@+id/dilog_jihuo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:text="激活"
+         android:gravity="center"
+        android:textColor="#fece00"
+        android:textSize="15sp"
+        />
+</LinearLayout>
+<ImageView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/dilog_down"
+    
+    />
+</LinearLayout>

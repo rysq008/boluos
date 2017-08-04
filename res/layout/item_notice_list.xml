@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    
+
+    <RelativeLayout
+        android:id="@+id/item_notice_list_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:background="@color/white" >
+		<TextView
+        android:id="@+id/item_notice_list_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textColor="#333"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/item_notice_list_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_notice_list_tv_title"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="12dp"
+        android:textSize="13sp"
+        android:textColor="#666"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/item_notice_list_tv_time"
+        android:background="#f2f2f2"
+        android:layout_marginTop="15dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

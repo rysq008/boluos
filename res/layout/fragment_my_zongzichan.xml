@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <lecho.lib.hellocharts.view.PieChartView
+        android:id="@+id/my_zongzichan_PieCharView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5.5" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#ff8b0f" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/textView1"
+                    android:text="账户余额(元)"
+                    android:textColor="#999"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1_gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/textView2"
+                    android:layout_below="@+id/textView2"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="14dp"
+                        android:text="未投资金额(元)"
+                        android:textColor="#999"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/textView7"
+                        android:layout_marginTop="9dp"
+                        android:text="已投资金额(元)"
+                        android:textColor="#999"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/my_zongzichan_relativeLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4.5" >
+
+                <ImageView
+                    android:id="@+id/my_zongzichan_img_right"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toRightOf="@+id/my_zongzichan_tv_zhanghuyue"
+                    android:src="@drawable/icon_right" />
+
+                <TextView
+                    android:id="@+id/my_zongzichan_tv_zhanghuyue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="***"
+                    android:textColor="#666"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout2_gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/my_zongzichan_tv_zhanghuyue"
+                    android:layout_below="@+id/my_zongzichan_tv_zhanghuyue"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/my_zongzichan_tv_wei"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="14dp"
+                        android:text="***"
+                        android:textColor="#999"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/my_zongzichan_tv_yi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/my_zongzichan_tv_wei"
+                        android:layout_marginTop="9dp"
+                        android:text="  500.00"
+                        android:textColor="#999"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_weight="5.5" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:background="#ffcb0f" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/textView3"
+                    android:text="冻结余额(元)"
+                    android:textColor="#999"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/my_zongzichan_rl_dongjieyue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_weight="4.5" >
+
+                <TextView
+                    android:id="@+id/my_zongzichan_tv_dongjieyue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="***"
+                    android:textColor="#666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/my_zongzichan_img_dongjieyue"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/my_zongzichan_tv_dongjieyue"
+                    android:src="@drawable/assets_tishi" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_weight="5.5" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:background="#5372ff" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/textView5"
+                    android:text="待收金额(元)"
+                    android:textColor="#999"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/my_zongzichan_rl_daishoueyue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_weight="4.5" >
+
+                <TextView
+                    android:id="@+id/my_zongzichan_tv_daishoueyue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="***"
+                    android:textColor="#666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/my_zongzichan_img_daishoueyue"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/my_zongzichan_tv_daishoueyue"
+                    android:src="@drawable/assets_tishi" />
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/my_zongzichan_btn_woyaotouzi"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_bt_boluoyellow"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:textSize="17sp"
+                android:textColor="#fff"
+                android:text="我要投资" />
+            
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff" >
+    
+    <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/mytouzi_coarse_details_titleview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/mytouzi_coarse_details_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="【汽车宝2017期】"
+                	android:textSize="15sp"
+                	android:textColor="#333333" />
+
+                <TextView
+                    android:id="@+id/mytouzi_coarse_details_tv_nianlilv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mytouzi_coarse_details_tv_title"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="14sp"
+                	android:textColor="#999999" />
+                
+            </RelativeLayout>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#f3f3f3" />
+            
+            <RelativeLayout
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/mytouzi_coarse_details_tv_shouyi_biao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#666666"
+                    android:text="收益" />
+
+                <TextView
+                    android:id="@+id/mytouzi_coarse_details_tv_shouyi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/boluo_Yellow"
+                    android:text="4276（元）" />
+                
+    		</RelativeLayout>
+    		<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/textView3"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+                    android:text="投资金额" />
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_touzijine"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_centerVertical="true"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_marginRight="10dp"
+    			    android:textColor="#666666"
+    			     />
+                
+    		</RelativeLayout>
+    		<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/textView5"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+    			    android:text="优惠券使用" />
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_hongbaoshiyong"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_centerVertical="true"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_marginRight="10dp"
+    			    android:textColor="#666666"
+    			    android:text="38元理财红包" />
+                
+    		</RelativeLayout>
+    		<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/textView7"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+    			    android:text="回款方式" />
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_huikuanfangshi"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_centerVertical="true"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_marginRight="10dp"
+    			    android:textColor="#666666"
+    			    android:text="到期还本付息" />
+                
+    		</RelativeLayout>
+    		<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/textView9"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+    			    android:text="投资日期" />
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_touzitime"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_centerVertical="true"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_marginRight="10dp"
+    			    android:textColor="#666666"
+    			    android:text="2017.02.01" />
+                
+    		</RelativeLayout>
+    		<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_jixi_state"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+    			    android:text="开始计息" />
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_jixi_state_time"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			   	android:layout_centerVertical="true"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_marginRight="10dp"
+    			    android:textSize="14sp"
+    			    android:textColor="#666666" />
+                
+    		</RelativeLayout>
+    		<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#f3f3f3" />
+    		<TextView
+    		    	android:id="@+id/mytouzi_coarse_details_tv_daoqi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#666666"
+                    android:text="到期日期" />
+    		<RelativeLayout
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_daoqitime"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#999999"
+    			    android:text="2017.09.05" />
+
+    			<TextView
+    			    android:id="@+id/mytouzi_coarse_details_tv_huankuan_state"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_centerVertical="true"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_marginRight="10dp"
+    			    android:textColor="#999999"
+    			    android:text="还款中" />
+                
+    		</RelativeLayout>
+    		<View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+    		    android:id="@+id/mytouzi_coarse_details_rl_details"
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/textView14"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+    			    android:text="项目详情" />
+
+    			<ImageView
+    			    android:id="@+id/imageView1"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginRight="10dp"
+    			    android:src="@drawable/img_enter_into_blue" />
+                
+    		</RelativeLayout>
+    		<TextView
+    		    	android:id="@+id/mytouzi_coarse_details_tv_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+    		    android:id="@+id/mytouzi_coarse_details_rl_hetongxieyi"
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/textView15"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+    			    android:text="合同协议"  />
+    			
+    			<ImageView
+    			    android:id="@+id/imageView2"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginRight="10dp"
+    			    android:src="@drawable/img_enter_into_blue" />
+
+    			
+                
+    		</RelativeLayout>
+    		<TextView
+    		    	android:id="@+id/mytouzi_coarse_details_tv_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f3f3f3" />
+    		<RelativeLayout
+    		    android:id="@+id/mytouzi_coarse_details_rl_weituoxieyi"
+        		android:layout_width="match_parent"
+       	 		android:layout_height="45dp"
+       	 		android:background="#fff" >
+
+    			<TextView
+    			    android:id="@+id/textView16"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentLeft="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginLeft="10dp"
+    			    android:textColor="#666666"
+    			    android:text="委托协议"  />
+    			
+    			<ImageView
+    			    android:id="@+id/imageView3"
+    			    android:layout_width="wrap_content"
+    			    android:layout_height="wrap_content"
+    			    android:layout_alignParentRight="true"
+    			    android:layout_centerVertical="true"
+    			    android:layout_marginRight="10dp"
+    			    android:src="@drawable/img_enter_into_blue" />
+
+    			
+                
+    		</RelativeLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

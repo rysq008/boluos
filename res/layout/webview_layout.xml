@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WebViewActivity">   
+<View 
+    android:id="@+id/statusBarview"
+    style="@style/statusBar"
+    />
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_webView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+    </com.delevin.boluolcs.view.TitleView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        
+         <LinearLayout
+            android:id="@+id/webView_layout"
+            android:layout_width="80dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center"
+            android:background="@drawable/jiazaibackgroup"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/webView_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/jiazai" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|center_horizontal"
+                android:text="请稍后"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        
+    </FrameLayout>
+</LinearLayout>

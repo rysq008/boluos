@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/shareyaoqing_titleView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+    
+    
+    <LinearLayout
+            android:id="@+id/shareyaoqing_lin_bottom_tab"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" 
+            android:baselineAligned="true"
+            android:background="@color/boluo_Yellow">
+
+            <RelativeLayout
+                android:id="@+id/shareyaoqing_rl_fanlijilu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/yaoqing_or_fanli_bar_false"
+                android:layout_weight="1.0" >
+                
+                <TextView
+                    android:id="@+id/shareyaoqing_tv_fanlijilu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="返利记录"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/shareyaoqing_rl_yaoqingjilu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/yaoqing_or_fanli_bar_false"
+                android:layout_weight="1.0" >
+
+                
+                <TextView
+                    android:id="@+id/shareyaoqing_tv_yaoqingjilu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="邀请记录"
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+            
+        </LinearLayout>
+        
+    <LinearLayout
+       	android:id="@+id/shareyaoqing_lin_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/bottom_tab"
+        android:orientation="vertical"
+        android:background="#fff" >
+
+        </LinearLayout>
+
+    
+</LinearLayout>

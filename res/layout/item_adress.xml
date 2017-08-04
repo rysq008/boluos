@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/item_adress_titleview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+   <FrameLayout 
+       
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       
+       >
+         <LinearLayout 
+      android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+       
+       >
+        <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        >
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="14sp"
+           android:paddingLeft="10dp"
+           android:paddingRight="10dp"
+           android:text="联系人："
+           android:textColor="@color/wwwwww"
+           /> 
+        <EditText 
+             android:id="@+id/adress_name"
+           android:layout_height="wrap_content"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:textSize="14sp"
+          android:hint="请输入联系人姓名"
+          android:background="@null"
+           android:textColor="@color/wwwwww" 
+            />
+    </LinearLayout>
+ <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:background="#f2f2f2" />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        >
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="14sp"
+           android:paddingRight="10dp"
+           android:paddingLeft="10dp"
+           android:text="手机号："
+           android:textColor="@color/wwwwww"
+           /> 
+        <EditText 
+            android:id="@+id/adress_phone"
+           android:layout_height="wrap_content"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:textSize="14sp"
+          android:hint="请输入联系人手机号"
+           android:numeric="decimal"
+           android:maxLength="11"
+          android:background="@null"
+           android:textColor="@color/wwwwww" 
+            />
+    </LinearLayout>
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:background="#f2f2f2" />
+     <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        >
+       <TextView 
+          
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="14sp"
+           android:paddingRight="10dp"
+           android:paddingLeft="10dp"
+           android:text="收货地址："
+           android:textColor="@color/wwwwww"
+           /> 
+        <EditText 
+             android:id="@+id/adress_adress"
+           android:layout_height="wrap_content"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:textSize="14sp"
+          android:hint="请详细填写收货地址"
+          android:background="@null"
+           android:textColor="@color/wwwwww" 
+            />
+    </LinearLayout>
+
+ <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:background="#f2f2f2" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="20dp"
+        android:text="*请填写详细的收货地址.例:xx省 xx市(县) xx区 xx小区 xx楼 xx号"
+        android:textColor="@color/gggggg"
+        android:textSize="12sp" />
+    <Button 
+        android:id="@+id/adress_bt"
+        style="@style/shape_bt_niu"
+        android:layout_margin="40dp"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        />
+   </LinearLayout>
+          <LinearLayout
+        android:id="@+id/listview_jiazai_slayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="#4b000000"
+        android:layout_gravity="center"
+        android:gravity="center"
+        
+        android:orientation="vertical" >
+        <ImageView
+            android:id="@+id/listview_jiazai_simg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/jiazai" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:text="请稍后"
+            android:textColor="@color/white" />
+    </LinearLayout> 
+       
+   </FrameLayout>
+ 
+  
+</LinearLayout>

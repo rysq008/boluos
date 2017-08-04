@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+
+    <LinearLayout
+            android:id="@+id/item_fanlijilu_lin"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" 
+            android:baselineAligned="true">
+
+            <RelativeLayout
+                android:id="@+id/item_fanlijilu_rl_riqi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0" >
+                
+                <TextView
+                    android:id="@+id/item_fanlijilu_tv_riqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="日期"
+                    android:textSize="14sp"
+                  	android:textColor="#666" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/item_fanlijilu_rl_haoyou"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0" >
+
+                
+                <TextView
+                    android:id="@+id/item_fanlijilu_tv_haoyou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="好友"
+                    android:textSize="14sp"
+                  android:textColor="#666" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/item_fanlijilu_rl_money"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_weight="1.0" >
+
+                
+                <TextView
+                    android:id="@+id/item_fanlijilu_tv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="金额"
+                    android:textSize="14sp"
+                  android:textColor="#666" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/item_fanlijilu_rl_qixian"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_weight="1.0" >
+
+                
+                <TextView
+                    android:id="@+id/item_fanlijilu_tv_qixian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="期限"
+                    android:textSize="14sp"
+                  android:textColor="#666" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/item_fanlijilu_rl_shouru"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0" >
+
+                
+                <TextView
+                    android:id="@+id/item_fanlijilu_tv_shouru"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="收入"
+                    android:textSize="14sp"
+                  android:textColor="#666" />
+            </RelativeLayout>
+            
+        </LinearLayout>
+    
+</RelativeLayout>

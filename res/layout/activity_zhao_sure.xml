@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical" >
+    <View 
+    android:id="@+id/statusBarview"
+    style="@style/statusBar"
+    />
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_sureSecret"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
+    <EditText 
+        android:id="@+id/zhao_sure_idCard"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical"
+       android:paddingLeft="10dp"
+       android:hint="请输入身份证号 "
+        android:background="@color/white"
+       android:textSize="14sp"
+       android:textColor="@color/wwwwww"
+       />
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/huise"
+        android:paddingLeft="10dp"
+        />
+    <EditText 
+        
+        android:id="@+id/zhao_sure_secret"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical"
+       android:paddingLeft="10dp"
+       android:hint="请输入登录密码 "
+        android:background="@color/white"
+       android:textSize="14sp"
+       android:textColor="@color/wwwwww"
+       />
+    <EditText 
+        android:id="@+id/zhao_sure_sure_secret"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:gravity="center_vertical"
+       android:paddingLeft="10dp"
+       android:hint="请确认登录密码 "
+        android:background="@color/white"
+       android:textSize="14sp"
+       android:textColor="@color/wwwwww"
+       />
+<Button 
+    android:id="@+id/zhao_btSure"
+    style="@style/shape_bt_niu"
+    android:layout_margin="20dp"
+    android:text="确认"
+    />
+</LinearLayout>

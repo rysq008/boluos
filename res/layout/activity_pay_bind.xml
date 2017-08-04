@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="@color/gray_bg"
+    	android:orientation="vertical" >
+    <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_payBind"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </com.delevin.boluolcs.view.TitleView>
+  <TextView 
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="充值银行卡"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:textColor="@color/wwwwww"
+      android:layout_marginTop="20dp"
+      android:textSize="16sp"
+      android:gravity="center_vertical" />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="76dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:background="#fff" >
+
+      <ImageView
+          android:id="@+id/add_pay_img_bank"
+          android:layout_width="85dp"
+          android:layout_height="70dp"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          android:scaleType="centerCrop"
+          android:src="@drawable/boluo_center"
+          android:layout_marginLeft="5dp" />
+
+      <TextView
+          android:id="@+id/add_pay_tv_bank_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/add_pay_img_bank"
+          android:layout_marginLeft="5dp"
+          android:layout_marginTop="13dp"
+          android:layout_toRightOf="@+id/add_pay_img_bank"
+          android:text="****"
+          android:textColor="#666"
+          android:textSize="15sp" />
+
+      <TextView
+          android:id="@+id/add_pay_tv_bank_state"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/add_pay_tv_bank_name"
+          android:layout_alignBottom="@+id/add_pay_tv_bank_name"
+          android:layout_marginLeft="20dp"
+          android:layout_toRightOf="@+id/add_pay_tv_bank_name"
+          android:text="借记卡"
+          android:textColor="#666" />
+
+      <TextView
+          android:id="@+id/add_pay_tv_bank_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/add_pay_img_bank"
+          android:layout_marginBottom="13dp"
+          android:layout_marginLeft="5dp"
+          android:layout_toRightOf="@+id/add_pay_img_bank"
+          android:text="************"
+          android:textColor="#666"
+          android:textSize="15sp" />
+
+  </RelativeLayout>
+
+  <TextView
+      android:id="@+id/textView4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="充值金额"
+      android:textColor="#333"
+      android:layout_marginLeft="10dp"
+      android:textSize="17sp" />
+  
+  <LinearLayout 
+    	android:layout_width="match_parent"
+    	android:layout_height="45dp"
+    	android:orientation="horizontal"
+    	android:gravity="center_vertical"
+    	android:paddingLeft="10dp"
+    	android:layout_marginTop="10dp"
+    	android:background="@color/white"
+      	android:paddingRight="10dp">
+   		<TextView 
+       		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:text="金额"
+       		android:layout_marginRight="10dp"
+       		android:textSize="14sp"
+       		android:textColor="@color/wwwwww"/> 
+    	<EditText 
+        	android:id="@+id/pay_bind_money"
+       		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:hint="请输入您要充值的金额(元)"
+       		android:numeric="decimal"
+       		android:textSize="14sp"
+       		android:textColor="@color/wwwwww"
+       		android:background="@null"/> 
+</LinearLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="48dp" >
+
+      <TextView
+          android:id="@+id/textView5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="10dp"
+          android:text="仅支持本人借记卡充值"
+          android:textColor="#666"
+          android:textSize="14sp" />
+
+      <TextView
+          android:id="@+id/add_pay_tv_see_xiane"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:gravity="center_vertical"
+          android:layout_marginRight="10dp"
+          android:textColor="@color/boluo_Yellow"
+          android:textSize="14sp"
+          android:text="查看限额" />
+
+  </RelativeLayout>
+  <Button
+      android:id="@+id/bt_pay_bind"
+      android:layout_width="fill_parent"
+      android:layout_height="45dp"
+      android:layout_marginLeft="15dip"
+      android:layout_marginRight="15dip"
+      android:layout_marginTop="10dp"
+      android:background="@color/boluo_Yellow"
+      android:gravity="center"
+      android:paddingLeft="10dip"
+      android:text="下一步"
+      android:textColor="#fff"
+      android:textSize="15sp" />
+
+</LinearLayout>
+<LinearLayout
+        android:id="@+id/pay_bind_lin_later"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone"
+        android:background="#4b000000"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/pay_bind_img_later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/jiazai" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal"
+            android:text="请稍后"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</FrameLayout>

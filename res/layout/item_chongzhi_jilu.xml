@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff" >
+
+        <TextView
+            android:id="@+id/item_chongzhi_jilu_tv_chongzhi_or_tixian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="12dp"
+            android:text="充值"
+            android:textColor="#333"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/item_chongzhi_jilu_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/item_chongzhi_jilu_tv_chongzhi_or_tixian"
+            android:layout_marginTop="10dp"
+            android:textColor="#999"
+            android:textSize="12sp"
+            android:text="2017.02.01" />
+
+        
+
+        <TextView
+            android:id="@+id/item_chongzhi_jilu_tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/item_chongzhi_jilu_tv_chongzhi_or_tixian"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:text="100.00"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/item_chongzhi_jilu_tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/item_chongzhi_jilu_tv_time"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:text="状态"
+            android:textColor="#999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/item_chongzhi_jilu_tv_tixianshouxxufei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_chongzhi_jilu_tv_time"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:textColor="#999"
+            android:textSize="12sp"
+            android:text="提现手续费0元" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="12dp"
+            android:layout_below="@+id/item_chongzhi_jilu_tv_tixianshouxxufei"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="12dp"
+            android:background="#f2f2f2" />
+
+    </RelativeLayout>
+
+</LinearLayout>
