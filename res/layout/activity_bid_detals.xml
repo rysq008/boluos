@@ -436,6 +436,7 @@
             android:background="#4b000000"
             android:clickable="true"
             android:gravity="center"
+            android:visibility="gone"
             android:orientation="vertical" >
             <ImageView
                 android:id="@+id/bid_visibility_image"
