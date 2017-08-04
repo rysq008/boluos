@@ -4,11 +4,12 @@
     android:id="@+id/home_pull"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
-    
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none" >
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
@@ -17,9 +18,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
+
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp" >
+
                     <android.support.v4.view.ViewPager
                         android:id="@+id/home_banner_viewPager"
                         android:layout_width="match_parent"
@@ -35,6 +38,11 @@
                         android:paddingBottom="10dp" >
                     </LinearLayout>
                 </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/huise" />
 
                 <com.delevin.boluolcs.view.PublicNoticeView
                     android:id="@+id/home_notice"
@@ -81,7 +89,7 @@
                             android:textColor="@color/wwwwww"
                             android:textSize="12sp" />
                     </LinearLayout>
-                    
+
                     <LinearLayout
                         android:id="@+id/home_anquanbaozhang"
                         android:layout_width="0dp"
@@ -106,7 +114,7 @@
 
                     <LinearLayout
                         android:id="@+id/home_img_view"
-                    	android:layout_width="0dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
@@ -121,14 +129,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="13dp"
-                            android:text="新手紅包"
+                            android:text="新手红包"
                             android:textColor="@color/wwwwww"
                             android:textSize="12sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/home_xinshoubangzhu"
-	                    android:layout_width="0dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
@@ -143,11 +151,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="13dp"
-                            android:text="幫助中心"
+                            android:text="帮助中心"
                             android:textColor="@color/wwwwww"
                             android:textSize="12sp" />
                     </LinearLayout>
-                    </LinearLayout>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -155,8 +163,8 @@
                     android:background="@color/huise"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:visibility="gone"                    
-                    android:paddingLeft="10dp" >
+                    android:paddingLeft="10dp"
+                    android:visibility="gone" >
 
                     <ImageView
                         android:layout_width="3dp"
@@ -177,7 +185,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
+                    android:layout_height="15dp"
                     android:background="@color/huise" />
 
                 <LinearLayout
@@ -192,8 +200,8 @@
                     android:layout_height="40dp"
                     android:background="@color/white"
                     android:gravity="center"
-                    android:visibility="gone"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
 
                     <TextView
                         android:id="@+id/home_moreNew_object"
@@ -213,7 +221,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/huise" />
+                    android:background="@color/huise"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -221,8 +230,8 @@
                     android:background="@color/huise"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:visibility="gone"                    
-                    android:paddingLeft="10dp" >
+                    android:paddingLeft="10dp"
+                    android:visibility="gone" >
 
                     <ImageView
                         android:layout_width="3dp"
@@ -244,7 +253,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@color/huise" />
+                    android:background="@color/huise"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:id="@+id/home_Layout_tjcp"
@@ -259,8 +269,8 @@
                     android:layout_height="40dp"
                     android:background="@color/white"
                     android:gravity="center"
-                    android:visibility="gone"                    
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -277,11 +287,13 @@
                 </LinearLayout>
 
                 <View
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:background="@color/huise" />
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/home_more_meiti"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
@@ -293,9 +305,8 @@
                         android:id="@+id/home_more_meiti_img"
                         android:layout_width="43dp"
                         android:layout_height="43dp"
-                        android:src="@drawable/boluo_toutiao"
-                        android:layout_marginRight="10dp" />
-                    
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/boluo_toutiao" />
 
                     <TextView
                         android:id="@+id/home_more_meiti_tv"
@@ -368,6 +379,7 @@
                             android:textSize="13sp" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/home_kefu"
                     android:layout_width="match_parent"
@@ -523,7 +535,6 @@
                 android:background="#4b000000"
                 android:clickable="true"
                 android:gravity="center"
-                android:visibility="gone"
                 android:orientation="vertical" >
 
                 <ImageView

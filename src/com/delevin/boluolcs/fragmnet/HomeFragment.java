@@ -60,7 +60,8 @@ import com.pusupanshi.boluolicai.R;
  *     @author 李红涛  @version 创建时间：2016-12-15 下午12:59:15    类说明 投资首页
  */
 
-public class HomeFragment extends BaseFragment implements OnPageChangeListener, OnClickListener, OnHeaderRefreshListener {
+public class HomeFragment extends BaseFragment implements OnPageChangeListener,
+		OnClickListener, OnHeaderRefreshListener {
 	private ViewPager viewPager; // banner viewpager 初始化
 	private LinearLayout viewGroup; // banner 底部切换点 初始化
 	private ArrayList<View> list; // banner 点 添加集合
@@ -72,7 +73,7 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 	private List<BeanTJCP> tjcpList;// 推荐产品
 	private LinearLayout layout_xinshoubangzhu; // 新手帮助
 	private LinearLayout layout_anquanbaozhang; // 安全保障
-	private LinearLayout layout_guanyuwomen; 	// 关于我们
+	private LinearLayout layout_guanyuwomen; // 关于我们
 	private LinearLayout home_Layout_tjcp;
 	private PublicNoticeView noticeView;
 	private LinearLayout draweeView;// 新手红包点击
@@ -90,73 +91,81 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 
 	@Override
 	protected View initView(LayoutInflater inflaters, ViewGroup container) {
-		View view = inflaters.inflate(R.layout.boluos_fragment_home,
-				container, false);
+		View view = inflaters.inflate(R.layout.boluos_fragment_home, container,
+				false);
 		return view;
 	}
 
 	@Override
 	protected void getFindById(View view) {
-		
-		strUserName=BoluoUtils.getShareOneData(getActivity(), "phone");
+
+		strUserName = BoluoUtils.getShareOneData(getActivity(), "phone");
 		if (!TextUtils.isEmpty(strUserName)) {
-			strUserName=BoluoUtils.getShareOneData(getActivity(), "phone");
-		}else {
-			strUserName=Utils.createRandomString(11);
+			strUserName = BoluoUtils.getShareOneData(getActivity(), "phone");
+		} else {
+			strUserName = Utils.createRandomString(11);
 		}
-		
-		//注册   环信用户
+
+		// 注册 环信用户
 		new Thread(new Runnable() {
 			public void run() {
 				try {
 					// call method in SDK
-					EMChatManager.getInstance().createAccountOnServer(strUserName,
-							"123");
+					EMChatManager.getInstance().createAccountOnServer(
+							strUserName, "123");
 					getActivity().runOnUiThread(new Runnable() {
 						public void run() {
-//									Toast.makeText(getActivity(), "注册成功",Toast.LENGTH_SHORT).show();
+							// Toast.makeText(getActivity(),
+							// "注册成功",Toast.LENGTH_SHORT).show();
 						}
 					});
 				} catch (final Exception e) {
 					getActivity().runOnUiThread(new Runnable() {
 						public void run() {
-//									Toast.makeText(getApplicationContext(), "注册失败",Toast.LENGTH_SHORT).show();
+							// Toast.makeText(getApplicationContext(),
+							// "注册失败",Toast.LENGTH_SHORT).show();
 						}
 					});
 				}
 			}
 		}).start();
-		
-		
-		
-		
-		
-		
-		
-		layout_V = (LinearLayout) view.findViewById(R.id.home_visibility_layout);
+
+		layout_V = (LinearLayout) view
+				.findViewById(R.id.home_visibility_layout);
 		img_V = (ImageView) view.findViewById(R.id.home_visibility_image);
 		imgNew = (ImageView) view.findViewById(R.id.home_more_meiti_img);
 		tvNew = (TextView) view.findViewById(R.id.home_more_meiti_tv);
-		pullToRefreshView = (PullToRefreshView) view.findViewById(R.id.home_pull);
+		pullToRefreshView = (PullToRefreshView) view
+				.findViewById(R.id.home_pull);
 		pullToRefreshView.setOnHeaderRefreshListener(this);
-		LinearLayout layoutKefu = (LinearLayout) view.findViewById(R.id.home_kefu);
+		LinearLayout layoutKefu = (LinearLayout) view
+				.findViewById(R.id.home_kefu);
 		layoutKefu.setOnClickListener(this);
-		LinearLayout layoutPai = (LinearLayout) view.findViewById(R.id.home_paihangbang);
-		LinearLayout layoutPi = (LinearLayout) view.findViewById(R.id.home_pilou);
-		
+		LinearLayout layoutPai = (LinearLayout) view
+				.findViewById(R.id.home_paihangbang);
+		LinearLayout layoutPi = (LinearLayout) view
+				.findViewById(R.id.home_pilou);
+
 		layoutPai.setOnClickListener(this);
 		layoutPi.setOnClickListener(this);
-		layoutNewerObject = (LinearLayout) view.findViewById(R.id.home_newer_object);
+		layoutNewerObject = (LinearLayout) view
+				.findViewById(R.id.home_newer_object);
 		layoutNewerObject.setOnClickListener(this);
-		TextView newMoreObject = (TextView) view.findViewById(R.id.home_moreNew_object);
-		LinearLayout moreObject = (LinearLayout) view.findViewById(R.id.home_more_object);
-		LinearLayout layoutMeiTi = (LinearLayout) view.findViewById(R.id.home_more_meiti);
+		TextView newMoreObject = (TextView) view
+				.findViewById(R.id.home_moreNew_object);
+		LinearLayout moreObject = (LinearLayout) view
+				.findViewById(R.id.home_more_object);
+		LinearLayout layoutMeiTi = (LinearLayout) view
+				.findViewById(R.id.home_more_meiti);
 		layoutMeiTi.setOnClickListener(this);
 		viewGroup = (LinearLayout) view.findViewById(R.id.home_banner_group);
 		viewPager = (ViewPager) view.findViewById(R.id.home_banner_viewPager);
-		layout_xinshoubangzhu = (LinearLayout) view.findViewById(R.id.home_xinshoubangzhu);
-		layout_anquanbaozhang = (LinearLayout) view.findViewById(R.id.home_anquanbaozhang);
-		layout_guanyuwomen = (LinearLayout) view.findViewById(R.id.home_guanyuwomen);
+		layout_xinshoubangzhu = (LinearLayout) view
+				.findViewById(R.id.home_xinshoubangzhu);
+		layout_anquanbaozhang = (LinearLayout) view
+				.findViewById(R.id.home_anquanbaozhang);
+		layout_guanyuwomen = (LinearLayout) view
+				.findViewById(R.id.home_guanyuwomen);
 		draweeView = (LinearLayout) view.findViewById(R.id.home_img_view);
 		draweeView.setOnClickListener(this);
 		layout_guanyuwomen.setOnClickListener(this);
@@ -164,7 +173,8 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 		layout_anquanbaozhang.setOnClickListener(this);
 		noticeView = (PublicNoticeView) view.findViewById(R.id.home_notice);
 		noticeView.setOnClickListener(this);
-		home_Layout_tjcp = (LinearLayout) view.findViewById(R.id.home_Layout_tjcp);
+		home_Layout_tjcp = (LinearLayout) view
+				.findViewById(R.id.home_Layout_tjcp);
 		bannersList = new ArrayList<BeanBanner>();
 		tjcpList = new ArrayList<BeanTJCP>();
 		newerList = new ArrayList<BeanTJCP>();
@@ -194,22 +204,32 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 							String code = result.getString("code");
 							ProessDilogs.closeAnimation(img_V, layout_V);
 							if (TextUtils.equals(code, "10000")) {
-								JSONObject contentObject = result.getJSONObject("content");
-								JSONArray bannerArray = contentObject.getJSONArray("banner");
-								JSONArray noticeArray = contentObject.getJSONArray("notice");
-								JSONArray newerArray = contentObject.getJSONArray("newer");
-								JSONArray tjcpArray = contentObject.getJSONArray("tjcp");
-								JSONArray imgArray = contentObject.getJSONArray("img");
+								JSONObject contentObject = result
+										.getJSONObject("content");
+								JSONArray bannerArray = contentObject
+										.getJSONArray("banner");
+								JSONArray noticeArray = contentObject
+										.getJSONArray("notice");
+								JSONArray newerArray = contentObject
+										.getJSONArray("newer");
+								JSONArray tjcpArray = contentObject
+										.getJSONArray("tjcp");
+								JSONArray imgArray = contentObject
+										.getJSONArray("img");
 								bannersList.clear();
 								newerList.clear();
 								tjcpList.clear();
 								for (int i = 0; i < bannerArray.length(); i++) {
 
 									BeanBanner banner = new BeanBanner();
-									JSONObject bannerObject = bannerArray.getJSONObject(i);
-									String webViewPath = bannerObject.getString("img");
-									String ImgPath = bannerObject.getString("url");
-									String type = bannerObject.getString("type");
+									JSONObject bannerObject = bannerArray
+											.getJSONObject(i);
+									String webViewPath = bannerObject
+											.getString("img");
+									String ImgPath = bannerObject
+											.getString("url");
+									String type = bannerObject
+											.getString("type");
 									banner.setType(type);
 									banner.setImg(webViewPath);
 									banner.setUrl(ImgPath);
@@ -217,30 +237,48 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 								}
 								getbanner(bannersList.size());
 								for (int i = 0; i < newerArray.length(); i++) {
-									JSONObject newerObject = newerArray.getJSONObject(0);
+									JSONObject newerObject = newerArray
+											.getJSONObject(0);
 									BeanTJCP newer = new BeanTJCP();
-									newer.setProduct_name(newerObject.getString("product_name"));
-									newer.setFeature_name(newerObject.getString("feature_name"));
-									newer.setRate(QntUtils.getFormatOne(QntUtils.getDouble(newerObject.getString("rate")) * 100)+ "");
-									newer.setRate_increase(QntUtils.getFormatOne(QntUtils.getDouble(newerObject.getString("rate_increase")) * 100)+ "");
-									newer.setTime_limit(newerObject.getString("time_limit"));
+									newer.setProduct_name(newerObject
+											.getString("product_name"));
+									newer.setFeature_name(newerObject
+											.getString("feature_name"));
+									newer.setRate(QntUtils.getFormatOne(QntUtils
+											.getDouble(newerObject
+													.getString("rate")) * 100)
+											+ "");
+									newer.setRate_increase(QntUtils.getFormatOne(QntUtils.getDouble(newerObject
+											.getString("rate_increase")) * 100)
+											+ "");
+									newer.setTime_limit(newerObject
+											.getString("time_limit"));
 									newer.setId(newerObject.getString("id"));
-									newer.setPercentage(newerObject.getString("percentage"));
-									newer.setProduct_status(newerObject.getString("product_status"));
-									newer.setProduct_remain(newerObject.getString("product_remain"));
+									newer.setPercentage(newerObject
+											.getString("percentage"));
+									newer.setProduct_status(newerObject
+											.getString("product_status"));
+									newer.setProduct_remain(newerObject
+											.getString("product_remain"));
 									newerList.add(newer);
 								}
-								getLayoutRecommended(newerList, true,
+								getLayoutRecommended(newerList, false,
 										layoutNewerObject);
 								for (int i = 0; i < tjcpArray.length(); i++) {
 									BeanTJCP tjcp = new BeanTJCP();
-									JSONObject tjcpObject = tjcpArray.getJSONObject(i);
-									String product_name = tjcpObject.getString("product_name");
-									String feature_name = tjcpObject.getString("feature_name");
+									JSONObject tjcpObject = tjcpArray
+											.getJSONObject(i);
+									String product_name = tjcpObject
+											.getString("product_name");
+									String feature_name = tjcpObject
+											.getString("feature_name");
 									String rate = tjcpObject.getString("rate");
-									String rate_increase = tjcpObject.getString("rate_increase");
-									String time_limit = tjcpObject.getString("time_limit");
-									String percentage = tjcpObject.getString("percentage");
+									String rate_increase = tjcpObject
+											.getString("rate_increase");
+									String time_limit = tjcpObject
+											.getString("time_limit");
+									String percentage = tjcpObject
+											.getString("percentage");
 									String product_status = tjcpObject
 											.getString("product_status");
 									String idString = tjcpObject
@@ -261,25 +299,34 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 									tjcp.setId(idString);
 									tjcpList.add(tjcp);
 								}
-								getLayoutRecommended(tjcpList, false,home_Layout_tjcp);
+								getLayoutRecommended(tjcpList, false,
+										home_Layout_tjcp);
 								for (int i = 0; i < noticeArray.length(); i++) {
 
 									BeanNotice notice = new BeanNotice();
-									JSONObject noticeObject = noticeArray.getJSONObject(i);
+									JSONObject noticeObject = noticeArray
+											.getJSONObject(i);
 									String url = noticeObject.getString("url");
-									String title = noticeObject.getString("title");
+									String title = noticeObject
+											.getString("title");
 									notice.setTitle(title);
 									notice.setUrl(url);
 									noticeList.add(notice);
 								}
 								noticeView.bindNotices(noticeList);
-								JSONObject imgObject = imgArray.getJSONObject(0);
+								JSONObject imgObject = imgArray
+										.getJSONObject(0);
 								newReder = imgObject.getString("url");
-								JSONObject newObject = result.getJSONObject("new");
-								String strNewTitle = newObject.getString("title");
+								JSONObject newObject = result
+										.getJSONObject("new");
+								String strNewTitle = newObject
+										.getString("title");
 								tvNew.setText(strNewTitle);
-//								String strNewImg = newObject.getString("image");
-//								AndroidUtils.getImg(getActivity(), strNewImg,imgNew, R.drawable.boluo_center,R.drawable.boluo_fail);
+								// String strNewImg =
+								// newObject.getString("image");
+								// AndroidUtils.getImg(getActivity(),
+								// strNewImg,imgNew,
+								// R.drawable.boluo_center,R.drawable.boluo_fail);
 							}
 
 						} catch (JSONException e) {
@@ -303,33 +350,40 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 		int i;
 		for (i = 0; i < size; i++) {
 			final BeanBanner banner = bannersList.get(i);
-			View view = LayoutInflater.from(getActivity()).inflate(R.layout.banner_item_image, null);
-			ImageView draweeView = (ImageView) view.findViewById(R.id.my_image_view);
+			View view = LayoutInflater.from(getActivity()).inflate(
+					R.layout.banner_item_image, null);
+			ImageView draweeView = (ImageView) view
+					.findViewById(R.id.my_image_view);
 			draweeView.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
 
-					Intent intent = new Intent(getActivity(),JSAndroidActivity.class);
+					Intent intent = new Intent(getActivity(),
+							JSAndroidActivity.class);
 					intent.putExtra("type", banner.getType());
 					intent.putExtra("js", "js");
 					if (memberId != null) {
 
-						intent.putExtra("jsUrl", banner.getUrl() + "?phone="+ phone + "&" + "token=" + apiToken);
+						intent.putExtra("jsUrl", banner.getUrl() + "?phone="
+								+ phone + "&" + "token=" + apiToken);
 					} else {
-						intent.putExtra("jsUrl", banner.getUrl() + "?phone="+ "" + "&" + "token=" + "");
+						intent.putExtra("jsUrl", banner.getUrl() + "?phone="
+								+ "" + "&" + "token=" + "");
 					}
 					intent.putExtra("title", "活动中心");
 					intent.putExtra("right", "rightA");
 					startActivity(intent);
 				}
 			});
-			AndroidUtils.getImg(getActivity(), banner.getImg(), draweeView,R.drawable.boluo_center, R.drawable.boluo_fail);
+			AndroidUtils.getImg(getActivity(), banner.getImg(), draweeView,
+					R.drawable.boluo_center, R.drawable.boluo_fail);
 			list.add(view);
 		}
 		// 添加底部切换点
 		imageViews = new ImageView[list.size()];
 		for (int j = 0; j < list.size(); j++) {
-			View view = LayoutInflater.from(getActivity()).inflate(R.layout.banner_item_indicator, null);
+			View view = LayoutInflater.from(getActivity()).inflate(
+					R.layout.banner_item_indicator, null);
 			imageViews[j] = (ImageView) view.findViewById(R.id.image_indicator);
 			// imageViews[i] = imageView;
 			if (j == 0) {
@@ -362,7 +416,8 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 			case 1:
 				int totalCount = list.size();
 				int currentItem = viewPager.getCurrentItem();
-				int toItem = currentItem + 1 == totalCount ? 0: currentItem + 1;
+				int toItem = currentItem + 1 == totalCount ? 0
+						: currentItem + 1;
 				viewPager.setCurrentItem(toItem, true);
 				// 每两秒钟发送一个message，用于切换viewPager中的图片
 				this.sendEmptyMessageDelayed(1, 4000);
@@ -399,22 +454,39 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 			LinearLayout layouts) {
 		layouts.removeAllViews();
 		for (int i = 0; i < list.size(); i++) {
-			View view = LayoutInflater.from(getActivity()).inflate(R.layout.item_object, null);
-			LinearLayout layout = (LinearLayout) view.findViewById(R.id.object_layout);
-			TextView object_product_name = (TextView) view.findViewById(R.id.object_product_name);
-			TextView object_rate = (TextView) view.findViewById(R.id.object_rate);
-			TextView object_rate_increase = (TextView) view.findViewById(R.id.object_rate_increase);
-			TextView object_time_limit = (TextView) view.findViewById(R.id.object_time_limit);
-			TextView object_yues = (TextView) view.findViewById(R.id.object_yues);
-			ImageView imgLimit = (ImageView) view.findViewById(R.id.item_newLimit);
+			View view;
+			if (layouts == home_Layout_tjcp) {
+				view = LayoutInflater.from(getActivity()).inflate(
+						R.layout.item_home_object, null);
+			} else {
+				view = LayoutInflater.from(getActivity()).inflate(
+						R.layout.item_home_newer, null);
+			}
+			LinearLayout layout = (LinearLayout) view
+					.findViewById(R.id.object_layout);
+			TextView object_product_name = (TextView) view
+					.findViewById(R.id.object_product_name);
+			TextView object_rate = (TextView) view
+					.findViewById(R.id.object_rate);
+			TextView object_rate_increase = (TextView) view
+					.findViewById(R.id.object_rate_increase);
+			TextView object_time_limit = (TextView) view
+					.findViewById(R.id.object_time_limit);
+			TextView object_yues = (TextView) view
+					.findViewById(R.id.object_yues);
+			ImageView imgLimit = (ImageView) view
+					.findViewById(R.id.item_newLimit);
 			ImageView imgGone = (ImageView) view.findViewById(R.id.object_gone);
 			if (b) {
 				imgLimit.setVisibility(View.VISIBLE);
 			}
-			RoundProgressBar grProgressBar = (RoundProgressBar) view.findViewById(R.id.object_PieCharViewBuy);
+			RoundProgressBar grProgressBar = (RoundProgressBar) view
+					.findViewById(R.id.object_PieCharViewBuy);
 			grProgressBar.setMax(100);
 			object_product_name.setText(list.get(i).getProduct_name());
-			object_rate.setText(""+ QntUtils.getDoubleToInt(QntUtils.getDouble(list.get(i).getRate())));
+			object_rate.setText(""
+					+ QntUtils.getDoubleToInt(QntUtils.getDouble(list.get(i)
+							.getRate())));
 			object_rate_increase.setText(QntUtils.getDoubleToInt(QntUtils
 					.getDouble(list.get(i).getRate_increase())) + "%");
 			object_time_limit.setText(list.get(i).getTime_limit());
@@ -428,7 +500,7 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 				grProgressBar.setProgress(gress);
 			}
 			object_yues.setText(QntUtils.getFormat(QntUtils
-					.getDouble(product_remain)) + "元");
+					.getDouble(product_remain)) + "");
 			final String id = list.get(i).getId();
 			final String status = list.get(i).getProduct_status();
 			layout.setOnClickListener(new OnClickListener() {
@@ -519,9 +591,9 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 				View currentView = viewFlipper.getCurrentView();
 				int id = currentView.getId();
 				Intent intentNotice = new Intent();
-//				intentNotice.putExtra("title", "公告");
-//				intentNotice.putExtra("jsUrl", noticeList.get(id).getUrl());
-//				intentNotice.putExtra("js", "js");
+				// intentNotice.putExtra("title", "公告");
+				// intentNotice.putExtra("jsUrl", noticeList.get(id).getUrl());
+				// intentNotice.putExtra("js", "js");
 				intentNotice.setClass(getActivity(), NoticeListActivity.class);
 				startActivity(intentNotice);
 			} else {
@@ -578,14 +650,15 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 			startActivity(intentPi);
 			break;
 		case R.id.home_paihangbang:
-			Intent intentBang = new Intent(getActivity(),JSAndroidActivity.class);
+			Intent intentBang = new Intent(getActivity(),
+					JSAndroidActivity.class);
 			intentBang.putExtra("title", "投资排行榜");
 			intentBang.putExtra("jsUrl", BeanUrl.PAIHANGBANG_STRING);
 			startActivity(intentBang);
 			break;
 		case R.id.home_kefu:
 			BoluoUtils.getKefuDilog(getActivity(), new KefuCallBack() {
-				
+
 				@Override
 				public void onCallPhone() {
 					Intent intentTel = new Intent();
@@ -593,55 +666,74 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener, 
 					intentTel.setData(Uri.parse("tel:400-032-0596"));
 					startActivity(intentTel);
 				}
-				
+
 				@Override
 				public void onCall() {
-//					Toast.makeText(getActivity(), "敬请期待", Toast.LENGTH_SHORT).show();
-					// 调用sdk  登陆方法      登陆聊天服务器
-					EMChatManager.getInstance().login(strUserName, "123", new EMCallBack() {
+					// Toast.makeText(getActivity(), "敬请期待",
+					// Toast.LENGTH_SHORT).show();
+					// 调用sdk 登陆方法 登陆聊天服务器
+					EMChatManager.getInstance().login(strUserName, "123",
+							new EMCallBack() {
 
-						@Override
-						public void onSuccess() {
-							// 登陆成功，保存用户名密码
-							((Myapplication) Myapplication.getInstance()).setUserName(strUserName);
-							((Myapplication) Myapplication.getInstance()).setPassword("123");
+								@Override
+								public void onSuccess() {
+									// 登陆成功，保存用户名密码
+									((Myapplication) Myapplication
+											.getInstance())
+											.setUserName(strUserName);
+									((Myapplication) Myapplication
+											.getInstance()).setPassword("123");
 
-							new Thread(new Runnable() {
-								public void run() {
+									new Thread(new Runnable() {
+										public void run() {
 
-									try {
-										// 参数为要添加的好友的username和添加理由
-										EMContactManager.getInstance().addContact("boluolicai", "添加理由");
-										getActivity().runOnUiThread(new Runnable() {
-											public void run() {
-												// 跳转到聊天页面
-												Intent intent = new Intent(getActivity(),ChatActivity.class);
-												intent.putExtra("userId", "boluolicai");
-												startActivity(intent);
+											try {
+												// 参数为要添加的好友的username和添加理由
+												EMContactManager.getInstance()
+														.addContact(
+																"boluolicai",
+																"添加理由");
+												getActivity().runOnUiThread(
+														new Runnable() {
+															public void run() {
+																// 跳转到聊天页面
+																Intent intent = new Intent(
+																		getActivity(),
+																		ChatActivity.class);
+																intent.putExtra(
+																		"userId",
+																		"boluolicai");
+																startActivity(intent);
+															}
+														});
+											} catch (final Exception e) {
+												getActivity().runOnUiThread(
+														new Runnable() {
+															public void run() {
+																// Toast.makeText(getActivity(),"添加好友失败",
+																// 1).show();
+															}
+														});
 											}
-										});
-									} catch (final Exception e) {
-										getActivity().runOnUiThread(new Runnable() {
-											public void run() {
-//												Toast.makeText(getActivity(),"添加好友失败", 1).show();
-											}
-										});
-									}
+										}
+									}).start();
 								}
-							}).start();
-						}
-						@Override
-						public void onProgress(int progress, String status) {
-						}
-						@Override
-						public void onError(final int code, final String message) {
-							getActivity().runOnUiThread(new Runnable() {
-								public void run() {
-//									Toast.makeText(getActivity(),"登录异常",Toast.LENGTH_SHORT).show();
+
+								@Override
+								public void onProgress(int progress,
+										String status) {
+								}
+
+								@Override
+								public void onError(final int code,
+										final String message) {
+									getActivity().runOnUiThread(new Runnable() {
+										public void run() {
+											// Toast.makeText(getActivity(),"登录异常",Toast.LENGTH_SHORT).show();
+										}
+									});
 								}
 							});
-						}
-					});
 				}
 			});
 			break;
