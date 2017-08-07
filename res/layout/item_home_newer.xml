@@ -185,6 +185,7 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/buy_now_tv"
             android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_below="@+id/linearLayout2"
@@ -198,9 +199,9 @@
             android:textSize="15sp" />
 
         <View
+            android:layout_below="@+id/buy_now_tv"
             android:layout_width="match_parent"
             android:layout_height="15dp"
-            android:layout_alignParentBottom="true"
             android:background="@color/huise" />
     </RelativeLayout>
 
