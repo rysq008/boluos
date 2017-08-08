@@ -2,47 +2,48 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
- <!-- 屏幕状态栏 -->
+    <!-- 屏幕状态栏 -->
     <style name="statusBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">20dp</item>
         <item name="android:background">@color/boluo_Yellow</item>
         <item name="android:visibility">gone</item>
     </style>
-    <style 
-        name="shape_bt_niu">
+
+    <style name="shape_bt_niu">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">18sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@drawable/shape_bt</item>
     </style>
-     <style 
-        name="shape_bt_yellow">
+
+    <style name="shape_bt_yellow">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14sp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:background">@drawable/shape_bt_boluoyellow</item>
     </style>
- <style 
-        name="shape_bt_while">
+
+    <style name="shape_bt_while">
         <item name="android:textColor">@color/boluo_Yellow</item>
         <item name="android:textSize">14sp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:background">@drawable/shape_button_write</item>
     </style>
-    <style 
-        name="shape_bt_gray">
+
+    <style name="shape_bt_gray">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">17sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@drawable/shape_gray</item>
     </style>
+
     <style name="MyDialog" parent="android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="android:background">#00000000</item>
@@ -50,13 +51,15 @@
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
     <style name="InputTextView">
         <item name="android:textColor">#000000</item>
         <item name="android:gravity">center</item>
         <item name="android:inputType">textPassword</item>
         <item name="android:textSize">24sp</item>
     </style>
-      <style name="progress_dialog" parent="@android:style/Theme.Dialog">
+
+    <style name="progress_dialog" parent="@android:style/Theme.Dialog">
 
         <!-- Dialog的windowFrame框为无 -->
         <item name="android:windowFrame">@null</item>
@@ -69,17 +72,13 @@
         <!-- <item name="android:windowBackground">@drawable/loading_bg</item> -->
         <item name="android:windowBackground">@drawable/touming</item>
     </style>
+
     <style name="gesturesPassword_dialog">
         <item name="android:background">#00000000</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
     </style>
-    
-    
-    
-    
-    
 
     <!-- 环信 -->
     <style name="chat_text_date_style">
@@ -92,11 +91,13 @@
         <item name="android:textSize">12sp</item>
         <item name="android:background">@drawable/timestampe_bg</item>
     </style>
+
     <style name="chat_text_name_style">
         <item name="android:textColor">#818181</item>
         <item name="android:textSize">15sp</item>
         <item name="android:gravity">center</item>
     </style>
+
     <style name="chat_content_date_style">
         <item name="android:minHeight">50dp</item>
         <item name="android:gravity">center</item>
@@ -107,6 +108,7 @@
         <item name="android:focusable">true</item>
         <item name="android:background">#bfbfbf</item>
     </style>
+
     <style name="AnimFade" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
         <item name="android:activityOpenExitAnimation">@anim/hold</item>
@@ -119,9 +121,11 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
         <item name="android:activityCloseEnterAnimation">@anim/slide_in_from_left</item>
     </style>
+
     <style name="horizontal_slide" parent="android:Theme.NoTitleBar">
         <item name="android:windowAnimationStyle">@style/AnimFade2</item>
     </style>
+
     <style name="MyDialogStyle">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowFrame">@null</item>
@@ -132,5 +136,15 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
-    
+
+    <style name="refresh_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="overlay">true</item>
+        <item name="progress_show_arrow">true</item>
+        <item name="wave_color">@color/wave_color</item>
+        <item name="wave_height_type">higher</item>
+        <item name="wave_show">true</item>
+    </style>
+
 </resources>

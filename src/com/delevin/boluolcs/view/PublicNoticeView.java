@@ -72,6 +72,7 @@ public class PublicNoticeView extends LinearLayout {
 
 	public void bindNotices(List<BeanNotice> list) {
 		mViewFlipper.removeAllViews();
+		i = 0;
 		while (i < list.size()) {
 			GungGaoLayout t1 = new GungGaoLayout(mContext);
 			BeanNotice beanNotice = list.get(i);

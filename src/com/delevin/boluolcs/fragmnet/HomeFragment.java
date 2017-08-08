@@ -25,6 +25,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.alibaba.fastjson.JSON;
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.activity.BidDetalsActivity;
 import com.delevin.boluolcs.activity.NoticeListActivity;
@@ -45,8 +48,6 @@ import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.utils.NetUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.ProessDilogs;
-import com.delevin.boluolcs.utils.PullToRefreshView;
-import com.delevin.boluolcs.utils.PullToRefreshView.OnHeaderRefreshListener;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.view.PublicNoticeView;
 import com.delevin.boluolcs.view.RoundProgressBar;
@@ -61,7 +62,7 @@ import com.pusupanshi.boluolicai.R;
  */
 
 public class HomeFragment extends BaseFragment implements OnPageChangeListener,
-		OnClickListener, OnHeaderRefreshListener {
+		OnClickListener {
 	private ViewPager viewPager; // banner viewpager 初始化
 	private LinearLayout viewGroup; // banner 底部切换点 初始化
 	private ArrayList<View> list; // banner 点 添加集合
@@ -82,7 +83,7 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 	private String apiToken;
 	private LinearLayout layoutNewerObject;
 	private String newReder;
-	private PullToRefreshView pullToRefreshView;
+	private MaterialRefreshLayout pullToRefreshView;
 	private ImageView imgNew;
 	private TextView tvNew;
 	private LinearLayout layout_V;
@@ -135,9 +136,28 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 		img_V = (ImageView) view.findViewById(R.id.home_visibility_image);
 		imgNew = (ImageView) view.findViewById(R.id.home_more_meiti_img);
 		tvNew = (TextView) view.findViewById(R.id.home_more_meiti_tv);
-		pullToRefreshView = (PullToRefreshView) view
+		pullToRefreshView = (MaterialRefreshLayout) view
 				.findViewById(R.id.home_pull);
-		pullToRefreshView.setOnHeaderRefreshListener(this);
+		pullToRefreshView
+				.setMaterialRefreshListener(new MaterialRefreshListener() {
+
+					@Override
+					public void onRefresh(
+							MaterialRefreshLayout materialRefreshLayout) {
+						// TODO Auto-generated method stub
+						getShareInit();
+						getData();
+					}
+
+					@Override
+					public void onRefreshLoadMore(
+							MaterialRefreshLayout materialRefreshLayout) {
+						// TODO Auto-generated method stub
+						super.onRefreshLoadMore(materialRefreshLayout);
+						getShareInit();
+						getData();
+					}
+				});
 		LinearLayout layoutKefu = (LinearLayout) view
 				.findViewById(R.id.home_kefu);
 		layoutKefu.setOnClickListener(this);
@@ -206,114 +226,36 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 							if (TextUtils.equals(code, "10000")) {
 								JSONObject contentObject = result
 										.getJSONObject("content");
-								JSONArray bannerArray = contentObject
-										.getJSONArray("banner");
-								JSONArray noticeArray = contentObject
-										.getJSONArray("notice");
-								JSONArray newerArray = contentObject
-										.getJSONArray("newer");
-								JSONArray tjcpArray = contentObject
-										.getJSONArray("tjcp");
-								JSONArray imgArray = contentObject
-										.getJSONArray("img");
+
 								bannersList.clear();
 								newerList.clear();
 								tjcpList.clear();
-								for (int i = 0; i < bannerArray.length(); i++) {
 
-									BeanBanner banner = new BeanBanner();
-									JSONObject bannerObject = bannerArray
-											.getJSONObject(i);
-									String webViewPath = bannerObject
-											.getString("img");
-									String ImgPath = bannerObject
-											.getString("url");
-									String type = bannerObject
-											.getString("type");
-									banner.setType(type);
-									banner.setImg(webViewPath);
-									banner.setUrl(ImgPath);
-									bannersList.add(banner);
-								}
+								bannersList = JSON.parseArray(
+										contentObject.getString("banner"),
+										BeanBanner.class);
 								getbanner(bannersList.size());
-								for (int i = 0; i < newerArray.length(); i++) {
-									JSONObject newerObject = newerArray
-											.getJSONObject(0);
-									BeanTJCP newer = new BeanTJCP();
-									newer.setProduct_name(newerObject
-											.getString("product_name"));
-									newer.setFeature_name(newerObject
-											.getString("feature_name"));
-									newer.setRate(QntUtils.getFormatOne(QntUtils
-											.getDouble(newerObject
-													.getString("rate")) * 100)
-											+ "");
-									newer.setRate_increase(QntUtils.getFormatOne(QntUtils.getDouble(newerObject
-											.getString("rate_increase")) * 100)
-											+ "");
-									newer.setTime_limit(newerObject
-											.getString("time_limit"));
-									newer.setId(newerObject.getString("id"));
-									newer.setPercentage(newerObject
-											.getString("percentage"));
-									newer.setProduct_status(newerObject
-											.getString("product_status"));
-									newer.setProduct_remain(newerObject
-											.getString("product_remain"));
-									newerList.add(newer);
-								}
+
+								noticeList = JSON.parseArray(
+										contentObject.getString("notice"),
+										BeanNotice.class);
+								noticeView.bindNotices(noticeList);
+
+								newerList = JSON.parseArray(
+										contentObject.getString("newer"),
+										BeanTJCP.class);
 								getLayoutRecommended(newerList, false,
 										layoutNewerObject);
-								for (int i = 0; i < tjcpArray.length(); i++) {
-									BeanTJCP tjcp = new BeanTJCP();
-									JSONObject tjcpObject = tjcpArray
-											.getJSONObject(i);
-									String product_name = tjcpObject
-											.getString("product_name");
-									String feature_name = tjcpObject
-											.getString("feature_name");
-									String rate = tjcpObject.getString("rate");
-									String rate_increase = tjcpObject
-											.getString("rate_increase");
-									String time_limit = tjcpObject
-											.getString("time_limit");
-									String percentage = tjcpObject
-											.getString("percentage");
-									String product_status = tjcpObject
-											.getString("product_status");
-									String idString = tjcpObject
-											.getString("id");
-									String product_remain = tjcpObject
-											.getString("product_remain");
-									tjcp.setProduct_remain(product_remain);
-									tjcp.setProduct_name(product_name);
-									tjcp.setFeature_name(feature_name);
-									tjcp.setRate(QntUtils.getFormatOne(QntUtils
-											.getDouble(rate) * 100) + "");
-									tjcp.setRate_increase(QntUtils.getFormatOne(QntUtils
-											.getDouble(rate_increase) * 100)
-											+ "");
-									tjcp.setTime_limit(time_limit);
-									tjcp.setPercentage(percentage);
-									tjcp.setProduct_status(product_status);
-									tjcp.setId(idString);
-									tjcpList.add(tjcp);
-								}
+
+								tjcpList = JSON.parseArray(
+										contentObject.getString("tjcp"),
+										BeanTJCP.class);
 								getLayoutRecommended(tjcpList, false,
 										home_Layout_tjcp);
-								for (int i = 0; i < noticeArray.length(); i++) {
 
-									BeanNotice notice = new BeanNotice();
-									JSONObject noticeObject = noticeArray
-											.getJSONObject(i);
-									String url = noticeObject.getString("url");
-									String title = noticeObject
-											.getString("title");
-									notice.setTitle(title);
-									notice.setUrl(url);
-									noticeList.add(notice);
-								}
-								noticeView.bindNotices(noticeList);
+								JSONArray imgArray = contentObject
+										.getJSONArray("img");
+
 								JSONObject imgObject = imgArray
 										.getJSONObject(0);
 								newReder = imgObject.getString("url");
@@ -322,16 +264,14 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 								String strNewTitle = newObject
 										.getString("title");
 								tvNew.setText(strNewTitle);
-								// String strNewImg =
-								// newObject.getString("image");
-								// AndroidUtils.getImg(getActivity(),
-								// strNewImg,imgNew,
-								// R.drawable.boluo_center,R.drawable.boluo_fail);
+
 							}
 
 						} catch (JSONException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
+						} finally {
+							pullToRefreshView.finishRefresh();
 						}
 					}
 				});
@@ -754,19 +694,5 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 		super.onResume();
 		// activity启动两秒钟后，发送一个message，用来将viewPager中的图片切换到下一个
 		mHandlers.sendEmptyMessageDelayed(1, 2000);
-	}
-
-	@Override
-	public void onHeaderRefresh(PullToRefreshView view) {
-		pullToRefreshView.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				pullToRefreshView.onHeaderRefreshComplete();
-				getShareInit();
-				getData();
-			}
-
-		}, 1000);
-
 	}
 }

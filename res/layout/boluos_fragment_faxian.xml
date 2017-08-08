@@ -1,319 +1,392 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.delevin.boluolcs.utils.PullToRefreshView 
+<com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.pusupanshi.boluolicai"
     android:id="@+id/faxian_pull"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#55dbdbdb"
-    >
+    style="@style/refresh_layout_style">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fillViewport="true"
         android:scrollbars="none" >
-<FrameLayout 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    
-    >
-    
-        <LinearLayout
-            android:id="@+id/parent"
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#fff"
-            android:orientation="vertical" >
+            android:layout_height="match_parent" >
 
             <LinearLayout
+                android:id="@+id/parent"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="bottom"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:background="#fff"
                 android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/faxian_pic_people" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="邀请好友,送50元红包返1%收益"
+                        android:textColor="#333"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="40dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <RelativeLayout
+                            android:id="@+id/faxian_ShareLeiji"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="12dp"
+                                android:layout_marginTop="8dp"
+                                android:src="@drawable/faxian_line" />
+
+                            <TextView
+                                android:id="@+id/textView1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView5"
+                                android:layout_centerHorizontal="true"
+                                android:text="累计返利(元)"
+                                android:textColor="#666"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/leijifanli"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/textView5"
+                                android:layout_centerHorizontal="true"
+                                android:text="-"
+                                android:textColor="#de2400"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/faxian_ShareFan"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/leijiyaoqing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/textView6"
+                                android:layout_centerHorizontal="true"
+                                android:text="-"
+                                android:textColor="#de2400"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView6"
+                                android:layout_centerHorizontal="true"
+                                android:text="累计邀请(人)"
+                                android:textColor="#666"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rgMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:background="#ffffff"
+                        android:orientation="horizontal" >
+
+                        <RelativeLayout
+                            android:id="@+id/yaoqinghaoyou"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/textView0"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/faxian_qiandao" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView0"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="14dp"
+                                android:text="去邀请好友"
+                                android:textColor="#333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView0"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/meiriqiandao"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/textView2"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/faxian_qiandao" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView2"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="14dp"
+                                android:text="每日签到"
+                                android:textColor="#333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/jifenshangcheng"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/textView3"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/faxian_shangcheng" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView3"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="14dp"
+                                android:text="积分商城"
+                                android:textColor="#333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/huodongzhongxin"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/textView4"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/faxian_huodong" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textView4"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="14dp"
+                                android:text="活动中心"
+                                android:textColor="#333"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/guize_bt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:gravity="center"
+                        android:text="返利规则说明"
+                        android:textColor="#333"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#eee" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f4f4f4" />
+
+                <ImageView
+                    android:id="@+id/faxian_mrqd_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#eee" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f4f4f4" />
+
+                <ImageView
+                    android:id="@+id/faxian_xydzp_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#eee" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#f4f4f4" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="3dp"
+                        android:layout_height="13dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="#29a1f7" />
+
+                    <TextView
+                        android:layout_width="1dp"
+                        android:layout_height="13dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="7dp"
+                        android:background="#29a1f7" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="积分商城"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#eee" />
+
+                <GridView
+                    android:id="@+id/faxian_shangcheng_adapter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnWidth="187dp"
+                    android:horizontalSpacing="1dp"
+                    android:listSelector="@null"
+                    android:numColumns="2"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="1dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#eee" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/faxian_visibility_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#4b000000"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/faxian_visibility_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/jiazai" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="38dp"
-                    android:text="邀请好友"
-                    android:textColor="#ffcb0f"
-                    android:textSize="20sp" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="46dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/faxian_pic_people" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="center_horizontal"
-                    android:text="邀请好友,送50元红包返1%收益"
-                    android:textColor="#333"
-                    android:textSize="14sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="40dp"
-                    android:orientation="horizontal" >
-
-                    <RelativeLayout
-                        android:id="@+id/faxian_ShareLeiji"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical" >
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="12dp"
-                            android:src="@drawable/faxian_line" />
-
-                        <TextView
-                            android:id="@+id/textView1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/textView5"
-                            android:text="累计返利(元)"
-                            android:textColor="#666"
-                            android:textSize="13sp" />
-
-                        <TextView
-                            android:id="@+id/leijifanli"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_above="@+id/textView5"
-                            android:text="-"
-                            android:textColor="#de2400"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/faxian_ShareFan"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical" >
-
-                        <TextView
-                            android:id="@+id/leijiyaoqing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_above="@+id/textView6"
-                            android:text="-"
-                            android:textColor="#de2400"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_below="@+id/textView6"
-                            android:text="累计邀请(人)"
-                            android:textColor="#666"
-                            android:textSize="13sp" />
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true" />
-
-                    </RelativeLayout>
-                </LinearLayout>
-                <RelativeLayout 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp">
-                    <Button
-                    android:id="@+id/open_share"
-                    android:layout_width="192dp"
-                    android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/shape_bt_boluoyellow"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:textColor="#fff"
-                    android:text="去邀请好友" />
-                    
-                </RelativeLayout>
-
-                
-
-                <TextView
-                    android:id="@+id/guize_bt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="26dp"
-                    android:gravity="center"
-                    android:text="返利规则说明"
-                    android:textColor="#333"
-                    android:textSize="14sp" />
+                    android:gravity="bottom|center_horizontal"
+                    android:text="请稍后"
+                    android:textColor="@color/white" />
             </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:layout_marginTop="16dp"
-                android:background="#55dbdbdb" />
-
-            <LinearLayout
-                android:id="@+id/rgMain"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:background="#ffffff"
-                android:orientation="horizontal" >
-
-                <RelativeLayout
-                    android:id="@+id/meiriqiandao"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" >
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/textView2"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/faxian_qiandao" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView2"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="14dp"
-                        android:text="每日签到"
-                        android:textColor="#333"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/jifenshangcheng"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" >
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/textView3"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/faxian_shangcheng" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView3"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="14dp"
-                        android:text="积分商城"
-                        android:textColor="#333"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/huodongzhongxin"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" >
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/textView4"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/faxian_huodong" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView4"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="14dp"
-                        android:text="活动中心"
-                        android:textColor="#333"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#55dbdbdb" />
-        </LinearLayout>
-         <LinearLayout
-            android:id="@+id/faxian_visibility_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="#4b000000"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical"
-             >
-            <ImageView
-                android:id="@+id/faxian_visibility_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/jiazai" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="bottom|center_horizontal"
-                android:text="请稍后"
-                android:textColor="@color/white" />
-        </LinearLayout>
-    
-    
-    
-</FrameLayout>
+        </FrameLayout>
     </ScrollView>
 
-  
-
-</com.delevin.boluolcs.utils.PullToRefreshView >
+</com.cjj.MaterialRefreshLayout>

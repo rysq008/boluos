@@ -15,6 +15,7 @@ import java.util.Map;
 
 import org.json.JSONObject;
 
+import com.bumptech.glide.Glide;
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.denglu.ZhuActivity;
@@ -46,7 +47,8 @@ import android.widget.RelativeLayout.LayoutParams;
 
 public class AndroidUtils {
 
-	public static void limitTextLenth(final Context context,final String content, final EditText textView, final int num) {
+	public static void limitTextLenth(final Context context,
+			final String content, final EditText textView, final int num) {
 		textView.addTextChangedListener(new TextWatcher() {
 			private CharSequence temp;
 			private int selectionStart;
@@ -143,12 +145,16 @@ public class AndroidUtils {
 	public static void getDilog(int img, final Context context,
 			final DilogCallBack callBack) {
 
-		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		LayoutInflater inflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		// 实例化自定义主题的对话框
-		final CustomDialog dialog = new CustomDialog(context,R.style.gesturesPassword_dialog);
+		final CustomDialog dialog = new CustomDialog(context,
+				R.style.gesturesPassword_dialog);
 		View layout = inflater.inflate(R.layout.dilog_guanggao, null);
-		dialog.addContentView(layout, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-		ImageView img1 = (ImageView) layout.findViewById(R.id.window_dilog_red_comeOn);
+		dialog.addContentView(layout, new LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		ImageView img1 = (ImageView) layout
+				.findViewById(R.id.window_dilog_red_comeOn);
 		img1.setBackgroundResource(img);
 		img1.setOnClickListener(new OnClickListener() {
 
@@ -172,9 +178,11 @@ public class AndroidUtils {
 
 	public static void getImg(Context context, String url, ImageView imageView,
 			int place, int error) {
-		Picasso.with(context).load(url).placeholder(place).error(error)
-
-		.into(imageView);
+		// Picasso.with(context).load(url).placeholder(place).error(error)
+		//
+		// .into(imageView);
+		Glide.with(context).load(url).placeholder(place).error(error)
+				.into(imageView);
 	}
 
 	public static void getDilogs(final Context context) {

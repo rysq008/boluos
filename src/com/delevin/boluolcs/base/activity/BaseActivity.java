@@ -11,6 +11,7 @@ import android.widget.EditText;
 import com.delevin.boluolcs.broderecaster.ConnectionChangeReceiver;
 import com.delevin.boluolcs.exit.ActivityCollector;
 import com.umeng.analytics.MobclickAgent;
+
 /**
  *     @author 李红涛  @version 创建时间：2016-12-15 上午10:06:18    类说明 
  */
@@ -35,6 +36,7 @@ public abstract class BaseActivity extends Activity {
 		ActivityCollector.removeActivity(this);
 		// ConnectionChangeReceiver.unregisterReceiver(this);
 	}
+
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		if (ev.getAction() == MotionEvent.ACTION_DOWN) {
@@ -74,20 +76,21 @@ public abstract class BaseActivity extends Activity {
 		}
 		return false;
 	}
-	
+
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
 		MobclickAgent.onPageStart("SplashScreen");
-		MobclickAgent.onResume(this) ;
+		MobclickAgent.onResume(this);
 	}
+
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		 MobclickAgent.onPageEnd("SplashScreen");
+		MobclickAgent.onPageEnd("SplashScreen");
 		MobclickAgent.onPause(this);
-		
+
 	}
 }

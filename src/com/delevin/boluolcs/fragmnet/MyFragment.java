@@ -22,6 +22,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.activity.AddNumberActivity;
 import com.delevin.boluolcs.activity.MyBankActivity;
@@ -53,7 +55,7 @@ import de.greenrobot.event.EventBus;
 /**
  *  @author 李红涛  @version 创建时间：2016-12-15 下午12:59:53    类说明 
  */
-public class MyFragment extends BaseFragment implements OnClickListener,OnHeaderRefreshListener {
+public class MyFragment extends BaseFragment implements OnClickListener {
 
 	private TextView total_money_txt; // 总资产
 	private TextView balance_money_txt; // 余额
@@ -71,21 +73,41 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 	private Button btnBangdingBankCard;
 	private TextView redPacketNumBerView;
 	private String type;
-	private PullToRefreshView pullToRefreshView;
+	private MaterialRefreshLayout pullToRefreshView;
 	private LinearLayout layout_V;
 	private ImageView img_V;
 
 	@Override
 	protected View initView(LayoutInflater inflaters, ViewGroup container) {
-		View view = inflaters.inflate(R.layout.boluos_fragment_my, container,false);
+		View view = inflaters.inflate(R.layout.boluos_fragment_my, container,
+				false);
 		apm = AndroidUtils.getTime();
 		return view;
 	}
+
 	@Override
 	protected void getFindById(View view) {
 		EventBus.getDefault().register(this);
-		pullToRefreshView = (PullToRefreshView) view.findViewById(R.id.my_pull);
-		pullToRefreshView.setOnHeaderRefreshListener(this);
+		pullToRefreshView = (MaterialRefreshLayout) view
+				.findViewById(R.id.my_pull);
+		pullToRefreshView
+				.setMaterialRefreshListener(new MaterialRefreshListener() {
+
+					@Override
+					public void onRefresh(
+							MaterialRefreshLayout materialRefreshLayout) {
+						// TODO Auto-generated method stub
+						getData();
+					}
+
+					@Override
+					public void onRefreshLoadMore(
+							MaterialRefreshLayout materialRefreshLayout) {
+						// TODO Auto-generated method stub
+						super.onRefreshLoadMore(materialRefreshLayout);
+					}
+				});
+
 		redPacketNumBerView = (TextView) view
 				.findViewById(R.id.my_redPacketNumBer);
 		rlNotBnak = (RelativeLayout) view.findViewById(R.id.my_not_bankcard);
@@ -171,7 +193,8 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 			pay_bind = data.get("pay_bind");
 			id_bind = data.get("id_bind");
 		} else {
-			Toast.makeText(getActivity(), "kongzhizhen", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity(), "kongzhizhen", Toast.LENGTH_SHORT)
+					.show();
 		}
 
 	}
@@ -224,6 +247,8 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 						} catch (JSONException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
+						} finally {
+							pullToRefreshView.finishRefresh();
 						}
 					}
 				});
@@ -249,7 +274,7 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 		total_money_txt.setText(QntUtils.getFormat(total_money));
 		balance_money_txt.setText(QntUtils.getFormat(QntUtils.getDouble(beanMy
 				.getRemain_balance())));
-		type=beanMy.getType();
+		type = beanMy.getType();
 	}
 
 	@Override
@@ -261,7 +286,8 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 		case R.id.my_total_layout:
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
 
-				Intent intent = new Intent(getActivity(),MyAssetsActivity.class);
+				Intent intent = new Intent(getActivity(),
+						MyAssetsActivity.class);
 				intent.putExtra("freezeamount", beanMy.getFreezeamount());
 				intent.putExtra("remain_balance", strRemain_balanc);
 				intent.putExtra("uncollectedamount",
@@ -278,7 +304,8 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 				intent.putExtra("sum_profit", beanMy.getSum_profit());
 				startActivity(intent);
 			} else {
-				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用","确定");
+				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
+						"确定");
 			}
 			break;
 		// 充值跳转
@@ -286,14 +313,17 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
 				if (TextUtils.equals(pay_bind, "1")) {
 
-					startActivity(new Intent(getActivity(),PayBindActivity.class));
+					startActivity(new Intent(getActivity(),
+							PayBindActivity.class));
 
 				} else {
 
-					startActivity(new Intent(getActivity(),AddNumberActivity.class));
+					startActivity(new Intent(getActivity(),
+							AddNumberActivity.class));
 				}
 			} else {
-				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用","确定");
+				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
+						"确定");
 			}
 
 			break;
@@ -400,17 +430,5 @@ public class MyFragment extends BaseFragment implements OnClickListener,OnHeader
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		EventBus.getDefault().unregister(this);
-	}
-
-	@Override
-	public void onHeaderRefresh(PullToRefreshView view) {
-		pullToRefreshView.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				pullToRefreshView.onHeaderRefreshComplete();
-				getData();
-			}
-
-		}, 1000);
 	}
 }

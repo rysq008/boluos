@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.delevin.boluolcs.utils.PullToRefreshView 
+<?xml version="1.0" encoding="UTF-8"?>
+<com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.pusupanshi.boluolicai"
     android:id="@+id/my_pull"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    style="@style/refresh_layout_style">
+
 <ScrollView 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -477,4 +475,4 @@
         </LinearLayout>
 </FrameLayout>
 </ScrollView>
-</com.delevin.boluolcs.utils.PullToRefreshView>
+</com.cjj.MaterialRefreshLayout>

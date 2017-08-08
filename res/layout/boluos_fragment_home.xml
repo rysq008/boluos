@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.delevin.boluolcs.utils.PullToRefreshView xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="UTF-8"?>
+<com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.pusupanshi.boluolicai"
     android:id="@+id/home_pull"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    style="@style/refresh_layout_style">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -287,19 +286,19 @@
                 </LinearLayout>
 
                 <View
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:background="@color/huise" />
+                    android:background="@color/huise"
+                    android:visibility="gone" />
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/home_more_meiti"
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
                     android:background="@color/white"
                     android:gravity="center_vertical"
-                    android:padding="16dp" >
+                    android:padding="16dp"
+                    android:visibility="gone" >
 
                     <ImageView
                         android:id="@+id/home_more_meiti_img"
@@ -552,5 +551,4 @@
             </LinearLayout>
         </FrameLayout>
     </ScrollView>
-
-</com.delevin.boluolcs.utils.PullToRefreshView>
+</com.cjj.MaterialRefreshLayout>

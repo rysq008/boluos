@@ -45,6 +45,7 @@ import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.view.TitleView;
 import com.delevin.jsandroid.JSAndroidActivity;
 import com.pusupanshi.boluolicai.R;
+
 /**
  *     @author 李红涛  @version 创建时间：2016-12-28 下午3:06:58    类说明 
  */
@@ -79,20 +80,24 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 	private Handler mHandler = new Handler();
 	private ScrollView mScrollView;
 	private TextView tvRate;
+
 	@SuppressLint("InlinedApi")
 	@Override
 	protected void findViews() {
-		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 		setContentView(R.layout.activity_bid_detals);
 		bidDetalsActivity = this;
 		TitleView titleView = (TitleView) findViewById(R.id.titleView_bidDetals);
 		View statusBarview = findViewById(R.id.statusBarview);
 		// 设置状态栏一体化
 		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
-			getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			getWindow().setFlags(
+					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 			statusBarview.setVisibility(View.VISIBLE);
 		}
-		
+
 		titleView.initViewsVisible(true, true, true, false);
 		titleView.setAppTitle("项目详情");
 		getShareData();
@@ -100,33 +105,46 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		init();
 		getIntentString();
 	}
+
 	@SuppressLint("InflateParams")
 	private void getLayoutJisuanqi() {
 		mScrollView = (ScrollView) findViewById(R.id.scroll);
-		popWindowlayout = getLayoutInflater().inflate(R.layout.touzi_detals_layout_jisuanqi, null);
-		addView = (EditText) popWindowlayout.findViewById(R.id.touzi_detals_addMoney);
+		popWindowlayout = getLayoutInflater().inflate(
+				R.layout.touzi_detals_layout_jisuanqi, null);
+		addView = (EditText) popWindowlayout
+				.findViewById(R.id.touzi_detals_addMoney);
 		addView.addTextChangedListener(this);
-		remainView = (TextView) popWindowlayout.findViewById(R.id.touzi_detals_remainMoney);
-		shouyiView = (TextView) popWindowlayout.findViewById(R.id.touzi_detals_shoyiMoney);
-		ImageView disView = (ImageView) popWindowlayout.findViewById(R.id.touzi_detals_dissmiss);
-		Button bt_bid = (Button) popWindowlayout.findViewById(R.id.touzi_detals_bid);
-		
+		remainView = (TextView) popWindowlayout
+				.findViewById(R.id.touzi_detals_remainMoney);
+		shouyiView = (TextView) popWindowlayout
+				.findViewById(R.id.touzi_detals_shoyiMoney);
+		ImageView disView = (ImageView) popWindowlayout
+				.findViewById(R.id.touzi_detals_dissmiss);
+		Button bt_bid = (Button) popWindowlayout
+				.findViewById(R.id.touzi_detals_bid);
+
 		if (memberId == null) {
 			bt_bid.setText("立即登录");
 		}
-		
-		Button btJian = (Button) popWindowlayout.findViewById(R.id.touzi_detals_jian);
-		Button btJia = (Button) popWindowlayout.findViewById(R.id.touzi_detals_jia);
+
+		Button btJian = (Button) popWindowlayout
+				.findViewById(R.id.touzi_detals_jian);
+		Button btJia = (Button) popWindowlayout
+				.findViewById(R.id.touzi_detals_jia);
 		btJia.setOnClickListener(this);
 		btJian.setOnClickListener(this);
 		bt_bid.setOnClickListener(this);
 		disView.setOnClickListener(this);
 	}
+
 	private void getShareData() {
 		phone = BoluoUtils.getShareOneData(getApplicationContext(), "phone");
-		memberId = BoluoUtils.getShareOneData(getApplicationContext(),"memberId");
-		pay_bind = BoluoUtils.getShareOneData(getApplicationContext(),"pay_bind");
+		memberId = BoluoUtils.getShareOneData(getApplicationContext(),
+				"memberId");
+		pay_bind = BoluoUtils.getShareOneData(getApplicationContext(),
+				"pay_bind");
 	}
+
 	// 数据解析
 	@Override
 	protected void getData() {
@@ -136,56 +154,88 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		if (TextUtils.isEmpty(phone)) {
 			params = null;
 		}
-		Myapplication.okhttpManger.sendComplexForm(this, false,BeanUrl.PRODUCT_DETALS_STRING + bidId, params, new Funck4() {
+		Myapplication.okhttpManger.sendComplexForm(this, false,
+				BeanUrl.PRODUCT_DETALS_STRING + bidId, params, new Funck4() {
 					@SuppressWarnings("deprecation")
 					@Override
 					public void onResponse(JSONObject result) {
 						try {
 							String code = result.getString("code");
 							if (TextUtils.equals(code, "10000")) {
-								JSONObject object = result.getJSONObject("content");
+								JSONObject object = result
+										.getJSONObject("content");
 								BeanProductDetals detals = new BeanProductDetals();
-								detals.setLimit_mount(object.getString("limit_mount"));
-								detals.setPercentage(object.getString("percentage"));
-								detals.setSell_time(object.getString("sell_time"));
-								detals.setProduct_detail(object.getString("product_detail"));
-								detals.setProduct_image(object.getString("product_image"));
-								detals.setProduct_invest(object.getString("product_invest"));
-								detals.setProduct_name(object.getString("product_name"));
-								detals.setProduct_status(object.getString("product_status"));
-								detals.setProduct_type(object.getString("product_type"));
-								detals.setRaise_limit(object.getString("raise_limit"));
+								detals.setLimit_mount(object
+										.getString("limit_mount"));
+								detals.setPercentage(object
+										.getString("percentage"));
+								detals.setSell_time(object
+										.getString("sell_time"));
+								detals.setProduct_detail(object
+										.getString("product_detail"));
+								detals.setProduct_image(object
+										.getString("product_image"));
+								detals.setProduct_invest(object
+										.getString("product_invest"));
+								detals.setProduct_name(object
+										.getString("product_name"));
+								detals.setProduct_status(object
+										.getString("product_status"));
+								detals.setProduct_type(object
+										.getString("product_type"));
+								detals.setRaise_limit(object
+										.getString("raise_limit"));
 								detals.setRate(object.getDouble("rate") + "");
-								detals.setRate_increase(object.getString("rate_increase"));
-								double remain_money = object.getDouble("remain_money");
+								detals.setRate_increase(object
+										.getString("rate_increase"));
+								double remain_money = object
+										.getDouble("remain_money");
 								if (!BoluoUtils.isEmpty(memberId)) {
-									if (!TextUtils.equals(detals.getProduct_status(), "2")) {
+									if (!TextUtils.equals(
+											detals.getProduct_status(), "2")) {
 										etBidMoney.setVisibility(View.GONE);
 									}
-									BoluoUtils.getStatusZhiJiao(getApplicationContext(),detals.getProduct_status(), bt_bid,"上线时间:" + detals.getSell_time(),imgJiSuanqi, btLayout);
+									BoluoUtils.getStatusZhiJiao(
+											getApplicationContext(),
+											detals.getProduct_status(), bt_bid,
+											"上线时间:" + detals.getSell_time(),
+											imgJiSuanqi, btLayout);
 								} else {
 									etBidMoney.setVisibility(View.GONE);
-									bt_bid.setBackgroundDrawable(getApplicationContext().getResources().getDrawable(R.drawable.shape_bt_boluoyellow));
+									bt_bid.setBackgroundDrawable(getApplicationContext()
+											.getResources()
+											.getDrawable(
+													R.drawable.shape_bt_boluoyellow));
 									bt_bid.setText("立即登录");
 								}
-								if (remain_money > 100D&& remain_money <= 10000D) {
-									BoluoUtils.getDilogJiaXi(remain_money + "",BidDetalsActivity.this, etBidMoney);
+								if (remain_money > 100D
+										&& remain_money <= 10000D) {
+									BoluoUtils.getDilogJiaXi(remain_money + "",
+											BidDetalsActivity.this, etBidMoney);
 								}
 								if (!TextUtils.isEmpty(phone)) {
-									String remain_balance = object.getString("remain_balance");
+									String remain_balance = object
+											.getString("remain_balance");
 									detals.setRemain_balance(remain_balance);
-									remainView.setText("账户余额（元）"+ QntUtils.getFormat(QntUtils.getDouble(remain_balance)));
+									remainView.setText("账户余额（元）"
+											+ QntUtils.getFormat(QntUtils
+													.getDouble(remain_balance)));
 								} else {
 									remainView.setText("账户余额(元)XXX.XX");
 								}
 								detals.setRemain_money(remain_money);
-								detals.setRepay_type(object.getString("repay_type"));
-								detals.setSell_time(object.getString("sell_time"));
-								detals.setTime_limit(object.getString("time_limit"));
-								detals.setTotal_mount(object.getDouble("total_mount"));
+								detals.setRepay_type(object
+										.getString("repay_type"));
+								detals.setSell_time(object
+										.getString("sell_time"));
+								detals.setTime_limit(object
+										.getString("time_limit"));
+								detals.setTotal_mount(object
+										.getDouble("total_mount"));
 								productDetalsList.add(detals);
 								getAssignment(productDetalsList);
-								ProessDilogs.closeAnimation(visi_image,visi_layout);
+								ProessDilogs.closeAnimation(visi_image,
+										visi_layout);
 							}
 						} catch (JSONException e) {
 							e.printStackTrace();
@@ -193,13 +243,15 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 					}
 				});
 	}
+
 	// intent数据
 	private void getIntentString() {
-		
+
 		bidId = getIntent().getStringExtra("bidId");
 		isNewer = getIntent().getBooleanExtra("isNewer", false);
-		
+
 	}
+
 	// 初始化数据
 	private void init() {
 		btLayout = (LinearLayout) findViewById(R.id.bid_detals_layoutbt);
@@ -236,7 +288,7 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		layouthetong.setOnClickListener(this);
 		bt_bid = (Button) findViewById(R.id.bid_detals_bt_bid);
 		bt_bid.setOnClickListener(this);
-		
+
 	}
 
 	private void getAssignment(List<BeanProductDetals> list) {
@@ -244,14 +296,21 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		titleTextView.setText(detals.getProduct_name());
 		startmoneyTextView.setText("100.0");
 		limitDayTextView.setText(detals.getTime_limit());
-		totalMoneyTextView.setText(QntUtils.getFormat(QntUtils.getDouble(detals.getTotal_mount() + "")));
-		remianMoneyTextView.setText(QntUtils.getFormat(QntUtils.getDouble(detals.getRemain_money() + "")));
+		totalMoneyTextView.setText(QntUtils.getFormat(QntUtils.getDouble(detals
+				.getTotal_mount() + "")));
+		remianMoneyTextView.setText(QntUtils.getFormat(QntUtils
+				.getDouble(detals.getRemain_money() + "")));
 		limitTotalMoneyTextView.setText(detals.getLimit_mount());
-		rate = QntUtils.getDoubleToInt(QntUtils.getDouble(detals.getRate()) * 100)+ "+"+ QntUtils.getDoubleToInt(QntUtils.getDouble(detals.getRate_increase()) * 100) + "%";
+		rate = QntUtils
+				.getDoubleToInt(QntUtils.getDouble(detals.getRate()) * 100)
+				+ "+"
+				+ QntUtils.getDoubleToInt(QntUtils.getDouble(detals
+						.getRate_increase()) * 100) + "%";
 		chartView.setProgress(QntUtils.getDoubleToInt(QntUtils.getDouble(detals
 				.getPercentage())));
 		tvRate.setText(rate);
 	}
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -266,13 +325,19 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 			}, 100);
 			break;
 		case R.id.bid_detals_objectAll:
-			getIntentBt("项目概况",QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)+ "0");
+			getIntentBt("项目概况",
+					QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)
+							+ "0");
 			break;
 		case R.id.bid_detals_objectFile:
-			getIntentBt("投资信息",QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)+ "2");
+			getIntentBt("投资信息",
+					QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)
+							+ "2");
 			break;
 		case R.id.bid_detals_objectMessage:
-			getIntentBt("相关文件",QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)+ "1");
+			getIntentBt("相关文件",
+					QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)
+							+ "1");
 			break;
 		case R.id.bid_detals_objecthetong:
 			Intent intent = new Intent(BidDetalsActivity.this,
@@ -293,10 +358,11 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 					popWindowlayout);
 			int xOff = 20;// 可以自己调整偏移
 			windowPos[0] -= xOff;
-			popupWindow = PopWindowUtils.getPop(this, popWindowlayout, btLayout);
+			popupWindow = PopWindowUtils
+					.getPop(this, popWindowlayout, btLayout);
 
 			popupWindow.showAtLocation(v, Gravity.BOTTOM, 0, 0);
-			
+
 			break;
 		case R.id.touzi_detals_dissmiss:
 			popupWindow.dismiss();
@@ -335,10 +401,11 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 				addView.setText("2000");
 			}
 			break;
-			
+
 		case R.id.touzi_detals_jia:
 			if (!TextUtils.isEmpty(addView.getText().toString())) {
-				double shuzi2 = QntUtils.getDouble(addView.getText().toString());
+				double shuzi2 = QntUtils
+						.getDouble(addView.getText().toString());
 				if (shuzi2 <= 1000000) {
 					String StringShuzi2 = (shuzi2 + 100) + "";
 					double rates = QntUtils.getDouble(productDetalsList.get(0)
@@ -364,29 +431,35 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 			break;
 		}
 	}
+
 	private void getIntentBt(String title, String jsUrl) {
-		Intent intent = new Intent(BidDetalsActivity.this,JSAndroidActivity.class);
+		Intent intent = new Intent(BidDetalsActivity.this,
+				JSAndroidActivity.class);
 		intent.putExtra("title", title);
 		intent.putExtra("jsUrl", jsUrl);
 		intent.putExtra("bidDetals", "bidDetals");
 		startActivity(intent);
 	}
+
 	private void getBid(String money) {
 		if (!BoluoUtils.isEmpty(memberId)) {// 登录状态下
 			if (TextUtils.equals(pay_bind, "1")) {// 是否绑卡
 
 				if (!TextUtils.isEmpty(money)) {// 投资金额不为空
 					if (Double.parseDouble(money) >= 100) {
-						Intent intentBid = new Intent(BidDetalsActivity.this,BidBuyActivity.class);
+						Intent intentBid = new Intent(BidDetalsActivity.this,
+								BidBuyActivity.class);
 						intentBid.putExtra("bidId", bidId);
 						intentBid.putExtra("buyMoney", money);
 						intentBid.putExtra("isNewer", isNewer);
 						startActivity(intentBid);
 					} else {
-						Toast.makeText(getApplicationContext(), "小于100元不可投",Toast.LENGTH_SHORT).show();
+						Toast.makeText(getApplicationContext(), "小于100元不可投",
+								Toast.LENGTH_SHORT).show();
 					}
 				} else {
-					Toast.makeText(getApplicationContext(), "请输入投资金额",Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "请输入投资金额",
+							Toast.LENGTH_SHORT).show();
 				}
 			} else {
 				BoluoUtils.getDilogHintBand(BidDetalsActivity.this,
@@ -396,13 +469,16 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 			startActivity(new Intent(BidDetalsActivity.this, ZhuActivity.class));
 		}
 	}
+
 	@Override
 	public void afterTextChanged(Editable s) {
 	}
+
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count,
 			int after) {
 	}
+
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		System.out.println("s=" + s);
@@ -422,7 +498,7 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 			 * 第一位输入小数点的话自动变换为 0.
 			 */
 			if (s.toString().trim().substring(0).equals(".")) {
-				
+
 				s = "0" + s;
 				addView.setText(s);
 				addView.setSelection(2);
@@ -438,18 +514,25 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 					return;
 				}
 			}
-			double shuzi1 = QntUtils.getDouble(addView.getText().toString().trim());
+			double shuzi1 = QntUtils.getDouble(addView.getText().toString()
+					.trim());
 
 			if (shuzi1 < 100D) {
-				Toast.makeText(getApplicationContext(), "投资金额至少为100元",Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "投资金额至少为100元",
+						Toast.LENGTH_SHORT).show();
 			} else {
-				double rates = QntUtils.getDouble(productDetalsList.get(0).getRate())+ QntUtils.getDouble(productDetalsList.get(0).getRate_increase());
-				double time = QntUtils.getDouble(productDetalsList.get(0).getTime_limit());
+				double rates = QntUtils.getDouble(productDetalsList.get(0)
+						.getRate())
+						+ QntUtils.getDouble(productDetalsList.get(0)
+								.getRate_increase());
+				double time = QntUtils.getDouble(productDetalsList.get(0)
+						.getTime_limit());
 				double lixi = (double) (shuzi1 * rates * time / 360.0f);
 				shouyiView.setText(QntUtils.getFormat(lixi) + "");
 			}
 		} else {
-			Toast.makeText(getApplicationContext(), "请输入投资金额",Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "请输入投资金额",
+					Toast.LENGTH_SHORT).show();
 		}
 	}
 }

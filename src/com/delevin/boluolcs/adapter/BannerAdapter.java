@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.ViewGroup;
 
 /**
  *     @author 李红涛  @version 创建时间：2016-12-16 下午1:46:26    类说明 
@@ -44,12 +45,23 @@ public class BannerAdapter extends PagerAdapter {
 	@Override
 	public Object instantiateItem(View arg0, int position) {
 		// TODO Auto-generated method stub
-		try {
-			((ViewPager) arg0).addView(list.get(position % list.size()), 0);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return list.get(position % list.size());
+        View view = this.list.get(position % list.size());
+
+        //判断其父容器是否存在，如存在，先和此子控件解除关系
+        ViewPager parent = (ViewPager) view.getParent();
+        if (parent != null) {
+            parent.removeView(view);
+        }
+
+        ((ViewGroup)arg0).addView(view);
+        return view;
+        
+//		try {
+//			((ViewPager) arg0).addView(list.get(position % list.size()), 0);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return list.get(position % list.size());
 	}
 
 	@Override

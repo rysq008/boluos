@@ -26,6 +26,7 @@ import com.delevin.boluolcs.interfaces.DilogCallBack;
 import com.delevin.boluolcs.interfaces.GengXinCallBack;
 import com.delevin.boluolcs.utils.AndroidUtils;
 import com.delevin.boluolcs.utils.BoluoUtils;
+import com.delevin.boluolcs.view.TitleView;
 import com.delevin.boluolcs.view.UpdateManager;
 import com.delevin.jsandroid.JSAndroidActivity;
 import com.pusupanshi.boluolicai.R;
@@ -45,6 +46,7 @@ public class MainActivity extends BaseFragmentActivity implements
 	private LinearLayout my_none;
 	private Button bt_denglu;
 	private TextView tlogin;
+	private TitleView titleView;
 	public static MainActivity mainActivity;
 
 	// 初始化控件
@@ -53,6 +55,11 @@ public class MainActivity extends BaseFragmentActivity implements
 	protected void findViews() {
 		setContentView(R.layout.activity_main);
 		mainActivity = this;
+
+		titleView = (TitleView) findViewById(R.id.titleView_main_activity);
+		titleView.initViewsVisible(false, true, true, false);
+		titleView.setAppTitle("首页");
+
 		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
 
 			getWindow().setFlags(
@@ -83,9 +90,9 @@ public class MainActivity extends BaseFragmentActivity implements
 		if (TextUtils.isEmpty(main)) {
 			setFragmentIndicator(0);
 		} else {
-			setFragmentIndicator(1);
-//			bt_my.setChecked(true);
-//			bt_touzi.setChecked(false);
+			setFragmentIndicator(2);
+			bt_my.setChecked(true);
+			bt_touzi.setChecked(false);
 		}
 	}
 
@@ -108,15 +115,17 @@ public class MainActivity extends BaseFragmentActivity implements
 				@Override
 				public void onSerivce(String ser) {
 					// TODO Auto-generated method stub
-//					Toast.makeText(MainActivity.this, "hahhahhahh",Toast.LENGTH_SHORT).show();
+					// Toast.makeText(MainActivity.this,
+					// "hahhahhahh",Toast.LENGTH_SHORT).show();
 					if (ser.equals("1")) {
 						Intent serivce = new Intent(MainActivity.this,
 								WebActivity.class);
-						serivce.putExtra("jsUrl", BeanUrl.URLZB+ BeanUrl.SERIVCE_STRING);
+						serivce.putExtra("jsUrl", BeanUrl.URLZB
+								+ BeanUrl.SERIVCE_STRING);
 						serivce.putExtra("title", "服务器维护中");
 						startActivity(serivce);
-					}else {
-						
+					} else {
+
 					}
 				}
 			});
@@ -155,28 +164,43 @@ public class MainActivity extends BaseFragmentActivity implements
 	 * 初始化fragment
 	 */
 	private void setFragmentIndicator(int whichIsDefault) {
+		if (whichIsDefault == 0) {
+			titleView.setVisibility(View.GONE);
+		} else {
+			titleView.setVisibility(View.VISIBLE);
+		}
 		my_none = (LinearLayout) findViewById(R.id.my_none);
 		my_none.setVisibility(View.GONE);
 		// 实例化 Fragment 集合
 		mFragments = new Fragment[4];
 
-		mFragments[0] = getSupportFragmentManager().findFragmentById(R.id.boluos_fragment_home);
-		
-		mFragments[1] = getSupportFragmentManager().findFragmentById(R.id.boluos_fragment_touzi);
+		mFragments[0] = getSupportFragmentManager().findFragmentById(
+				R.id.boluos_fragment_home);
 
-		mFragments[2] = getSupportFragmentManager().findFragmentById(R.id.boluos_fragment_my);
+		mFragments[1] = getSupportFragmentManager().findFragmentById(
+				R.id.boluos_fragment_touzi);
 
-		mFragments[3] = getSupportFragmentManager().findFragmentById(R.id.boluos_fragment_faxian);
+		mFragments[2] = getSupportFragmentManager().findFragmentById(
+				R.id.boluos_fragment_my);
+
+		mFragments[3] = getSupportFragmentManager().findFragmentById(
+				R.id.boluos_fragment_faxian);
 		// 显示默认的Fragment
-		getSupportFragmentManager().beginTransaction().hide(mFragments[0]).hide(mFragments[1]).hide(mFragments[2]).hide(mFragments[3])
+		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
+				.hide(mFragments[1]).hide(mFragments[2]).hide(mFragments[3])
 				.show(mFragments[whichIsDefault]).commit();
 	}
 
 	public void showFragment(int which) {
-
+		if (which == 0) {
+			titleView.setVisibility(View.GONE);
+		} else {
+			titleView.setVisibility(View.VISIBLE);
+		}
 		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
 				.hide(mFragments[1]).hide(mFragments[2]).hide(mFragments[3])
 				.show(mFragments[which]).commit();
+
 	}
 
 	@Override
@@ -191,6 +215,7 @@ public class MainActivity extends BaseFragmentActivity implements
 				showFragment(0);
 				my_none.setVisibility(View.GONE);
 			}
+			titleView.setAppTitle("首页");
 			break;
 		// 我的投资显示
 		case R.id.boluos_bt_touzi:
@@ -200,7 +225,7 @@ public class MainActivity extends BaseFragmentActivity implements
 				showFragment(1);
 				my_none.setVisibility(View.GONE);
 			}
-
+			titleView.setAppTitle("项目");
 			break;
 		// 我的账户显示
 		case R.id.boluos_bt_my:
@@ -210,6 +235,7 @@ public class MainActivity extends BaseFragmentActivity implements
 				showFragment(2);
 				my_none.setVisibility(View.VISIBLE);
 			}
+			titleView.setAppTitle("发现");
 			break;
 		// 发现显示
 		case R.id.boluos_bt_faxian:
@@ -219,7 +245,7 @@ public class MainActivity extends BaseFragmentActivity implements
 				showFragment(3);
 				my_none.setVisibility(View.VISIBLE);
 			}
-
+			titleView.setAppTitle("账户");
 			break;
 		case R.id.bt_dilog_login:
 			startActivity(new Intent(MainActivity.this, ZhuActivity.class));

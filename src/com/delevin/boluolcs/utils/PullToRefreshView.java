@@ -129,6 +129,10 @@ public class PullToRefreshView extends LinearLayout {
 	 * footer refresh listener
 	 */
 	private OnHeaderRefreshListener mOnHeaderRefreshListener;
+	/**
+	 * support footer refresh
+	 */
+	private boolean supportFooterRefresh = false;
 
 	/**
 	 * last update time
@@ -319,7 +323,9 @@ public class PullToRefreshView extends LinearLayout {
 				headerPrepareToRefresh(deltaY);
 				// setHeaderPadding(-mHeaderViewHeight);
 			} else if (mPullState == PULL_UP_STATE) {// 执行上拉
-			// footerPrepareToRefresh(deltaY);
+				if (supportFooterRefresh) {
+					footerPrepareToRefresh(deltaY);
+				}
 			}
 			mLastMotionY = y;
 			break;
@@ -338,10 +344,10 @@ public class PullToRefreshView extends LinearLayout {
 				if (Math.abs(topMargin) >= mHeaderViewHeight
 						+ mFooterViewHeight) {
 					// 开始执行footer 刷新
-					// footerRefreshing();
+					footerRefreshing();
 				} else {
 					// 还没有执行刷新，重新隐藏
-					// setHeaderTopMargin(-mHeaderViewHeight);
+					setHeaderTopMargin(-mHeaderViewHeight);
 				}
 			}
 			break;
@@ -630,6 +636,14 @@ public class PullToRefreshView extends LinearLayout {
 	public void setOnFooterRefreshListener(
 			OnFooterRefreshListener footerRefreshListener) {
 		mOnFooterRefreshListener = footerRefreshListener;
+	}
+
+	public boolean isSupportFooterRefresh() {
+		return supportFooterRefresh;
+	}
+
+	public void setSupportFooterRefresh(boolean footerRefresh) {
+		this.supportFooterRefresh = footerRefresh;
 	}
 
 	/**

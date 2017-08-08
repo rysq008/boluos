@@ -1,9 +1,13 @@
 package com.delevin.boluolcs.bean;
 
+import java.io.Serializable;
+
+import com.delevin.boluolcs.utils.QntUtils;
+
 /**
  *     @author 李红涛  @version 创建时间：2016-12-20 下午1:55:17    类说明 
  */
-public class BeanTJCP {
+public class BeanTJCP implements Serializable {
 	private String feature_id;
 	private String feature_name;
 	private String id;
@@ -144,7 +148,8 @@ public class BeanTJCP {
 	}
 
 	public void setRate(String rate) {
-		this.rate = rate;
+		// this.rate = rate;
+		this.rate = QntUtils.getFormatOne(QntUtils.getDouble(rate) * 100) + "";
 	}
 
 	public String getRate_increase() {
@@ -152,7 +157,9 @@ public class BeanTJCP {
 	}
 
 	public void setRate_increase(String rate_increase) {
-		this.rate_increase = rate_increase;
+		// this.rate_increase = rate_increase;
+		this.rate_increase = QntUtils.getFormatOne(QntUtils
+				.getDouble(rate_increase) * 100) + "";
 	}
 
 	public String getSell_time() {

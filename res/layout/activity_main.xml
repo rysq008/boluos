@@ -2,112 +2,130 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <FrameLayout 
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-       <LinearLayout 
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:orientation="vertical"
-           >
-    <fragment
-        android:id="@+id/boluos_fragment_home"
-        android:name="com.delevin.boluolcs.fragmnet.HomeFragment"
-        android:layout_width="fill_parent"
-        android:layout_height="0sp"
-        android:layout_weight="1" />
-    <fragment
-        android:id="@+id/boluos_fragment_touzi"
-        android:name="com.delevin.boluolcs.fragmnet.TouziFragment"
-        android:layout_width="fill_parent"
-        android:layout_height="0sp"
-        android:layout_weight="1" />
-    <fragment
-        android:id="@+id/boluos_fragment_my"
-        android:name="com.delevin.boluolcs.fragmnet.MyFragment"
-        android:layout_width="fill_parent"
-        android:layout_height="0sp"
-        android:layout_weight="1" />
-    <fragment
-        android:id="@+id/boluos_fragment_faxian"
-        android:name="com.delevin.boluolcs.fragmnet.FaxianFragment"
-        android:layout_width="fill_parent"
-        android:layout_height="0sp"
-        android:layout_weight="1" />
-    </LinearLayout> 
-    <LinearLayout
-        android:id="@+id/my_none"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <fragment
+                android:id="@+id/boluos_fragment_home"
+                android:name="com.delevin.boluolcs.fragmnet.HomeFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/boluos_fragment_touzi"
+                android:name="com.delevin.boluolcs.fragmnet.TouziFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/boluos_fragment_my"
+                android:name="com.delevin.boluolcs.fragmnet.MyFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/boluos_fragment_faxian"
+                android:name="com.delevin.boluolcs.fragmnet.FaxianFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/my_none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/my_nones"
+                layout="@layout/layout_dilog_login" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:clickable="true">
-         <include 
-        android:id="@+id/my_nones"
-        layout="@layout/layout_dilog_login"
-        />
-        
-    </LinearLayout>
-   
-   </FrameLayout>
-   <View 
+        android:layout_height="1dp"
+        android:background="#fbfbfb" />
+
+    <RadioGroup
         android:layout_width="match_parent"
-       	android:layout_height="1dp"
-       	android:background="#fbfbfb"/>
-   <RadioGroup 
-       android:layout_width="match_parent"
-       android:layout_height="50dp"
-       android:orientation="horizontal"
-       android:background="#fff" >
-       <RadioButton
-                android:id="@+id/boluos_bt_home"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:button="@null"
-                android:checked="true"
-                android:drawableTop="@drawable/boluos_tab_home_check"
-                android:gravity="center"
-                android:paddingTop="5dip"
-                android:text="首页"
-                android:textSize="12sp" />
-       <RadioButton
-                android:id="@+id/boluos_bt_touzi"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@drawable/boluos_tab_xiangmu_check"
-                android:gravity="center"
-                android:paddingTop="5dip"
-                android:text="項目"
-                android:textSize="12sp" />
-       <RadioButton
-                android:id="@+id/boluos_bt_faxian"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@drawable/boluos_tab_faxian_check"
-                android:gravity="center"
-                android:paddingTop="5dip"
-                android:text="@string/boluos_faxian_string"
-                android:textSize="12sp" />
-       <RadioButton
-                android:id="@+id/boluos_bt_my"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@drawable/boluos_tab_my_check"
-                android:gravity="center"
-                android:paddingTop="5dip"
-                android:text="@string/boluos_touzi_string"
-                android:textSize="12sp" />
-       </RadioGroup>
+        android:layout_height="50dp"
+        android:background="#fff"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/boluos_bt_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/boluos_tab_home_check"
+            android:gravity="center"
+            android:paddingTop="5dip"
+            android:text="首页"
+            android:textColor="@color/color_radiobutton"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/boluos_bt_touzi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/boluos_tab_xiangmu_check"
+            android:gravity="center"
+            android:paddingTop="5dip"
+            android:text="項目"
+            android:textColor="@color/color_radiobutton"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/boluos_bt_faxian"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/boluos_tab_faxian_check"
+            android:gravity="center"
+            android:paddingTop="5dip"
+            android:text="@string/boluos_faxian_string"
+            android:textColor="@color/color_radiobutton"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/boluos_bt_my"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/boluos_tab_my_check"
+            android:gravity="center"
+            android:paddingTop="5dip"
+            android:text="@string/boluos_touzi_string"
+            android:textColor="@color/color_radiobutton"
+            android:textSize="12sp" />
+    </RadioGroup>
+
 </LinearLayout>
