@@ -159,12 +159,12 @@
             android:text="收货地址管理"
             android:textColor="#333"
             android:textSize="14sp" />
-        <View 
+
+        <View
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            
-            />
+            android:layout_weight="1" />
+
         <ImageView
             android:id="@+id/imageView35"
             android:layout_width="wrap_content"
@@ -175,6 +175,15 @@
             android:src="@drawable/img_enter_into" />
     </LinearLayout>
 
-   
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray_bg" />
+
+    <TextView
+        android:id="@+id/my_bank_tv"
+        style="@style/my_touzi_list_item"
+        android:drawableLeft="@drawable/my_money"
+        android:text="我的银行卡" />
 
 </LinearLayout>

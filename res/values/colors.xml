@@ -31,7 +31,7 @@
     <color name="feise">#f60e9d</color>
     <color name="black">#000000</color>
     <color name="gray">#666666</color>
-    <color name="gray_bg">#f3f3f3</color>
+    <color name="gray_bg">#eee</color>
     <color name="ff8b0f">#ff8b0f</color>
     <color name="wwwwww">#333333</color>
     <color name="de2400">#de2400</color>
@@ -42,6 +42,7 @@
     <color name="e6e6e6">#e6e6e6</color>
     <color name="c70c1e">#c70c1e</color>
     <color name="f15a4a">#f15a4a</color>
+    <color name="eee">#eee</color>
 
     <!-- 环信 -->
 

@@ -20,6 +20,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -179,7 +181,17 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 				.findViewById(R.id.home_more_meiti);
 		layoutMeiTi.setOnClickListener(this);
 		viewGroup = (LinearLayout) view.findViewById(R.id.home_banner_group);
+		int statusBarHeight = -1;  
+		//获取status_bar_height资源的ID  
+		int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");  
+		if (resourceId > 0) {  
+		    //根据资源ID获取响应的尺寸值  
+		    statusBarHeight = getResources().getDimensionPixelSize(resourceId);  
+		}
 		viewPager = (ViewPager) view.findViewById(R.id.home_banner_viewPager);
+		FrameLayout.LayoutParams lp = (LayoutParams) viewPager.getLayoutParams();
+		lp.topMargin = -statusBarHeight;
+		viewPager.setLayoutParams(lp);
 		layout_xinshoubangzhu = (LinearLayout) view
 				.findViewById(R.id.home_xinshoubangzhu);
 		layout_anquanbaozhang = (LinearLayout) view

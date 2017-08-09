@@ -3,10 +3,11 @@
     package="com.pusupanshi.boluolicai"
     android:versionCode="78"
     android:versionName="2.3.4" >
+
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-     <!--+++++++++++++++++++++++++++++++++++++相关权限 +++++++++++++++++++++++++++++++++++++-->
+    <!-- +++++++++++++++++++++++++++++++++++++相关权限 +++++++++++++++++++++++++++++++++++++ -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -16,12 +17,12 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.SET_DEBUG_APP" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    
+
     <!-- 支付权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
-    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -29,28 +30,29 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <!-- 自动添加短信验证码权限 -->
-  	<uses-permission android:name="android.permission.READ_SMS"/> 
-   	<!-- 友盟分享权限 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- 友盟分享权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-	  <!-- Required -->
-	  <!-- 友盟统计 -->
-	  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-	  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	  <uses-permission android:name="android.permission.INTERNET"/>
-	  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <permission 
-        android:name="com.pusupanshi.boluolicai.permission.JPUSH_MESSAGE"  
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- Required -->
+    <!-- 友盟统计 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <permission
+        android:name="com.pusupanshi.boluolicai.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
     <!-- 极光推送权限 -->
     <uses-permission android:name="com.pusupanshi.boluolicai.permission.JPUSH_MESSAGE" />
@@ -63,7 +65,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> 
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -72,7 +74,7 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    
+
     <!-- 环信 -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -97,116 +99,140 @@
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    
+
     <application
         android:name="com.delevin.application.Myapplication"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-         android:theme="@android:style/Theme.Light.NoTitleBar">
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
             android:name="com.delevin.boluolcs.welcome.WelcomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <activity
+        <activity
             android:name="com.yintong.secure.activity.BaseActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" 
             android:windowSoftInputMode="adjustResize" />
-         
+
         <service
             android:name="com.yintong.secure.service.PayService"
             android:exported="false" />
         <!-- 主界面 -->
-        <activity android:name="com.delevin.boluolcs.main.MainActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.main.MainActivity" >
+        </activity>
         <!-- 引导页 -->
-        <activity android:name="com.delevin.boluolcs.welcome.GuideActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.welcome.GuideActivity" >
+        </activity>
         <!-- 手势密码 -->
-        <activity android:name="com.delevin.boluolcs.denglu.GestruePwdActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.denglu.GestruePwdActivity" >
+        </activity>
         <!-- 注册 -->
-        <activity android:name="com.delevin.boluolcs.denglu.LoginActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.denglu.LoginActivity" >
+        </activity>
         <!-- 登陆 -->
-        <activity android:name="com.delevin.boluolcs.denglu.DengluActvity"></activity>
-         <!-- 判断手机是否注册-->
-        <activity android:name="com.delevin.boluolcs.denglu.ZhuActivity"></activity>
-        <!-- webView界面-->
-        <activity android:name="com.delevin.boluolcs.activity.WebViewActivity"></activity>
-        <!-- 新手帮助界面-->
-        <activity android:name="com.delevin.boluolcs.activity.HelpActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.denglu.DengluActvity" >
+        </activity>
+        <!-- 判断手机是否注册 -->
+        <activity android:name="com.delevin.boluolcs.denglu.ZhuActivity" >
+        </activity>
+        <!-- webView界面 -->
+        <activity android:name="com.delevin.boluolcs.activity.WebViewActivity" >
+        </activity>
+        <!-- 新手帮助界面 -->
+        <activity android:name="com.delevin.boluolcs.activity.HelpActivity" >
+        </activity>
         <!-- 设置手势密码 -->
-        <activity android:name="com.delevin.boluolcs.gestureedit.GestureEditActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.gestureedit.GestureEditActivity" >
+        </activity>
         <!-- 校验手势密码 -->
-        <activity android:name="com.delevin.boluolcs.gestureedit.GestureVerifyActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.gestureedit.GestureVerifyActivity" >
+        </activity>
         <!-- 充值 -->
-        <activity android:name="com.delevin.boluolcs.activity.PayActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.PayActivity" >
+        </activity>
         <!-- 充值金额 -->
-        <activity android:name="com.delevin.boluolcs.activity.AddNumberActivity"></activity>
-        <!--支持银行列表-->
-        <activity android:name="com.delevin.boluolcs.activity.ZhichiBankActivity"></activity>
-         <!--hetongImage-->
-        <activity android:name="com.delevin.boluolcs.activity.HeTongActivity"></activity>
-        <!-- 投资标的详情-->
-        <!--android:windowSoftInputMode="adjustPan"   键盘就会覆盖屏幕
-			android:windowSoftInputMode="stateVisible|adjustResize"   屏幕整体上移--> 
-			  <!--只有用户点击了编辑框才显示软键盘，并且会导致原有界面重新布局  android:windowSoftInputMode="stateHidden|adjustResize"-->
-        <activity android:name="com.delevin.boluolcs.activity.BidDetalsActivity"
-           		  android:windowSoftInputMode="stateHidden|adjustResize" 
-         ></activity>
-         <!--js交互界面-->
-        <activity android:name="com.delevin.jsandroid.JSAndroidActivity"></activity>
-        <!-- 绑定充值 -->
-        <activity android:name="com.delevin.boluolcs.activity.PayBindActivity"/>
-          <!-- 绑定充值 -->
-        <activity android:name="com.delevin.boluolcs.activity.TiXianActivity"/>
-         <!-- 我的投资 -->
-        <activity android:name="com.delevin.boluolcs.activity.MyTouziActivity"/>
-        <!-- 我的资金-->
-        <activity android:name="com.delevin.boluolcs.activity.MyZijinActivity"/>
-        <!-- 我的红包-->
-        <activity android:name="com.delevin.boluolcs.activity.MyRedPacketActivity"/>
-        <!-- 我的红包-->
-        <activity android:name="com.delevin.boluolcs.activity.PdfActivity"/>
-        <!-- 我的银行卡-->
-        <activity android:name="com.delevin.boluolcs.activity.MyBankActivity"/>
-        <!-- 安全管理-->
-        <activity android:name="com.delevin.boluolcs.activity.MySafetyManagmentActivity"/>
-        <!-- 更多-->
-        <activity android:name="com.delevin.boluolcs.activity.MyMoreActivity"/>
-        <!--总资产-->
-        <activity android:name="com.delevin.boluolcs.fragmentactivity.MyAssetsActivity"/>
-         <!-- 确认购买-->
-        <activity android:name="com.delevin.boluolcs.activity.BidBuyActivity"/>
-         <!-- 筛选红包-->
-        <activity android:name="com.delevin.boluolcs.activity.FilterRedPacketActivity"/>
-        <activity android:name="com.pusupanshi.boluolicai.wxapi.ShareActivity"></activity>
-        <!-- 邀请记录 -->
-        <activity android:name="com.delevin.boluolcs.fragmentactivity.ShareYaoqingActivity"></activity>
-         <!-- 筛选优惠券 -->
-        <activity android:name="com.delevin.boluolcs.fragmentactivity.FilterFragmentActivity"></activity>
-          <!-- 我的优惠券-->
-        <activity android:name="com.delevin.boluolcs.fragmentactivity.MyRedPacketActivity"></activity>
-        
-        <!-- 微信 -->
-        
+        <activity android:name="com.delevin.boluolcs.activity.AddNumberActivity" >
+        </activity>
+        <!-- 支持银行列表 -->
+        <activity android:name="com.delevin.boluolcs.activity.ZhichiBankActivity" >
+        </activity>
+        <!-- hetongImage -->
+        <activity android:name="com.delevin.boluolcs.activity.HeTongActivity" >
+        </activity>
+        <!-- 投资标的详情 -->
+        <!--
+            android:windowSoftInputMode="adjustPan"   键盘就会覆盖屏幕
+			android:windowSoftInputMode="stateVisible|adjustResize"   屏幕整体上移
+        -->
+        <!-- 只有用户点击了编辑框才显示软键盘，并且会导致原有界面重新布局  android:windowSoftInputMode="stateHidden|adjustResize" -->
         <activity
-        android:name=".wxapi.WXEntryActivity"
-        android:configChanges="keyboardHidden|orientation|screenSize"
-        android:exported="true"
-        android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-         <receiver
-             android:name="com.delevin.boluolcs.broderecaster.ConnectionChangeReceiver"
-             android:enabled="true"/>
+            android:name="com.delevin.boluolcs.activity.BidDetalsActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+        </activity>
+        <!-- js交互界面 -->
+        <activity android:name="com.delevin.jsandroid.JSAndroidActivity" >
+        </activity>
+        <!-- 绑定充值 -->
+        <activity android:name="com.delevin.boluolcs.activity.PayBindActivity" />
+        <!-- 绑定充值 -->
+        <activity android:name="com.delevin.boluolcs.activity.TiXianActivity" />
+        <!-- 我的投资 -->
+        <activity android:name="com.delevin.boluolcs.activity.MyTouziActivity" />
+        <!-- 我的资金 -->
+        <activity android:name="com.delevin.boluolcs.activity.MyZijinActivity" />
+        <!-- 我的红包 -->
+        <activity android:name="com.delevin.boluolcs.activity.MyRedPacketActivity" />
+        <!-- 我的红包 -->
+        <activity android:name="com.delevin.boluolcs.activity.PdfActivity" />
+        <!-- 我的银行卡 -->
+        <activity android:name="com.delevin.boluolcs.activity.MyBankActivity" />
+        <!-- 安全管理 -->
+        <activity android:name="com.delevin.boluolcs.activity.MySafetyManagmentActivity" />
+        <!-- 更多 -->
+        <activity android:name="com.delevin.boluolcs.activity.MyMoreActivity" />
+        <!-- 总资产 -->
+        <activity android:name="com.delevin.boluolcs.fragmentactivity.MyAssetsActivity" />
+        <!-- 确认购买 -->
+        <activity android:name="com.delevin.boluolcs.activity.BidBuyActivity" />
+        <!-- 筛选红包 -->
+        <activity android:name="com.delevin.boluolcs.activity.FilterRedPacketActivity" />
+        <activity android:name="com.pusupanshi.boluolicai.wxapi.ShareActivity" >
+        </activity>
+        <!-- 邀请记录 -->
+        <activity android:name="com.delevin.boluolcs.fragmentactivity.ShareYaoqingActivity" >
+        </activity>
+        <!-- 筛选优惠券 -->
+        <activity android:name="com.delevin.boluolcs.fragmentactivity.FilterFragmentActivity" >
+        </activity>
+        <!-- 我的优惠券 -->
+        <activity android:name="com.delevin.boluolcs.fragmentactivity.MyRedPacketActivity" >
+        </activity>
+
+        <!-- 微信 -->
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name="com.delevin.boluolcs.broderecaster.ConnectionChangeReceiver"
+            android:enabled="true" />
         <!-- 友盟分享key -->
-    <meta-data
+        <meta-data
             android:name="UMENG_APPKEY"
             android:value="576112d967e58ebc210016b6" >
-      </meta-data>
+        </meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="f1023" >
@@ -215,38 +241,38 @@
             android:name="UMENG_MESSAGE_SECRET"
             android:value="0440904e1f163344948abf0e263dbb52" >
         </meta-data>
-  
-        <!--qq完整版 -->
-       <activity
-        android:name="com.tencent.tauth.AuthActivity"
-        android:launchMode="singleTask"
-        android:noHistory="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="tencent1104974044" />
+
+        <!-- qq完整版 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104974044" />
             </intent-filter>
-            </activity>
-            <activity
-        android:name="com.tencent.connect.common.AssistActivity"
-        android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar"
-        android:configChanges="orientation|keyboardHidden|screenSize"/>
-        <!-- 退出相关广播-->
-        <receiver 
-            android:name="com.delevin.boluolcs.exit.ForceOfflineReceiver"
-            >
-            <intent-filter >
-                <action 
-                    android:name="com.delevin.broadcast_FORCE_OFFLINE"
-                    />
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 退出相关广播 -->
+        <receiver android:name="com.delevin.boluolcs.exit.ForceOfflineReceiver" >
+            <intent-filter>
+                <action android:name="com.delevin.broadcast_FORCE_OFFLINE" />
             </intent-filter>
         </receiver>
         <!-- 极光推送 -->
-        <!-- Required SDK 核心功能-->
+        <!-- Required SDK 核心功能 -->
         <!-- 可配置android:process参数将PushService放在其他进程中 -->
-        <activity android:name="com.delevin.boluolcs.jpush.TestActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.jpush.TestActivity" >
+        </activity>
+
         <service
             android:name="cn.jpush.android.service.PushService"
             android:enabled="true"
@@ -261,23 +287,25 @@
 
         <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
         <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
-         <service
-             android:name="cn.jpush.android.service.DaemonService"
-             android:enabled="true"
-             android:exported="true">
-             <intent-filter >
-                 <action android:name="cn.jpush.android.intent.DaemonService" />
-                 <category android:name="com.pusupanshi.boluolicai"/>
-             </intent-filter>
-         </service>
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
 
-        <!-- Required SDK核心功能-->
+                <category android:name="com.pusupanshi.boluolicai" />
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能 -->
         <receiver
             android:name="cn.jpush.android.service.PushReceiver"
             android:enabled="true" >
-          <intent-filter android:priority="1000"> 
-                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> 
-                <category android:name="com.pusupanshi.boluolicai"/> 
+            <intent-filter android:priority="1000" >
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+
+                <category android:name="com.pusupanshi.boluolicai" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -287,128 +315,154 @@
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
 
-        <!-- Required SDK核心功能-->
+        <!-- Required SDK核心功能 -->
         <activity
             android:name="cn.jpush.android.ui.PushActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:exported="false" >
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="cn.jpush.android.ui.PushActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.pusupanshi.boluolicai" />
             </intent-filter>
         </activity>
 
-        <!-- Required SDK核心功能-->
+        <!-- Required SDK核心功能 -->
         <service
             android:name="cn.jpush.android.service.DownloadService"
             android:enabled="true"
             android:exported="false" >
         </service>
 
-        <!-- Required SDK核心功能-->
+        <!-- Required SDK核心功能 -->
         <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
 
-        <!-- User defined. 用户自定义的广播接收器-->
-         <receiver
-             android:name="com.delevin.boluolcs.jpush.MyReceiver"
-             android:enabled="true">
-             <intent-filter>
-                 <!--Required 用户注册SDK的intent-->
-                 <action android:name="cn.jpush.android.intent.REGISTRATION" /> 
-                 <!--Required 用户接收SDK消息的intent--> 
-                 <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> 
-                 <!--Required 用户接收SDK通知栏信息的intent-->
-                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> 
-                 <!--Required 用户打开自定义通知栏的intent-->
-                 <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> 
-                 <!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                 <action android:name="cn.jpush.android.intent.CONNECTION" />
-                 <category android:name="com.pusupanshi.boluolicai" />
-             </intent-filter>
-         </receiver>
+        <!-- User defined. 用户自定义的广播接收器 -->
+        <receiver
+            android:name="com.delevin.boluolcs.jpush.MyReceiver"
+            android:enabled="true" >
+            <intent-filter>
+
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.pusupanshi.boluolicai" />
+            </intent-filter>
+        </receiver>
         <!-- Required. For publish channel feature -->
-        <!-- JPUSH_CHANNEL 是为了方便开发者统计APK分发渠道。-->
+        <!-- JPUSH_CHANNEL 是为了方便开发者统计APK分发渠道。 -->
         <!-- 例如: -->
         <!-- 发到 Google Play 的APK可以设置为 google-play; -->
         <!-- 发到其他市场的 APK 可以设置为 xxx-market。 -->
-        <!-- 目前这个渠道统计功能的报表还未开放。-->
-        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <!-- 目前这个渠道统计功能的报表还未开放。 -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
         <!-- Required. AppKey copied from Portal -->
-        <meta-data android:name="JPUSH_APPKEY" android:value="29041dec36c29a92af7ad7ad"/>
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="29041dec36c29a92af7ad7ad" />
         <!-- 返利说明 -->
-        <activity android:name="com.delevin.boluolcs.activity.JSWebViewActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.JSWebViewActivity" >
+        </activity>
         <!-- 第一次设置交易密码验证 -->
-        <activity android:name="com.delevin.boluolcs.activity.NOSetPayPasswordNextActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.NOSetPayPasswordNextActivity" >
+        </activity>
         <!-- 已经设置交易密码验证 -->
-        <activity android:name="com.delevin.boluolcs.activity.YiSetPayPasswordNextActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.YiSetPayPasswordNextActivity" >
+        </activity>
         <!-- 修改交易密码 -->
-        <activity android:name="com.delevin.boluolcs.activity.XiugaiPayPasswordActivity"></activity>
-         <!-- 忘记交易密码，身份验证 -->
-        <activity android:name="com.delevin.boluolcs.activity.WangjiPayPasswordNextActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.XiugaiPayPasswordActivity" >
+        </activity>
+        <!-- 忘记交易密码，身份验证 -->
+        <activity android:name="com.delevin.boluolcs.activity.WangjiPayPasswordNextActivity" >
+        </activity>
         <!-- 身份验证之后的手机验证 -->
-        <activity android:name="com.delevin.boluolcs.activity.IDCardNextPhoneCodeActivity"></activity>    
+        <activity android:name="com.delevin.boluolcs.activity.IDCardNextPhoneCodeActivity" >
+        </activity>
         <!-- 我的投资详情第一页 -->
-        <activity android:name="com.delevin.boluolcs.activity.MyTouziCoarseDetailsActivity"></activity>
-        <!-- 我的头像点击跳转-->
-        <activity android:name="com.delevin.boluolcs.activity.MyHeadPicActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.MyTouziCoarseDetailsActivity" >
+        </activity>
+        <!-- 我的头像点击跳转 -->
+        <activity android:name="com.delevin.boluolcs.activity.MyHeadPicActivity" >
+        </activity>
         <!-- 投资成功 -->
-        <activity android:name="com.delevin.boluolcs.activity.BidSuccessActivity"></activity>
-         <!-- 更多投资项目 -->
-        <activity android:name="com.delevin.boluolcs.activity.TouziMoreObjectActivity"></activity>
-         <!-- 媒体报道 -->
-        <activity android:name="com.delevin.boluolcs.activity.TouziMeiTiActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.BidSuccessActivity" >
+        </activity>
+        <!-- 更多投资项目 -->
+        <activity android:name="com.delevin.boluolcs.activity.TouziMoreObjectActivity" >
+        </activity>
+        <!-- 媒体报道 -->
+        <activity android:name="com.delevin.boluolcs.activity.TouziMeiTiActivity" >
+        </activity>
         <!-- 原手机号验证 -->
-        <activity android:name="com.delevin.boluolcs.activity.OldPhoneCodeActivity"></activity>
-       <!--  验证码通知 -->
+        <activity android:name="com.delevin.boluolcs.activity.OldPhoneCodeActivity" >
+        </activity>
+        <!-- 验证码通知 -->
         <service
             android:name="com.delevin.boluolcs.utils.RegisterCodeTimerService"
             android:enabled="true" />
         <!-- 新手机号验证 -->
-        <activity android:name="com.delevin.boluolcs.activity.NewPhoneCodeActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.NewPhoneCodeActivity" >
+        </activity>
         <!-- 未实名认证 -->
-        <activity android:name="com.delevin.boluolcs.activity.NoShimingRenzhengActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.NoShimingRenzhengActivity" >
+        </activity>
         <!-- 更多  微信客服 -->
-        <activity android:name="com.delevin.boluolcs.activity.MoreWXServiceActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.MoreWXServiceActivity" >
+        </activity>
         <!-- 充值纪录 -->
-        <activity android:name="com.delevin.boluolcs.activity.ChongzhiJiluActivity"></activity>
+        <activity android:name="com.delevin.boluolcs.activity.ChongzhiJiluActivity" >
+        </activity>
         <!-- 提现纪录 -->
-        <activity android:name="com.delevin.boluolcs.activity.TixianJiluActivity"></activity>
-          <!-- pdf -->
-        <activity android:name="com.delevin.boluolcs.pdf.PDFActivity"></activity>
-          <!-- 找回密码获取验证码-->
-        <activity android:name="com.delevin.boluolcs.denglu.ZhaoHuiSecretActivity"/>
-         <!-- 确认密码-->
-        <activity android:name="com.delevin.boluolcs.denglu.ZhaoSureActivity"/>
-         <!-- 确认密码-->
-        <activity android:name="com.delevin.boluolcs.activity.PayOrTianSuccessActivity"/>
+        <activity android:name="com.delevin.boluolcs.activity.TixianJiluActivity" >
+        </activity>
+        <!-- pdf -->
+        <activity android:name="com.delevin.boluolcs.pdf.PDFActivity" >
+        </activity>
+        <!-- 找回密码获取验证码 -->
+        <activity android:name="com.delevin.boluolcs.denglu.ZhaoHuiSecretActivity" />
+        <!-- 确认密码 -->
+        <activity android:name="com.delevin.boluolcs.denglu.ZhaoSureActivity" />
+        <!-- 确认密码 -->
+        <activity android:name="com.delevin.boluolcs.activity.PayOrTianSuccessActivity" />
         <!-- web2 -->
-        <activity android:name="com.delevin.boluolcs.activity.WebActivity"></activity>
-        <!--注册其他一类说明-->
-        <activity android:name="com.delevin.boluolcs.activity.RegisterOtherActivity"></activity>
-        <!--PDF 列表-->
-        <activity android:name="com.delevin.boluolcs.activity.PdfListActivity"></activity>
-        <!--合同列表-->
-        <activity android:name="com.delevin.boluolcs.activity.TeTongImageActivity"></activity>
-        <!--公告列表-->
-        <activity android:name="com.delevin.boluolcs.activity.NoticeListActivity"></activity>
-        <!--结标记录-->
-        <activity android:name="com.delevin.boluolcs.activity.JiebiaoJiluActivity"></activity>
-         <!--收货地址-->
-        <activity android:name="com.delevin.boluolcs.activity.AdressActivity"></activity>
-        
-        
-        
-        
-        
-        
-        
-        
+        <activity android:name="com.delevin.boluolcs.activity.WebActivity" >
+        </activity>
+        <!-- 注册其他一类说明 -->
+        <activity android:name="com.delevin.boluolcs.activity.RegisterOtherActivity" >
+        </activity>
+        <!-- PDF 列表 -->
+        <activity android:name="com.delevin.boluolcs.activity.PdfListActivity" >
+        </activity>
+        <!-- 合同列表 -->
+        <activity android:name="com.delevin.boluolcs.activity.TeTongImageActivity" >
+        </activity>
+        <!-- 公告列表 -->
+        <activity android:name="com.delevin.boluolcs.activity.NoticeListActivity" >
+        </activity>
+        <!-- 结标记录 -->
+        <activity android:name="com.delevin.boluolcs.activity.JiebiaoJiluActivity" >
+        </activity>
+        <!-- 收货地址 -->
+        <activity android:name="com.delevin.boluolcs.activity.AdressActivity" >
+        </activity>
+
         <!-- 环信 -->
         <!-- 开机自启动服务 -->
         <receiver android:name="com.easemob.chat.StartServiceReceiver" >
@@ -434,7 +488,6 @@
             android:theme="@style/horizontal_slide"
             android:windowSoftInputMode="adjustResize" >
         </activity>
-        
         <activity
             android:name="com.delevin.boluolcs.chat.activity.ContextMenu"
             android:screenOrientation="portrait"
@@ -450,6 +503,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide" >
         </activity>
-        
     </application>
+
 </manifest>

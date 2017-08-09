@@ -61,7 +61,7 @@ public class MyFragment extends BaseFragment implements OnClickListener {
 	private TextView balance_money_txt; // 余额
 	private TextView time_txt; // 时间
 	private int apm;
-	private RelativeLayout manyLayout;
+	private TextView manyLayout;
 	private String phone;
 	private String pay_bind;
 	private String id_bind;
@@ -128,27 +128,26 @@ public class MyFragment extends BaseFragment implements OnClickListener {
 			time_txt.setText("下午好");
 		RelativeLayout totalLayout = (RelativeLayout) view
 				.findViewById(R.id.my_total_layout);
-		TextView paytView = (TextView) view.findViewById(R.id.my_pay);
-		TextView tixianView = (TextView) view.findViewById(R.id.my_tixian);
-		RelativeLayout touziLayout = (RelativeLayout) view
-				.findViewById(R.id.my_touzi_layout);
-		RelativeLayout moneyLayout = (RelativeLayout) view
-				.findViewById(R.id.my_money_layout);
+		TextView paytView = (TextView) view.findViewById(R.id.my_pay);// 充值
+		TextView tixianView = (TextView) view.findViewById(R.id.my_tixian);// 提现
+		TextView touziTv = (TextView) view.findViewById(R.id.my_touzi_tv);// 投资记录（我的投资）
+		TextView moneyTv = (TextView) view.findViewById(R.id.my_money_tv);// 资金记录
+		TextView infoTv = (TextView) view.findViewById(R.id.my_info_tv);// 人个信息
 		RelativeLayout pageLayout = (RelativeLayout) view
-				.findViewById(R.id.my_page_layout);
-		RelativeLayout bankLayout = (RelativeLayout) view
-				.findViewById(R.id.my_bank_layout);
-		RelativeLayout safeLayout = (RelativeLayout) view
-				.findViewById(R.id.my_safe_layout);
-		manyLayout = (RelativeLayout) view.findViewById(R.id.my_many_layout);
+				.findViewById(R.id.my_page_layout);// 我的优惠券
+		// TextView bankTv = (TextView) view.findViewById(R.id.my_bank_tv);//
+		// 我的银行卡
+		TextView safeLayout = (TextView) view.findViewById(R.id.my_safe_tv);// 安全管理
+		manyLayout = (TextView) view.findViewById(R.id.my_many_tv);// 更多
 		totalLayout.setOnClickListener(this);
 		paytView.setOnClickListener(this);
 		tixianView.setOnClickListener(this);
-		touziLayout.setOnClickListener(this);
-		moneyLayout.setOnClickListener(this);
+		touziTv.setOnClickListener(this);
+		moneyTv.setOnClickListener(this);
 		pageLayout.setOnClickListener(this);
-		bankLayout.setOnClickListener(this);
+		// bankTv.setOnClickListener(this);
 		safeLayout.setOnClickListener(this);
+		infoTv.setOnClickListener(this);
 		manyLayout.setOnClickListener(this);
 		getshareData();
 		imgHeadPic.setOnClickListener(this);
@@ -343,7 +342,7 @@ public class MyFragment extends BaseFragment implements OnClickListener {
 			}
 			break;
 		// 我的投资
-		case R.id.my_touzi_layout:
+		case R.id.my_touzi_tv:
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
 				startActivity(new Intent(getActivity(), MyTouziActivity.class));
 			} else {
@@ -352,7 +351,7 @@ public class MyFragment extends BaseFragment implements OnClickListener {
 			}
 			break;
 		// 资金记录
-		case R.id.my_money_layout:
+		case R.id.my_money_tv:
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
 				startActivity(new Intent(getActivity(), MyZijinActivity.class));
 			} else {
@@ -373,35 +372,36 @@ public class MyFragment extends BaseFragment implements OnClickListener {
 
 			break;
 		// 我的银行卡
-		case R.id.my_bank_layout:
-			if (NetUtils.getNetWorkState(getActivity()) != -1) {
-				if (TextUtils.equals(id_bind, "1")) {
-
-					if (TextUtils.equals(pay_bind, "1")) {
-
-						startActivity(new Intent(getActivity(),
-								MyBankActivity.class));
-					} else {
-
-					}
-				}
-			} else {
-				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
-						"确定");
-			}
-			break;
+		// case R.id.my_bank_tv:
+		// if (NetUtils.getNetWorkState(getActivity()) != -1) {
+		// if (TextUtils.equals(id_bind, "1")) {
+		//
+		// if (TextUtils.equals(pay_bind, "1")) {
+		//
+		// startActivity(new Intent(getActivity(),
+		// MyBankActivity.class));
+		// } else {
+		//
+		// }
+		// }
+		// } else {
+		// BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
+		// "确定");
+		// }
+		// break;
 		// 安全管理
-		case R.id.my_safe_layout:
+		case R.id.my_safe_tv:
 			startActivity(new Intent(getActivity(),
 					MySafetyManagmentActivity.class));
 			break;
 		// 更多
-		case R.id.my_many_layout:
+		case R.id.my_many_tv:
 			Intent intent = new Intent(getActivity(), MyMoreActivity.class);
 			intent.putExtra("type", type);
 			startActivity(intent);
 			break;
 		// 个人中心
+		case R.id.my_info_tv:
 		case R.id.my_img_headpic:
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
 				startActivity(new Intent(getActivity(), MyHeadPicActivity.class));

@@ -2,7 +2,7 @@
 <com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.pusupanshi.boluolicai"
     android:id="@+id/home_pull"
-    style="@style/refresh_layout_style">
+    style="@style/refresh_layout_style" >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" >
+                    android:layout_height="wrap_content" >
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/home_banner_viewPager"
@@ -551,4 +551,5 @@
             </LinearLayout>
         </FrameLayout>
     </ScrollView>
+
 </com.cjj.MaterialRefreshLayout>
