@@ -309,6 +309,9 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		chartView.setProgress(QntUtils.getDoubleToInt(QntUtils.getDouble(detals
 				.getPercentage())));
 		tvRate.setText(rate);
+		// int gress =
+		// QntUtils.getDoubleToInt(QntUtils.getDouble(detals.getPercentage()));
+		// chartView.setProgress(gress);
 	}
 
 	@Override
