@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -33,6 +34,7 @@ import com.delevin.boluolcs.utils.NetUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.utils.QntUtils;
+import com.delevin.boluolcs.utils.StatusBarUtil;
 import com.delevin.boluolcs.view.RoundProgressBar;
 import com.pusupanshi.boluolicai.R;
 

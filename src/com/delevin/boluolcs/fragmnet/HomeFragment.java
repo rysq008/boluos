@@ -51,6 +51,7 @@ import com.delevin.boluolcs.utils.NetUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.utils.QntUtils;
+import com.delevin.boluolcs.utils.StatusBarUtil;
 import com.delevin.boluolcs.view.PublicNoticeView;
 import com.delevin.boluolcs.view.RoundProgressBar;
 import com.delevin.jsandroid.JSAndroidActivity;
@@ -181,15 +182,11 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 				.findViewById(R.id.home_more_meiti);
 		layoutMeiTi.setOnClickListener(this);
 		viewGroup = (LinearLayout) view.findViewById(R.id.home_banner_group);
-		int statusBarHeight = -1;  
-		//获取status_bar_height资源的ID  
-		int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");  
-		if (resourceId > 0) {  
-		    //根据资源ID获取响应的尺寸值  
-		    statusBarHeight = getResources().getDimensionPixelSize(resourceId);  
-		}
+		int statusBarHeight = StatusBarUtil.getStatusBarHeight(getActivity());
+
 		viewPager = (ViewPager) view.findViewById(R.id.home_banner_viewPager);
-		FrameLayout.LayoutParams lp = (LayoutParams) viewPager.getLayoutParams();
+		FrameLayout.LayoutParams lp = (LayoutParams) viewPager
+				.getLayoutParams();
 		lp.topMargin = -statusBarHeight;
 		viewPager.setLayoutParams(lp);
 		layout_xinshoubangzhu = (LinearLayout) view

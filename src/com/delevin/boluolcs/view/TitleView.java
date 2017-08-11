@@ -19,9 +19,7 @@ import android.widget.TextView;
 /**
  *     @author 李红涛  @version 创建时间：2016-12-15 下午1:41:15    类说明 
  */
-public class TitleView extends LinearLayout
-
-{
+public class TitleView extends LinearLayout {
 	private OnRightButtonClickListener mRightButtonClickListener;
 	private MyViewHolder mViewHolder;
 	private View viewAppTitle;
@@ -47,13 +45,16 @@ public class TitleView extends LinearLayout
 
 	@SuppressLint("InflateParams")
 	private void init(Context context) {
-		LayoutInflater inflater = (LayoutInflater) this.getContext()
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.WRAP_CONTENT);
-		viewAppTitle = inflater.inflate(R.layout.boluos_view_title, null);
+		// LayoutInflater inflater = (LayoutInflater) this.getContext()
+		// .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		// LayoutParams layoutParams = new
+		// LayoutParams(LayoutParams.MATCH_PARENT,
+		// LayoutParams.WRAP_CONTENT);
+		// viewAppTitle = inflater.inflate(R.layout.boluos_view_title, null);
+		//
+		// this.addView(viewAppTitle, layoutParams);
+		View.inflate(context, R.layout.boluos_view_title, this);
 
-		this.addView(viewAppTitle, layoutParams);
 		mViewHolder = new MyViewHolder(this);
 		mViewHolder.llLeftGoBack.setOnClickListener(new OnClickListener() {
 			@Override

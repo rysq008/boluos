@@ -5,20 +5,32 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.delevin.boluolcs.broderecaster.ConnectionChangeReceiver;
 import com.delevin.boluolcs.exit.ActivityCollector;
+import com.delevin.boluolcs.utils.StatusBarUtil;
+import com.pusupanshi.boluolicai.R;
 import com.umeng.analytics.MobclickAgent;
 
 /**
  *     @author 李红涛  @version 创建时间：2016-12-15 上午10:06:18    类说明 
  */
 public abstract class BaseActivity extends Activity {
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		// 这一句是实现将window扩展至全屏，也就是全屏显示，并且不会覆盖状态栏。
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+		// 这是为了避免在状态栏的显示状态发生变化时重新布局，从而避免界面卡顿。
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 		super.onCreate(savedInstanceState);
+		StatusBarUtil.setColor(this,
+				getResources().getColor(R.color.boluo_Yellow), 0);
+
 		findViews();
 		ConnectionChangeReceiver.registerReceiver(this);
 		getData();
@@ -35,6 +47,7 @@ public abstract class BaseActivity extends Activity {
 		super.onDestroy();
 		ActivityCollector.removeActivity(this);
 		// ConnectionChangeReceiver.unregisterReceiver(this);
+
 	}
 
 	@Override

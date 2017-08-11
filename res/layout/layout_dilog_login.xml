@@ -1,49 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#cc000000"
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/layoutDilog"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#cc000000"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
         android:gravity="center_horizontal"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="6"
-            android:padding="20dp"
-            android:src="@drawable/dilog_login" />
+        android:orientation="horizontal"
+        android:paddingBottom="40dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" >
 
         <Button
             android:id="@+id/bt_dilog_login"
-            android:layout_width="140dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/shape_bt_white"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg_corners_stroke_red_5dip"
             android:gravity="center"
-            android:text="立即登录"
+            android:text="登录"
             android:textColor="@color/boluo_Yellow"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/bt_dilog_resger"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg_corners_solid_red_5dip"
             android:gravity="center"
-            android:text="注册新账户>>"
+            android:text="注册"
             android:textColor="@color/white"
             android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layoutDilog"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/my_money"
+            android:text="新手注册红包抢不断"
+            android:textColor="@color/f15a4a" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="80dp" />
+            android:layout_height="1px"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gray_bg" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -316,20 +316,20 @@
                 </LinearLayout>
 
                 <View
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:background="@color/huise" />
+                    android:background="@color/huise"
+                    android:visibility="gone" />
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingBottom="10dp"
-                    android:paddingTop="10dp" >
+                    android:paddingTop="10dp"
+                    android:visibility="gone" >
 
                     <LinearLayout
                         android:id="@+id/home_pilou"
@@ -524,7 +524,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:background="@color/huise" />
+                    android:background="@color/huise"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <LinearLayout

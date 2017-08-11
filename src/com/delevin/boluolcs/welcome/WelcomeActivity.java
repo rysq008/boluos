@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Build.VERSION;
@@ -19,6 +20,7 @@ import com.delevin.boluolcs.gestureedit.GestureEditActivity;
 import com.delevin.boluolcs.gestureedit.GestureVerifyActivity;
 import com.delevin.boluolcs.main.MainActivity;
 import com.delevin.boluolcs.utils.BoluoUtils;
+import com.delevin.boluolcs.utils.StatusBarUtil;
 import com.delevin.boluolcs.view.CountDownProgress;
 import com.pusupanshi.boluolicai.R;
 
@@ -51,12 +53,13 @@ public class WelcomeActivity extends BaseActivity {
 		Myapplication.registrationID = JPushInterface
 				.getRegistrationID(getApplicationContext());
 		setContentView(R.layout.boluos_activity_welcome);
+		StatusBarUtil.setColor(this, Color.TRANSPARENT, 0);
 
-		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
-			getWindow().setFlags(
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-		}
+//		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
+//			getWindow().setFlags(
+//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//		}
 		getApp();
 		gProgress = (CountDownProgress) findViewById(R.id.countdownProgressView);
 		gProgress.start();

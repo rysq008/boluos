@@ -3,18 +3,8 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import com.delevin.boluolcs.base.activity.BaseActivity;
-import com.delevin.boluolcs.denglu.DengluActvity;
-import com.delevin.boluolcs.denglu.ZhuActivity;
-import com.delevin.boluolcs.gestureedit.fund.widget.GestureContentView;
-import com.delevin.boluolcs.main.MainActivity;
-import com.delevin.boluolcs.utils.BoluoUtils;
-import com.delevin.boluolcs.utils.QntUtils;
-import com.pusupanshi.boluolicai.R;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
@@ -22,6 +12,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.delevin.boluolcs.base.activity.BaseActivity;
+import com.delevin.boluolcs.denglu.DengluActvity;
+import com.delevin.boluolcs.denglu.ZhuActivity;
+import com.delevin.boluolcs.gestureedit.fund.widget.GestureContentView;
+import com.delevin.boluolcs.main.MainActivity;
+import com.delevin.boluolcs.utils.BoluoUtils;
+import com.delevin.boluolcs.utils.QntUtils;
+import com.delevin.boluolcs.utils.StatusBarUtil;
+import com.pusupanshi.boluolicai.R;
 
 /**
  * 
@@ -52,7 +52,7 @@ public class GestureVerifyActivity extends BaseActivity implements
 		ObtainExtraData();
 		setUpViews();
 		setUpListeners();
-
+		StatusBarUtil.setStatusBarPadding(this,0);
 	}
 
 	@Override

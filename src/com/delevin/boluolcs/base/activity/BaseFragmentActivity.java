@@ -11,6 +11,8 @@ import android.widget.EditText;
 
 import com.delevin.boluolcs.broderecaster.ConnectionChangeReceiver;
 import com.delevin.boluolcs.exit.ActivityCollector;
+import com.delevin.boluolcs.utils.StatusBarUtil;
+import com.pusupanshi.boluolicai.R;
 
 /**
  *     @author 李红涛  @version 创建时间：2016-12-15 上午10:07:35    类说明 
@@ -18,12 +20,16 @@ import com.delevin.boluolcs.exit.ActivityCollector;
 public abstract class BaseFragmentActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		// 这一句是实现将window扩展至全屏，也就是全屏显示，并且不会覆盖状态栏。
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+		// 这是为了避免在状态栏的显示状态发生变化时重新布局，从而避免界面卡顿。
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		ConnectionChangeReceiver.registerReceiver(this);
+		StatusBarUtil.setColor(this,
+				getResources().getColor(R.color.boluo_Yellow), 0);
+
 		findViews();
 		getData();
 		ActivityCollector.addActicity(this);

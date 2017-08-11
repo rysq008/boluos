@@ -6,21 +6,16 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.graphics.Rect;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.WindowManager;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.delevin.boluolcs.activity.WebActivity;
 import com.delevin.boluolcs.base.activity.BaseFragmentActivity;
@@ -30,6 +25,7 @@ import com.delevin.boluolcs.interfaces.DilogCallBack;
 import com.delevin.boluolcs.interfaces.GengXinCallBack;
 import com.delevin.boluolcs.utils.AndroidUtils;
 import com.delevin.boluolcs.utils.BoluoUtils;
+import com.delevin.boluolcs.utils.StatusBarUtil;
 import com.delevin.boluolcs.view.TitleView;
 import com.delevin.boluolcs.view.UpdateManager;
 import com.delevin.jsandroid.JSAndroidActivity;
@@ -52,23 +48,25 @@ public class MainActivity extends BaseFragmentActivity implements
 	private TextView tlogin;
 	private TitleView titleView;
 	public static MainActivity mainActivity;
+	private int statusBarHeight = 0;
 
 	// 初始化控件
 	@SuppressLint("InlinedApi")
 	@Override
 	protected void findViews() {
 
+		// View content = View.inflate(this, R.layout.activity_main, null);
 		setContentView(R.layout.activity_main);
 		mainActivity = this;
-
+		statusBarHeight = StatusBarUtil.getStatusBarHeight(this);
 		titleView = (TitleView) findViewById(R.id.titleView_main_activity);
 		titleView.initViewsVisible(false, true, true, false);
 		titleView.setAppTitle("首页");
 
-		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
-			getWindow().addFlags(
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-		}
+		// if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
+		// getWindow().addFlags(
+		// WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		// }
 		SharedPreferences preferences = getApplicationContext()
 				.getSharedPreferences("isProgramFirstIn", MODE_PRIVATE);
 		editor = preferences.edit();
@@ -169,8 +167,11 @@ public class MainActivity extends BaseFragmentActivity implements
 	private void setFragmentIndicator(int whichIsDefault) {
 		if (whichIsDefault == 0) {
 			titleView.setVisibility(View.GONE);
+			StatusBarUtil.setColor(this, Color.TRANSPARENT, 0);
 		} else {
 			titleView.setVisibility(View.VISIBLE);
+			StatusBarUtil.setColor(this,
+					getResources().getColor(R.color.boluo_Yellow), 0);
 		}
 		my_none = (LinearLayout) findViewById(R.id.my_none);
 		my_none.setVisibility(View.GONE);
@@ -195,11 +196,17 @@ public class MainActivity extends BaseFragmentActivity implements
 	}
 
 	public void showFragment(int which) {
+		int statusBarHeight = StatusBarUtil.getStatusBarHeight(this);
 		if (which == 0) {
 			titleView.setVisibility(View.GONE);
+
+			StatusBarUtil.setColor(this, Color.TRANSPARENT, 0);
 		} else {
 			titleView.setVisibility(View.VISIBLE);
+			StatusBarUtil.setColor(this,
+					getResources().getColor(R.color.boluo_Yellow), 0);
 		}
+
 		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
 				.hide(mFragments[1]).hide(mFragments[2]).hide(mFragments[3])
 				.show(mFragments[which]).commit();

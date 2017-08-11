@@ -1,16 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2e7bb1" >
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/statusBarview"
+        style="@style/statusBar" />
+
+    <com.delevin.boluolcs.view.TitleView
+        android:id="@+id/titleView_gesture_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+    </com.delevin.boluolcs.view.TitleView>
 
     <RelativeLayout
         android:id="@+id/top_layout"
         android:layout_width="match_parent"
         android:layout_height="46dip"
+        android:layout_marginTop="20dp"
         android:paddingLeft="20dip"
         android:paddingRight="20dip"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentTop="true" >
+        android:visibility="gone" >
 
         <TextView
             android:id="@+id/text_title"
@@ -19,8 +30,8 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:text="@string/setup_gesture_code"
-            android:textSize="20sp"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/text_cancel"
@@ -30,9 +41,9 @@
             android:layout_centerVertical="true"
             android:gravity="right"
             android:text="取消"
-            android:visibility="gone"
+            android:textColor="@color/gesture_cancel_text_color"
             android:textSize="18sp"
-            android:textColor="@color/gesture_cancel_text_color" />
+            android:visibility="gone" />
     </RelativeLayout>
 
     <LinearLayout
@@ -47,41 +58,42 @@
             android:id="@+id/lock_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dip" />
+            android:layout_marginTop="50dip" />
+
         <TextView
             android:id="@+id/text_tip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
             android:gravity="center_horizontal"
             android:text="@string/set_gesture_pattern"
-            android:textColor="#F98F12"
-            android:layout_marginTop="10dip" />
-      
+            android:textColor="#F98F12" />
     </LinearLayout>
-<LinearLayout 
-    android:id="@+id/gesture_containers"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="20dip" 
-    android:gravity="center_horizontal"
-    android:layout_below="@id/gesture_tip_layout"
-    >
-     <FrameLayout
-        android:id="@+id/gesture_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </FrameLayout>
-</LinearLayout>
-   
+
+    <LinearLayout
+        android:id="@+id/gesture_containers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gesture_tip_layout"
+        android:layout_marginTop="20dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/gesture_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </FrameLayout>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/text_reset"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_below="@id/gesture_containers"
         android:layout_marginTop="20dip"
+        android:gravity="center_horizontal"
         android:text="@string/set_gesture_pattern_reason"
         android:textColor="@color/white" />
 
-</RelativeLayout>
+</LinearLayout>

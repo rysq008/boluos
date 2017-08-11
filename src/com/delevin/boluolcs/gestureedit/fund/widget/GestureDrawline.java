@@ -9,6 +9,7 @@ import com.delevin.boluolcs.gestureedit.GestureCallBack;
 import com.delevin.boluolcs.gestureedit.fund.common.AppUtil;
 import com.delevin.boluolcs.gestureedit.fund.common.Constants;
 import com.delevin.boluolcs.gestureedit.fund.entity.GesturePoint;
+import com.pusupanshi.boluolicai.R;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -78,7 +79,8 @@ public class GestureDrawline extends View {
 		canvas.setBitmap(bitmap);
 		paint.setStyle(Style.STROKE);// 设置非填充
 		paint.setStrokeWidth(10);// 笔宽5像素
-		paint.setColor(Color.rgb(245, 142, 33));// 设置默认连线颜色
+//		paint.setColor(Color.rgb(245, 142, 33));// 设置默认连线颜色
+		paint.setColor(getResources().getColor(R.color.boluo_Yellow));
 		paint.setAntiAlias(true);// 不显示锯齿
 
 		this.list = list;

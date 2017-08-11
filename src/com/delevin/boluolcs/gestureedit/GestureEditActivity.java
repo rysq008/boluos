@@ -1,11 +1,5 @@
 ﻿package com.delevin.boluolcs.gestureedit;
 
-import com.delevin.boluolcs.activity.MySafetyManagmentActivity;
-import com.delevin.boluolcs.base.activity.BaseActivity;
-import com.delevin.boluolcs.gestureedit.fund.widget.GestureContentView;
-import com.delevin.boluolcs.gestureedit.fund.widget.LockIndicator;
-import com.delevin.boluolcs.main.MainActivity;
-import com.pusupanshi.boluolicai.R;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -18,12 +12,22 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.delevin.boluolcs.activity.MySafetyManagmentActivity;
+import com.delevin.boluolcs.base.activity.BaseActivity;
+import com.delevin.boluolcs.gestureedit.fund.widget.GestureContentView;
+import com.delevin.boluolcs.gestureedit.fund.widget.LockIndicator;
+import com.delevin.boluolcs.main.MainActivity;
+import com.delevin.boluolcs.view.TitleView;
+import com.pusupanshi.boluolicai.R;
+
 /**
  * 
  * 手势密码设置界面
  * 
  */
-public class GestureEditActivity extends BaseActivity implements OnClickListener {
+public class GestureEditActivity extends BaseActivity implements
+		OnClickListener {
 	/** 手机号码 */
 	public static final String PARAM_PHONE_NUMBER = "PARAM_PHONE_NUMBER";
 	/** 意图 */
@@ -40,6 +44,8 @@ public class GestureEditActivity extends BaseActivity implements OnClickListener
 	private boolean mIsFirstInput = true;
 	private String mFirstPassword = null;
 	private SharedPreferences preferences;
+	private TitleView tvTitle;
+
 	@Override
 	protected void findViews() {
 		// TODO Auto-generated method stub
@@ -53,6 +59,19 @@ public class GestureEditActivity extends BaseActivity implements OnClickListener
 	}
 
 	private void setUpViews() {
+		tvTitle = (TitleView) findViewById(R.id.titleView_gesture_password);
+		tvTitle.initViewsVisible(true, true, true, false);
+		tvTitle.setAppTitle(getResources().getString(
+				R.string.setup_gesture_code));
+		// View statusBarview = findViewById(R.id.statusBarview);
+		// // 设置状态栏一体化
+		// if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
+		// getWindow().setFlags(
+		// WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+		// WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		// statusBarview.setVisibility(View.VISIBLE);
+		// }
+
 		mTextTitle = (TextView) findViewById(R.id.text_title);
 		// mTextTitle.setText("15210310201");
 		mTextCancel = (TextView) findViewById(R.id.text_cancel);
@@ -77,13 +96,18 @@ public class GestureEditActivity extends BaseActivity implements OnClickListener
 							updateCodeList(inputCode);
 							mGestureContentView.clearDrawlineState(0L);
 							mTextReset.setClickable(true);
-							mTextReset.setText(getString(R.string.reset_gesture_code));
+							mTextReset
+									.setText(getString(R.string.reset_gesture_code));
 						} else {
 							if (inputCode.equals(mFirstPassword)) {
-								Toast.makeText(GestureEditActivity.this,"设置成功", Toast.LENGTH_SHORT).show();
+								Toast.makeText(GestureEditActivity.this,
+										"设置成功", Toast.LENGTH_SHORT).show();
 								mGestureContentView.clearDrawlineState(0L);
-								startActivity(new Intent(GestureEditActivity.this,MainActivity.class));
-								preferences = getSharedPreferences("is_set_pwd", 0);
+								startActivity(new Intent(
+										GestureEditActivity.this,
+										MainActivity.class));
+								preferences = getSharedPreferences(
+										"is_set_pwd", 0);
 								Editor editor = preferences.edit();
 								editor.putString("pwd", mFirstPassword);
 								editor.putBoolean("is_pwd", true);
@@ -93,9 +117,12 @@ public class GestureEditActivity extends BaseActivity implements OnClickListener
 									MySafetyManagmentActivity.activity.finish();
 								}
 							} else {
-								mTextTip.setText(Html.fromHtml("<font color='#c70c1e'>与上一次绘制不一致，请重新绘制</font>"));
+								mTextTip.setText(Html
+										.fromHtml("<font color='#c70c1e'>与上一次绘制不一致，请重新绘制</font>"));
 								// 左右移动动画
-								Animation shakeAnimation = AnimationUtils.loadAnimation(GestureEditActivity.this,
+								Animation shakeAnimation = AnimationUtils
+										.loadAnimation(
+												GestureEditActivity.this,
 												R.anim.shake);
 								mTextTip.startAnimation(shakeAnimation);
 								// 保持绘制的线，1.5秒后清除

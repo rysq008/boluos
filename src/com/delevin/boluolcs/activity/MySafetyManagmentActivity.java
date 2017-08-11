@@ -20,8 +20,8 @@ import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.gestureedit.GestureEditActivity;
 import com.delevin.boluolcs.utils.BoluoUtils;
-import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
+import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.view.TitleView;
 import com.pusupanshi.boluolicai.R;
 
