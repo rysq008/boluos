@@ -23,13 +23,13 @@ public abstract class BaseActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// 这一句是实现将window扩展至全屏，也就是全屏显示，并且不会覆盖状态栏。
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-		// 这是为了避免在状态栏的显示状态发生变化时重新布局，从而避免界面卡顿。
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+		// // 这一句是实现将window扩展至全屏，也就是全屏显示，并且不会覆盖状态栏。
+		// getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+		// // 这是为了避免在状态栏的显示状态发生变化时重新布局，从而避免界面卡顿。
+		// getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 		super.onCreate(savedInstanceState);
 		StatusBarUtil.setColor(this,
-				getResources().getColor(R.color.boluo_Yellow), 0);
+				getResources().getColor(R.color.boluo_Yellow),0,true);
 
 		findViews();
 		ConnectionChangeReceiver.registerReceiver(this);

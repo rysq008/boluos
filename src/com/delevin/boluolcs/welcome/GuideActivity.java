@@ -51,22 +51,14 @@ public class GuideActivity extends BaseFragmentActivity {
 		vpGuide = (ViewPager) findViewById(R.id.vpGuide);
 		// llGuideDots = (ViewGroup) findViewById(R.id.llGuideDots);
 
-		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
-
-			getWindow().setFlags(
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
-		}
-
-		// 设置状态栏一体化
-		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
-
-			getWindow().setFlags(
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
-		}
+//		// 设置状态栏一体化
+//		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
+//
+//			getWindow().setFlags(
+//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//
+//		}
 
 		setViewPager();
 

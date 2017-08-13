@@ -11,7 +11,6 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -167,11 +166,11 @@ public class MainActivity extends BaseFragmentActivity implements
 	private void setFragmentIndicator(int whichIsDefault) {
 		if (whichIsDefault == 0) {
 			titleView.setVisibility(View.GONE);
-			StatusBarUtil.setColor(this, Color.TRANSPARENT, 0);
+			StatusBarUtil.setColor(this, Color.TRANSPARENT,0, false);
 		} else {
 			titleView.setVisibility(View.VISIBLE);
 			StatusBarUtil.setColor(this,
-					getResources().getColor(R.color.boluo_Yellow), 0);
+					getResources().getColor(R.color.boluo_Yellow),0,true);
 		}
 		my_none = (LinearLayout) findViewById(R.id.my_none);
 		my_none.setVisibility(View.GONE);
@@ -199,12 +198,12 @@ public class MainActivity extends BaseFragmentActivity implements
 		int statusBarHeight = StatusBarUtil.getStatusBarHeight(this);
 		if (which == 0) {
 			titleView.setVisibility(View.GONE);
-
-			StatusBarUtil.setColor(this, Color.TRANSPARENT, 0);
+			StatusBarUtil.setColor(this, Color.TRANSPARENT,0, false);
+//			StatusBarUtil.setColorNoTranslucent(this, Color.GREEN, false);
 		} else {
 			titleView.setVisibility(View.VISIBLE);
 			StatusBarUtil.setColor(this,
-					getResources().getColor(R.color.boluo_Yellow), 0);
+					getResources().getColor(R.color.boluo_Yellow),0,true);
 		}
 
 		getSupportFragmentManager().beginTransaction().hide(mFragments[0])

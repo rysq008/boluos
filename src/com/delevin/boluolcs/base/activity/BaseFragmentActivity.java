@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
@@ -20,16 +19,12 @@ import com.pusupanshi.boluolicai.R;
 public abstract class BaseFragmentActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// 这一句是实现将window扩展至全屏，也就是全屏显示，并且不会覆盖状态栏。
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-		// 这是为了避免在状态栏的显示状态发生变化时重新布局，从而避免界面卡顿。
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		ConnectionChangeReceiver.registerReceiver(this);
 		StatusBarUtil.setColor(this,
-				getResources().getColor(R.color.boluo_Yellow), 0);
-
+				getResources().getColor(R.color.boluo_Yellow),0,true);
+		
 		findViews();
 		getData();
 		ActivityCollector.addActicity(this);

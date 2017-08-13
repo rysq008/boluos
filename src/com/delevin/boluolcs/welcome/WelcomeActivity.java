@@ -53,7 +53,8 @@ public class WelcomeActivity extends BaseActivity {
 		Myapplication.registrationID = JPushInterface
 				.getRegistrationID(getApplicationContext());
 		setContentView(R.layout.boluos_activity_welcome);
-		StatusBarUtil.setColor(this, Color.TRANSPARENT, 0);
+//		StatusBarUtil.setColor(this,
+//				getResources().getColor(R.color.boluo_Yellow),0,true);		
 
 //		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
 //			getWindow().setFlags(
