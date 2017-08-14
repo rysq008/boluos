@@ -10,7 +10,6 @@ import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
@@ -24,6 +23,7 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -32,6 +32,7 @@ import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.activity.BidDetalsActivity;
+import com.delevin.boluolcs.activity.HelpCenterActivity;
 import com.delevin.boluolcs.activity.NoticeListActivity;
 import com.delevin.boluolcs.activity.TouziMeiTiActivity;
 import com.delevin.boluolcs.activity.TouziMoreObjectActivity;
@@ -42,9 +43,7 @@ import com.delevin.boluolcs.bean.BeanBanner;
 import com.delevin.boluolcs.bean.BeanNotice;
 import com.delevin.boluolcs.bean.BeanTJCP;
 import com.delevin.boluolcs.bean.BeanUrl;
-import com.delevin.boluolcs.chat.activity.ChatActivity;
 import com.delevin.boluolcs.chat.activity.Utils;
-import com.delevin.boluolcs.interfaces.KefuCallBack;
 import com.delevin.boluolcs.utils.AndroidUtils;
 import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.utils.NetUtils;
@@ -53,11 +52,8 @@ import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.utils.StatusBarUtil;
 import com.delevin.boluolcs.view.PublicNoticeView;
-import com.delevin.boluolcs.view.RoundProgressBar;
 import com.delevin.jsandroid.JSAndroidActivity;
-import com.easemob.EMCallBack;
 import com.easemob.chat.EMChatManager;
-import com.easemob.chat.EMContactManager;
 import com.pusupanshi.boluolicai.R;
 
 /**
@@ -92,6 +88,7 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 	private LinearLayout layout_V;
 	private ImageView img_V;
 	private String strUserName;
+	private String token;
 
 	@Override
 	protected View initView(LayoutInflater inflaters, ViewGroup container) {
@@ -161,7 +158,7 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 						getData();
 					}
 				});
-		LinearLayout layoutKefu = (LinearLayout) view
+		RelativeLayout layoutKefu = (RelativeLayout) view
 				.findViewById(R.id.home_kefu);
 		layoutKefu.setOnClickListener(this);
 		LinearLayout layoutPai = (LinearLayout) view
@@ -190,12 +187,12 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 		lp.topMargin = -statusBarHeight;
 		viewPager.setLayoutParams(lp);
 		layout_xinshoubangzhu = (LinearLayout) view
-				.findViewById(R.id.home_xinshoubangzhu);
+				.findViewById(R.id.home_qiandaosongli);
 		layout_anquanbaozhang = (LinearLayout) view
-				.findViewById(R.id.home_anquanbaozhang);
+				.findViewById(R.id.home_xinshoubidu);
 		layout_guanyuwomen = (LinearLayout) view
 				.findViewById(R.id.home_guanyuwomen);
-		draweeView = (LinearLayout) view.findViewById(R.id.home_img_view);
+		draweeView = (LinearLayout) view.findViewById(R.id.home_paihongbao);
 		draweeView.setOnClickListener(this);
 		layout_guanyuwomen.setOnClickListener(this);
 		layout_xinshoubangzhu.setOnClickListener(this);
@@ -219,6 +216,7 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 		phone = shareData.get("phone");
 		apiToken = shareData.get("login_token");
 		memberId = shareData.get("memberId");
+		token = BoluoUtils.getShareOneData(getActivity(), "login_token");
 	}
 
 	@Override
@@ -429,9 +427,9 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 			if (b) {
 				imgLimit.setVisibility(View.VISIBLE);
 			}
-			RoundProgressBar grProgressBar = (RoundProgressBar) view
-					.findViewById(R.id.object_PieCharViewBuy);
-			grProgressBar.setMax(100);
+			// RoundProgressBar grProgressBar = (RoundProgressBar) view
+			// .findViewById(R.id.object_PieCharViewBuy);
+			// grProgressBar.setMax(100);
 			object_product_name.setText(list.get(i).getProduct_name());
 			object_rate.setText(""
 					+ QntUtils.getDoubleToInt(QntUtils.getDouble(list.get(i)
@@ -440,14 +438,15 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 					.getDouble(list.get(i).getRate_increase())) + "%");
 			object_time_limit.setText(list.get(i).getTime_limit());
 			String product_remain = list.get(i).getProduct_remain();
-			int gress = QntUtils.getDoubleToInt(QntUtils.getDouble(list.get(i)
-					.getPercentage()));
-			if (gress == 100) {
-				grProgressBar.setVisibility(View.GONE);
-				imgGone.setVisibility(View.VISIBLE);
-			} else {
-				grProgressBar.setProgress(gress);
-			}
+			// int gress =
+			// QntUtils.getDoubleToInt(QntUtils.getDouble(list.get(i)
+			// .getPercentage()));
+			// if (gress == 100) {
+			// grProgressBar.setVisibility(View.GONE);
+			// imgGone.setVisibility(View.VISIBLE);
+			// } else {
+			// grProgressBar.setProgress(gress);
+			// }
 			object_yues.setText(QntUtils.getFormat(QntUtils
 					.getDouble(product_remain)) + "");
 			final String id = list.get(i).getId();
@@ -509,24 +508,29 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 						"确定");
 			}
 			break;
-		case R.id.home_xinshoubangzhu:
+		case R.id.home_qiandaosongli:
+			// case R.id.home_xinshoubangzhu:
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
-				Intent intent = new Intent(getActivity(),
+				Intent qiandao = new Intent(getActivity(),
 						JSAndroidActivity.class);
-				intent.putExtra("jsUrl", BeanUrl.XINSHOU_HELP_STRING);
-				intent.putExtra("title", "新手帮助");
-				startActivity(intent);
+				qiandao.putExtra("jsUrl", BeanUrl.MeiriQiandao + "?phone="
+						+ phone + "&" + "token=" + token);
+				qiandao.putExtra("title", "每日签到");
+				qiandao.putExtra("type", "3");
+				qiandao.putExtra("right", "rightQ");
+				startActivity(qiandao);
 			} else {
 				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
 						"确定");
 			}
 			break;
-		case R.id.home_anquanbaozhang:
+		case R.id.home_xinshoubidu:
+			// case R.id.home_anquanbaozhang:
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
 				Intent intentSafe = new Intent(getActivity(),
 						JSAndroidActivity.class);
 				intentSafe.putExtra("jsUrl", BeanUrl.SAFE_STRING);
-				intentSafe.putExtra("title", "安全保障");
+				intentSafe.putExtra("title", "新手必读");
 				startActivity(intentSafe);
 			} else {
 				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
@@ -578,9 +582,9 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 						"确定");
 			}
 			break;
-		case R.id.home_img_view:
+		case R.id.home_paihongbao:
 			Intent intent = new Intent(getActivity(), JSAndroidActivity.class);
-			intent.putExtra("title", "活动中心");
+			intent.putExtra("title", "胜辉贷");
 			intent.putExtra("js", "js");
 			if (memberId != null) {
 
@@ -606,85 +610,12 @@ public class HomeFragment extends BaseFragment implements OnPageChangeListener,
 			startActivity(intentBang);
 			break;
 		case R.id.home_kefu:
-			BoluoUtils.getKefuDilog(getActivity(), new KefuCallBack() {
-
-				@Override
-				public void onCallPhone() {
-					Intent intentTel = new Intent();
-					intentTel.setAction(Intent.ACTION_DIAL);
-					intentTel.setData(Uri.parse("tel:400-032-0596"));
-					startActivity(intentTel);
-				}
-
-				@Override
-				public void onCall() {
-					// Toast.makeText(getActivity(), "敬请期待",
-					// Toast.LENGTH_SHORT).show();
-					// 调用sdk 登陆方法 登陆聊天服务器
-					EMChatManager.getInstance().login(strUserName, "123",
-							new EMCallBack() {
-
-								@Override
-								public void onSuccess() {
-									// 登陆成功，保存用户名密码
-									((Myapplication) Myapplication
-											.getInstance())
-											.setUserName(strUserName);
-									((Myapplication) Myapplication
-											.getInstance()).setPassword("123");
-
-									new Thread(new Runnable() {
-										public void run() {
-
-											try {
-												// 参数为要添加的好友的username和添加理由
-												EMContactManager.getInstance()
-														.addContact(
-																"boluolicai",
-																"添加理由");
-												getActivity().runOnUiThread(
-														new Runnable() {
-															public void run() {
-																// 跳转到聊天页面
-																Intent intent = new Intent(
-																		getActivity(),
-																		ChatActivity.class);
-																intent.putExtra(
-																		"userId",
-																		"boluolicai");
-																startActivity(intent);
-															}
-														});
-											} catch (final Exception e) {
-												getActivity().runOnUiThread(
-														new Runnable() {
-															public void run() {
-																// Toast.makeText(getActivity(),"添加好友失败",
-																// 1).show();
-															}
-														});
-											}
-										}
-									}).start();
-								}
-
-								@Override
-								public void onProgress(int progress,
-										String status) {
-								}
-
-								@Override
-								public void onError(final int code,
-										final String message) {
-									getActivity().runOnUiThread(new Runnable() {
-										public void run() {
-											// Toast.makeText(getActivity(),"登录异常",Toast.LENGTH_SHORT).show();
-										}
-									});
-								}
-							});
-				}
-			});
+			if (true) {
+				Intent it = new Intent(getActivity(), HelpCenterActivity.class);
+				it.putExtra("username", strUserName);
+				startActivity(it);
+				return;
+			}
 			break;
 		default:
 			break;

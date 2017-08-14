@@ -29,9 +29,6 @@ import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.utils.NetUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.ProessDilogs;
-import com.delevin.boluolcs.utils.PullToRefreshView;
-import com.delevin.boluolcs.utils.PullToRefreshView.OnFooterRefreshListener;
-import com.delevin.boluolcs.utils.PullToRefreshView.OnHeaderRefreshListener;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.jsandroid.JSAndroidActivity;
 import com.pusupanshi.boluolicai.R;
@@ -42,7 +39,7 @@ import com.pusupanshi.boluolicai.wxapi.ShareActivity;
  */
 public class FaxianFragment extends BaseFragment implements OnClickListener {
 	private TextView tvFanliShuoming;
-	private RelativeLayout linMeiriQiandao, linJifensShangcheng,
+	private RelativeLayout linAnQuanBaoZhang, linJifensShangcheng,
 			linHongdongZhongxin, linYaoQingHaoYou;
 	private String phone;
 	private TextView tvFanli, tvYaoqing;
@@ -118,7 +115,7 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 		tvFanliShuoming = (TextView) view.findViewById(R.id.guize_bt);
 		linYaoQingHaoYou = (RelativeLayout) view
 				.findViewById(R.id.yaoqinghaoyou);
-		linMeiriQiandao = (RelativeLayout) view.findViewById(R.id.meiriqiandao);
+		linAnQuanBaoZhang = (RelativeLayout) view.findViewById(R.id.anquanbaozhang);
 		linJifensShangcheng = (RelativeLayout) view
 				.findViewById(R.id.jifenshangcheng);
 		linHongdongZhongxin = (RelativeLayout) view
@@ -130,7 +127,7 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 		// btQuyaoqinghaoyou.setOnClickListener(this);
 		tvFanliShuoming.setOnClickListener(this);
 		linYaoQingHaoYou.setOnClickListener(this);
-		linMeiriQiandao.setOnClickListener(this);
+		linAnQuanBaoZhang.setOnClickListener(this);
 		linJifensShangcheng.setOnClickListener(this);
 		linHongdongZhongxin.setOnClickListener(this);
 
@@ -173,7 +170,7 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 					e.printStackTrace();
 				} finally {
 					ProessDilogs.closeAnimation(img_V, layout_V);
-					 pullToRefreshView.finishRefresh();
+					pullToRefreshView.finishRefresh();
 					// pullToRefreshView.finishRefreshLoadMore();
 				}
 			}
@@ -242,15 +239,19 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 						"确定");
 			}
 			break;
-		case R.id.meiriqiandao:
+		case R.id.anquanbaozhang:
+			// case R.id.home_anquanbaozhang:
+			if (NetUtils.getNetWorkState(getActivity()) != -1) {
+				Intent intentSafe = new Intent(getActivity(),
+						JSAndroidActivity.class);
+				intentSafe.putExtra("jsUrl", BeanUrl.SAFE_STRING);
+				intentSafe.putExtra("title", "安全保障");
+				startActivity(intentSafe);
+			} else {
+				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
+						"确定");
+			}
 
-			Intent qiandao = new Intent(getActivity(), JSAndroidActivity.class);
-			qiandao.putExtra("jsUrl", BeanUrl.MeiriQiandao + "?phone=" + phone
-					+ "&" + "token=" + token);
-			qiandao.putExtra("title", "签到中心");
-			qiandao.putExtra("type", "3");
-			qiandao.putExtra("right", "rightQ");
-			startActivity(qiandao);
 			break;
 		case R.id.jifenshangcheng:
 			Intent jifen = new Intent(getActivity(), JSAndroidActivity.class);

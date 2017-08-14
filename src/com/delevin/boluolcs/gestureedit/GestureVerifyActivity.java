@@ -20,7 +20,6 @@ import com.delevin.boluolcs.gestureedit.fund.widget.GestureContentView;
 import com.delevin.boluolcs.main.MainActivity;
 import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.utils.QntUtils;
-import com.delevin.boluolcs.utils.StatusBarUtil;
 import com.pusupanshi.boluolicai.R;
 
 /**
@@ -52,7 +51,6 @@ public class GestureVerifyActivity extends BaseActivity implements
 		ObtainExtraData();
 		setUpViews();
 		setUpListeners();
-		StatusBarUtil.setStatusBarPadding(this,0);
 	}
 
 	@Override

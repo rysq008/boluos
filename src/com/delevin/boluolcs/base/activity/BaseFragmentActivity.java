@@ -23,8 +23,8 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		ConnectionChangeReceiver.registerReceiver(this);
 		StatusBarUtil.setColor(this,
-				getResources().getColor(R.color.boluo_Yellow),0,true);
-		
+				getResources().getColor(R.color.boluo_Yellow), 0, true);
+
 		findViews();
 		getData();
 		ActivityCollector.addActicity(this);

@@ -166,11 +166,11 @@ public class MainActivity extends BaseFragmentActivity implements
 	private void setFragmentIndicator(int whichIsDefault) {
 		if (whichIsDefault == 0) {
 			titleView.setVisibility(View.GONE);
-			StatusBarUtil.setColor(this, Color.TRANSPARENT,0, false);
+			StatusBarUtil.setColor(this, Color.TRANSPARENT, 0, false);
 		} else {
 			titleView.setVisibility(View.VISIBLE);
 			StatusBarUtil.setColor(this,
-					getResources().getColor(R.color.boluo_Yellow),0,true);
+					getResources().getColor(R.color.boluo_Yellow), 0, true);
 		}
 		my_none = (LinearLayout) findViewById(R.id.my_none);
 		my_none.setVisibility(View.GONE);
@@ -198,12 +198,12 @@ public class MainActivity extends BaseFragmentActivity implements
 		int statusBarHeight = StatusBarUtil.getStatusBarHeight(this);
 		if (which == 0) {
 			titleView.setVisibility(View.GONE);
-			StatusBarUtil.setColor(this, Color.TRANSPARENT,0, false);
-//			StatusBarUtil.setColorNoTranslucent(this, Color.GREEN, false);
+			StatusBarUtil.setColor(this, Color.TRANSPARENT, 0, false);
+			// StatusBarUtil.setColorNoTranslucent(this, Color.GREEN, false);
 		} else {
 			titleView.setVisibility(View.VISIBLE);
 			StatusBarUtil.setColor(this,
-					getResources().getColor(R.color.boluo_Yellow),0,true);
+					getResources().getColor(R.color.boluo_Yellow), 0, true);
 		}
 
 		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
@@ -222,7 +222,7 @@ public class MainActivity extends BaseFragmentActivity implements
 				showFragment(0);
 			} else {
 				showFragment(0);
-				my_none.setVisibility(View.GONE);
+				my_none.setVisibility(View.VISIBLE);
 			}
 			titleView.setAppTitle("首页");
 			break;
@@ -232,7 +232,7 @@ public class MainActivity extends BaseFragmentActivity implements
 				showFragment(1);
 			} else {
 				showFragment(1);
-				my_none.setVisibility(View.GONE);
+				my_none.setVisibility(View.VISIBLE);
 			}
 			titleView.setAppTitle("项目");
 			break;

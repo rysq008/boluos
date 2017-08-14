@@ -6,7 +6,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
         android:scrollbars="none" >
 
         <FrameLayout
@@ -15,7 +16,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/huise"
                 android:orientation="vertical" >
 
                 <FrameLayout
@@ -90,29 +92,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/home_anquanbaozhang"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical" >
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/boluo_safe" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="13dp"
-                            android:text="安全保障"
-                            android:textColor="@color/wwwwww"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/home_img_view"
+                        android:id="@+id/home_paihongbao"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -128,13 +108,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="13dp"
-                            android:text="新手红包"
+                            android:text="派红包"
                             android:textColor="@color/wwwwww"
                             android:textSize="12sp" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/home_xinshoubangzhu"
+                        android:id="@+id/home_xinshoubidu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -144,13 +124,35 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/boluo_newer" />
+                            android:src="@drawable/boluo_safe" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="13dp"
-                            android:text="帮助中心"
+                            android:text="新手必读"
+                            android:textColor="@color/wwwwww"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/home_qiandaosongli"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/faxian_qiandao" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:text="签到送礼"
                             android:textColor="@color/wwwwww"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -381,48 +383,37 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:id="@+id/home_kefu"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
                     android:background="@color/white"
-                    android:gravity="center"
-                    android:orientation="vertical" >
+                    android:orientation="horizontal" >
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/boluos_tv_tip"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal" >
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/img_kefu" />
-
-                        <View
-                            android:layout_width="10dp"
-                            android:layout_height="10dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="联系客服"
-                            android:textColor="@color/wwwwww"
-                            android:textSize="15sp" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="6dp" />
+                        android:text="问题帮助中心"
+                        android:textColor="@color/f15a4a"
+                        android:textSize="15sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="（客服工作时间：9:00-22:30）"
+                        android:layout_below="@+id/boluos_tv_tip"
+                        android:text="解决理财问题，让您投资无压力\n（客服工作时间：9:00-22:30）"
                         android:textColor="@color/gggggg"
                         android:textSize="11sp" />
-                </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/img_kefu" />
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -431,7 +422,8 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingBottom="16dp"
-                    android:paddingTop="16dp" >
+                    android:paddingTop="16dp"
+                    android:visibility="gone" >
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -497,29 +489,20 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/home_textView12"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/huise" >
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="5dp"
-                        android:layout_toLeftOf="@+id/home_textView12"
-                        android:src="@drawable/boluo_dun" />
-
-                    <TextView
-                        android:id="@+id/home_textView12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="理财非存款，投资需谨慎"
-                        android:textColor="#a6a6a6"
-                        android:textSize="12sp" />
-                </RelativeLayout>
+                    android:layout_gravity="center"
+                    android:background="@color/huise"
+                    android:drawableLeft="@drawable/boluo_dun"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:paddingTop="16dp"
+                    android:text="理财非存款，投资需谨慎"
+                    android:textColor="#a6a6a6"
+                    android:textSize="12sp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -536,7 +519,8 @@
                 android:background="#4b000000"
                 android:clickable="true"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:visibility="visible" >
 
                 <ImageView
                     android:id="@+id/home_visibility_image"

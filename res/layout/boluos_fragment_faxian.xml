@@ -2,7 +2,7 @@
 <com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res/com.pusupanshi.boluolicai"
     android:id="@+id/faxian_pull"
-    style="@style/refresh_layout_style">
+    style="@style/refresh_layout_style" >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -168,7 +168,7 @@
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:id="@+id/meiriqiandao"
+                            android:id="@+id/anquanbaozhang"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1" >
@@ -178,7 +178,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_above="@+id/textView2"
                                 android:layout_centerHorizontal="true"
-                                android:src="@drawable/faxian_qiandao" />
+                                android:src="@drawable/boluo_safe" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -186,7 +186,7 @@
                                 android:layout_below="@+id/textView2"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="14dp"
-                                android:text="每日签到"
+                                android:text="安全保障"
                                 android:textColor="#333"
                                 android:textSize="14sp" />
 

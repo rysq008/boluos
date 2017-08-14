@@ -119,7 +119,7 @@
             android:name="com.yintong.secure.activity.BaseActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" 
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="adjustResize" />
 
         <service
@@ -461,6 +461,9 @@
         </activity>
         <!-- 收货地址 -->
         <activity android:name="com.delevin.boluolcs.activity.AdressActivity" >
+        </activity>
+        <!-- 帮助中心 -->
+        <activity android:name="com.delevin.boluolcs.activity.HelpCenterActivity" >
         </activity>
 
         <!-- 环信 -->
