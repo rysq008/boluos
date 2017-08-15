@@ -1,7 +1,6 @@
 package com.delevin.boluolcs.activity;
 
 import java.util.ArrayList;
-import com.delevin.boluolcs.view.YellowRoundProgressBar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,25 +19,29 @@ import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.bean.BeanProductDetals;
 import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.denglu.ZhuActivity;
 import com.delevin.boluolcs.utils.AndroidUtils;
+import com.delevin.boluolcs.utils.AppUtil;
 import com.delevin.boluolcs.utils.BoluoUtils;
-import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.NetUtils;
+import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.PopWindowUtils;
 import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.utils.QntUtils;
@@ -56,13 +59,13 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 	private ImageView visi_image;// 动画图片
 	private String bidId;// 产品ID
 	private List<BeanProductDetals> productDetalsList;
-	private TextView titleTextView;
+	// private TextView titleTextView;
 	private TextView startmoneyTextView;// 起投金额
 	private TextView limitDayTextView;// 限制天数
 	private TextView totalMoneyTextView;// 融资金额
 	private TextView remianMoneyTextView;// 剩余金额
 	private TextView limitTotalMoneyTextView;
-	private YellowRoundProgressBar chartView;
+	// private YellowRoundProgressBar chartView;
 	private Button bt_bid;
 	private boolean isNewer;// 点击新手标
 	private EditText etBidMoney;// 投资金额
@@ -79,7 +82,9 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 	public static BidDetalsActivity bidDetalsActivity;
 	private Handler mHandler = new Handler();
 	private ScrollView mScrollView;
-	private TextView tvRate;
+	private TextView tvRate, tvRateTop, progressTv;
+	private TitleView titleView;
+	private ProgressBar progressBar;
 
 	@SuppressLint("InlinedApi")
 	@Override
@@ -88,7 +93,7 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 				WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 		setContentView(R.layout.activity_bid_detals);
 		bidDetalsActivity = this;
-		TitleView titleView = (TitleView) findViewById(R.id.titleView_bidDetals);
+		titleView = (TitleView) findViewById(R.id.titleView_bidDetals);
 		View statusBarview = findViewById(R.id.statusBarview);
 		// 设置状态栏一体化
 		if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
@@ -122,6 +127,8 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 				.findViewById(R.id.touzi_detals_dissmiss);
 		Button bt_bid = (Button) popWindowlayout
 				.findViewById(R.id.touzi_detals_bid);
+		progressBar = (ProgressBar) findViewById(R.id.bid_detals_progress);
+		progressTv = (TextView) findViewById(R.id.bid_detals_progressTV);
 
 		if (memberId == null) {
 			bt_bid.setText("立即登录");
@@ -268,14 +275,16 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		// .setSelection(etBidMoney.getText().toString().trim().length());//
 		// 设置光标在最后
 		productDetalsList = new ArrayList<BeanProductDetals>();
-		chartView = (YellowRoundProgressBar) findViewById(R.id.bid_detals_PieCharView);
+		// chartView = (YellowRoundProgressBar)
+		// findViewById(R.id.bid_detals_PieCharView);
 		visi_layout = (LinearLayout) findViewById(R.id.bid_visibility_layout);
 		visi_image = (ImageView) findViewById(R.id.bid_visibility_image);
-		titleTextView = (TextView) findViewById(R.id.bid_detals_title);
+		// titleTextView = (TextView) findViewById(R.id.bid_detals_title);
 		startmoneyTextView = (TextView) findViewById(R.id.bid_detals_startMoney);
 		limitDayTextView = (TextView) findViewById(R.id.bid_detals_limitDay);
 		totalMoneyTextView = (TextView) findViewById(R.id.bid_detals_totalMoney);
 		tvRate = (TextView) findViewById(R.id.bid_detalsnianhuaNum);
+		tvRateTop = (TextView) findViewById(R.id.bid_detalsnianhuaNumTopRight);
 		remianMoneyTextView = (TextView) findViewById(R.id.bid_detals_remain_Money);
 		limitTotalMoneyTextView = (TextView) findViewById(R.id.bid_detals_limit_totals);
 		RelativeLayout layoutAll = (RelativeLayout) findViewById(R.id.bid_detals_objectAll);
@@ -293,7 +302,8 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 
 	private void getAssignment(List<BeanProductDetals> list) {
 		BeanProductDetals detals = list.get(0);
-		titleTextView.setText(detals.getProduct_name());
+		// titleTextView.setText(detals.getProduct_name());
+		titleView.setAppTitle(detals.getProduct_name());
 		startmoneyTextView.setText("100.0");
 		limitDayTextView.setText(detals.getTime_limit());
 		totalMoneyTextView.setText(QntUtils.getFormat(QntUtils.getDouble(detals
@@ -303,15 +313,53 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		limitTotalMoneyTextView.setText(detals.getLimit_mount());
 		rate = QntUtils
 				.getDoubleToInt(QntUtils.getDouble(detals.getRate()) * 100)
-				+ "+"
-				+ QntUtils.getDoubleToInt(QntUtils.getDouble(detals
-						.getRate_increase()) * 100) + "%";
-		chartView.setProgress(QntUtils.getDoubleToInt(QntUtils.getDouble(detals
-				.getPercentage())));
+				+ ""
+		/*
+		 * + "+" + QntUtils.getDoubleToInt(QntUtils.getDouble(detals
+		 * .getRate_increase()) * 100) + "%"
+		 */;
+		// chartView.setProgress(QntUtils.getDoubleToInt(QntUtils.getDouble(detals
+		// .getPercentage())));
 		tvRate.setText(rate);
-		// int gress =
-		// QntUtils.getDoubleToInt(QntUtils.getDouble(detals.getPercentage()));
-		// chartView.setProgress(gress);
+		tvRateTop.setText(QntUtils.getDoubleToInt(QntUtils.getDouble(detals
+				.getRate_increase()) * 100) + "");
+		final int gress = QntUtils.getDoubleToInt(QntUtils.getDouble(detals
+				.getPercentage()));
+		progressBar.setProgress(gress);
+
+		// 屏幕宽高
+		final int width = progressBar.getWidth();
+		final Double double1 = (double) (width / 100.00);
+		final LinearLayout.LayoutParams para = (android.widget.LinearLayout.LayoutParams) progressTv
+				.getLayoutParams();
+
+		progressTv.setText(gress + "%");
+		progressTv.getViewTreeObserver().addOnGlobalLayoutListener(
+				new OnGlobalLayoutListener() {
+
+					@Override
+					public void onGlobalLayout() {
+						// TODO Auto-generated method stub
+						if (gress == 100) {
+							para.leftMargin = width
+									+ AppUtil.dip2px(getBaseContext(), 15)
+									- progressTv.getWidth() / 2;
+						} else {
+							para.leftMargin = (int) (gress * double1)
+									+ AppUtil.dip2px(getBaseContext(), 15)
+									- progressTv.getWidth() / 2;
+						}
+
+						progressTv.setLayoutParams(para);
+					}
+				});
+
+		((TextView) findViewById(R.id.bid_detals_project_type)).setText(detals
+				.getProduct_type());
+		((TextView) findViewById(R.id.bid_detals_start_time)).setText(detals
+				.getSell_time());
+		((TextView) findViewById(R.id.bid_detals_money_time)).setText(detals
+				.getTime_limit());
 	}
 
 	@Override
