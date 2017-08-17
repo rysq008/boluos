@@ -1,9 +1,6 @@
 package com.delevin.boluolcs.view;
 
 import java.util.List;
-import com.delevin.boluolcs.bean.BeanConvert;
-import com.delevin.boluolcs.bean.BeanNotice;
-import com.pusupanshi.boluolicai.R;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,6 +10,10 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.ViewFlipper;
+
+import com.delevin.boluolcs.bean.BeanConvert;
+import com.delevin.boluolcs.bean.BeanNotice;
+import com.pusupanshi.boluolicai.R;
 
 public class PublicNoticeView extends LinearLayout {
 	int i = 0;

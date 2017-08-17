@@ -1,9 +1,11 @@
 package com.delevin.boluolcs.base.adapter;
 
 import java.util.List;
+
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.delevin.boluolcs.bean.BeanMeiTi;
 import com.delevin.boluolcs.utils.AndroidUtils;
 import com.delevin.boluolcs.utils.QntUtils;

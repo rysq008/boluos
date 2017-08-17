@@ -1,8 +1,5 @@
 package com.delevin.boluolcs.utils;
 
-import com.delevin.boluolcs.activity.OldPhoneCodeActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;

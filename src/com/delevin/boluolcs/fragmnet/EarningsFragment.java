@@ -1,15 +1,14 @@
 package com.delevin.boluolcs.fragmnet;
 
 import lecho.lib.hellocharts.view.PieChartView;
-
-import com.delevin.boluolcs.base.fragment.BaseFragment;
-import com.delevin.boluolcs.utils.PieChartViewUtils;
-import com.pusupanshi.boluolicai.R;
-
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.delevin.boluolcs.base.fragment.BaseFragment;
+import com.delevin.boluolcs.utils.PieChartViewUtils;
+import com.pusupanshi.boluolicai.R;
 
 /**
  *     @author 李红涛  @version 创建时间：2017-1-6 下午2:08:00    类说明 

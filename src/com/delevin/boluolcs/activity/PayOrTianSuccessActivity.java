@@ -1,18 +1,17 @@
 package com.delevin.boluolcs.activity;
 
-import android.content.Intent;
+
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.bean.BeanFirstEvent;
-import com.delevin.boluolcs.main.MainActivity;
 import com.delevin.boluolcs.view.TitleView;
 import com.pusupanshi.boluolicai.R;
 

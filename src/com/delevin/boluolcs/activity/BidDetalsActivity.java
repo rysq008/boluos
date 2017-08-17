@@ -21,14 +21,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,15 +48,17 @@ import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.PopWindowUtils;
 import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.utils.QntUtils;
+import com.delevin.boluolcs.view.MyScrollView;
+import com.delevin.boluolcs.view.PullUpToLoadMore;
+import com.delevin.boluolcs.view.PullUpToLoadMore.ScrollPageTurnListener;
 import com.delevin.boluolcs.view.TitleView;
-import com.delevin.jsandroid.JSAndroidActivity;
 import com.pusupanshi.boluolicai.R;
 
 /**
  *     @author 李红涛  @version 创建时间：2016-12-28 下午3:06:58    类说明 
  */
 public class BidDetalsActivity extends BaseActivity implements OnClickListener,
-		TextWatcher {
+		TextWatcher, ScrollPageTurnListener {
 	private PopupWindow popupWindow;
 	private LinearLayout visi_layout;// 动画布局
 	private ImageView visi_image;// 动画图片
@@ -81,17 +86,24 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 	private TextView shouyiView;
 	public static BidDetalsActivity bidDetalsActivity;
 	private Handler mHandler = new Handler();
-	private ScrollView mScrollView;
+	private MyScrollView mScrollView;
 	private TextView tvRate, tvRateTop, progressTv;
-	private TitleView titleView;
+	private TitleView titleView, tvTitle;
 	private ProgressBar progressBar;
+	private PullUpToLoadMore pullView;
+	private LinearLayout layout;
+	private ImageView imageView;
+	private WebView mWebView;
+	private RadioButton mRadioButton;
 
 	@SuppressLint("InlinedApi")
 	@Override
 	protected void findViews() {
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-		setContentView(R.layout.activity_bid_detals);
+		pullView = (PullUpToLoadMore) View.inflate(this,
+				R.layout.activity_bid_detals, null);
+		setContentView(pullView);
 		bidDetalsActivity = this;
 		titleView = (TitleView) findViewById(R.id.titleView_bidDetals);
 		View statusBarview = findViewById(R.id.statusBarview);
@@ -113,7 +125,7 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 
 	@SuppressLint("InflateParams")
 	private void getLayoutJisuanqi() {
-		mScrollView = (ScrollView) findViewById(R.id.scroll);
+		mScrollView = (MyScrollView) findViewById(R.id.scroll);
 		popWindowlayout = getLayoutInflater().inflate(
 				R.layout.touzi_detals_layout_jisuanqi, null);
 		addView = (EditText) popWindowlayout
@@ -142,6 +154,8 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		btJian.setOnClickListener(this);
 		bt_bid.setOnClickListener(this);
 		disView.setOnClickListener(this);
+		pullView.setScrollPageTurnListener(this);
+
 	}
 
 	private void getShareData() {
@@ -287,16 +301,24 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		tvRateTop = (TextView) findViewById(R.id.bid_detalsnianhuaNumTopRight);
 		remianMoneyTextView = (TextView) findViewById(R.id.bid_detals_remain_Money);
 		limitTotalMoneyTextView = (TextView) findViewById(R.id.bid_detals_limit_totals);
-		RelativeLayout layoutAll = (RelativeLayout) findViewById(R.id.bid_detals_objectAll);
-		RelativeLayout layoutMessage = (RelativeLayout) findViewById(R.id.bid_detals_objectMessage);
-		RelativeLayout layoutFile = (RelativeLayout) findViewById(R.id.bid_detals_objectFile);
-		RelativeLayout layouthetong = (RelativeLayout) findViewById(R.id.bid_detals_objecthetong);
+		RadioButton layoutAll = (RadioButton) findViewById(R.id.bid_detals_objectAll);
+		RadioButton layoutMessage = (RadioButton) findViewById(R.id.bid_detals_objectMessage);
+		RadioButton layoutFile = (RadioButton) findViewById(R.id.bid_detals_objectFile);
+		RadioButton layouthetong = (RadioButton) findViewById(R.id.bid_detals_objecthetong);
 		layoutAll.setOnClickListener(this);
 		layoutMessage.setOnClickListener(this);
 		layoutFile.setOnClickListener(this);
 		layouthetong.setOnClickListener(this);
 		bt_bid = (Button) findViewById(R.id.bid_detals_bt_bid);
 		bt_bid.setOnClickListener(this);
+
+		/**
+		 * 下半部分页面
+		 */
+		tvTitle = (TitleView) findViewById(R.id.js_webview_titleview);
+		imageView = (ImageView) findViewById(R.id.js_webview_visibility_image);
+		layout = (LinearLayout) findViewById(R.id.js_webview_visibility_layout);
+		mWebView = (WebView) findViewById(R.id.js_webview_webview);
 
 	}
 
@@ -379,16 +401,19 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 			getIntentBt("项目概况",
 					QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)
 							+ "0");
+			mRadioButton = (RadioButton) v;
 			break;
 		case R.id.bid_detals_objectFile:
-			getIntentBt("投资信息",
-					QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)
-							+ "2");
-			break;
-		case R.id.bid_detals_objectMessage:
 			getIntentBt("相关文件",
 					QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)
+							+ "2");
+			mRadioButton = (RadioButton) v;
+			break;
+		case R.id.bid_detals_objectMessage:
+			getIntentBt("投资信息",
+					QntUtils.getURL(BeanUrl.XIANGMUGAIKUANG_STRING, bidId)
 							+ "1");
+			mRadioButton = (RadioButton) v;
 			break;
 		case R.id.bid_detals_objecthetong:
 			Intent intent = new Intent(BidDetalsActivity.this,
@@ -484,12 +509,14 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 	}
 
 	private void getIntentBt(String title, String jsUrl) {
-		Intent intent = new Intent(BidDetalsActivity.this,
-				JSAndroidActivity.class);
-		intent.putExtra("title", title);
-		intent.putExtra("jsUrl", jsUrl);
-		intent.putExtra("bidDetals", "bidDetals");
-		startActivity(intent);
+		// Intent intent = new Intent(BidDetalsActivity.this,
+		// JSAndroidActivity.class);
+		// intent.putExtra("title", title);
+		// intent.putExtra("jsUrl", jsUrl);
+		// intent.putExtra("bidDetals", "bidDetals");
+		// startActivity(intent);
+		tvTitle.setAppTitle(title);
+		showWebView(jsUrl);
 	}
 
 	private void getBid(String money) {
@@ -584,6 +611,84 @@ public class BidDetalsActivity extends BaseActivity implements OnClickListener,
 		} else {
 			Toast.makeText(getApplicationContext(), "请输入投资金额",
 					Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	@Override
+	public void onScrollPageTurnListener(int dir) {
+		// TODO Auto-generated method stub
+		if (dir == ScrollPageTurnListener.TurnDown) {
+			View statusBarview = findViewById(R.id.statusBarviewWeb);
+			// 设置状态栏一体化
+			if (VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
+				getWindow().addFlags(
+						WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+				statusBarview.setVisibility(View.VISIBLE);
+			}
+
+			tvTitle.initViewsVisible(true, true, false, false);
+
+			// mWebView.reload();
+			if (TextUtils.isEmpty(mWebView.getUrl())) {
+				((RadioButton) findViewById(R.id.bid_detals_objectAll))
+						.performClick();
+			}
+		}
+	}
+
+	@SuppressLint({ "NewApi", "SetJavaScriptEnabled" })
+	private void showWebView(String url) {
+		try {
+			ProessDilogs.getProessAnima(imageView, this);
+
+			mWebView.setWebChromeClient(new WebChromeClient() {
+				@Override
+				public void onProgressChanged(WebView view, int progress) {
+					BidDetalsActivity.this.setTitle("Loading...");
+					BidDetalsActivity.this.setProgress(progress);
+					if (progress >= 80) {
+						// JSAndroidActivity.this.setTitle("JsAndroid");
+						ProessDilogs.closeAnimation(imageView, layout);
+					}
+				}
+			});
+			WebSettings webSettings = mWebView.getSettings();
+			webSettings.setBuiltInZoomControls(true);
+			webSettings
+					.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+			webSettings.setUseWideViewPort(true);
+			webSettings.setLoadWithOverviewMode(true);
+			webSettings.setSaveFormData(true);
+			webSettings.setGeolocationEnabled(true);
+			webSettings.setTextZoom(100);
+			webSettings.setDomStorageEnabled(true);
+			mWebView.requestFocus();
+			mWebView.setScrollBarStyle(0);
+			webSettings.setUseWideViewPort(true);// 设置此属性，可任意比例缩放
+			webSettings.setJavaScriptEnabled(true);
+			webSettings.setLoadWithOverviewMode(true);
+			webSettings.setJavaScriptEnabled(true);
+			webSettings.setDefaultTextEncodingName("utf-8");
+			mWebView.loadUrl(BeanUrl.URLZ + url);
+			mWebView.setWebViewClient(new WebViewClient() {
+				@Override
+				public boolean shouldOverrideUrlLoading(WebView view, String url) {
+					//
+					view.loadUrl(url);
+					return super.shouldOverrideUrlLoading(view, url);
+				}
+			});
+		} catch (Exception e) {
+			// e.printStackTrace();
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		if (null != mRadioButton) {
+			mRadioButton.setChecked(true);
 		}
 	}
 }

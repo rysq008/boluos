@@ -3,24 +3,16 @@ package com.delevin.boluolcs.fragmnet;
 import java.text.DecimalFormat;
 
 import lecho.lib.hellocharts.view.PieChartView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.base.fragment.BaseFragment;
-import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.utils.BoluoUtils;
-import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.PieChartViewUtils;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.pusupanshi.boluolicai.R;

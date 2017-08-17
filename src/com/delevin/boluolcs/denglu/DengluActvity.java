@@ -3,11 +3,8 @@ package com.delevin.boluolcs.denglu;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.annotation.SuppressLint;
 import android.app.Instrumentation;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.support.v4.app.Fragment;
@@ -17,17 +14,15 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.delevin.boluolcs.base.activity.BaseFragmentActivity;
 import com.delevin.boluolcs.view.TitleView;
-import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.view.annotation.ViewInject;
 import com.pusupanshi.boluolicai.R;
 
 /**

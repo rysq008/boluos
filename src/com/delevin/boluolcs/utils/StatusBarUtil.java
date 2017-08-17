@@ -1,5 +1,7 @@
 package com.delevin.boluolcs.utils;
 
+
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
@@ -119,7 +121,7 @@ public class StatusBarUtil {
 	/**
 	 * 设置根布局参数
 	 */
-	public static void setRootView(Activity activity) {
+	@SuppressLint("NewApi") public static void setRootView(Activity activity) {
 		ViewGroup parent = (ViewGroup) activity
 				.findViewById(android.R.id.content);
 		for (int i = 0, count = parent.getChildCount(); i < count; i++) {

@@ -1,6 +1,5 @@
 package com.delevin.boluolcs.utils;
 
-import com.pusupanshi.boluolicai.R;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -16,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.pusupanshi.boluolicai.R;
 
 /***
  * 

@@ -2,9 +2,11 @@ package com.delevin.boluolcs.activity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -17,12 +19,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
 import com.alibaba.fastjson.JSON;
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.adapter.TixianJiluAdapter;
 import com.delevin.boluolcs.base.activity.BaseActivity;
-import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.bean.BeanTixianJilu;
+import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.ProessDilogs;

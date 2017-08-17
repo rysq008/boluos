@@ -3,21 +3,19 @@ package com.delevin.boluolcs.activity;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.security.auth.PrivateCredentialPermission;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,9 +24,9 @@ import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.interfaces.PhoneCodeCallBack;
-import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.AndroidUtils;
 import com.delevin.boluolcs.utils.BoluoUtils;
+import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.utils.RegisterCodeTimer;
 import com.delevin.boluolcs.utils.RegisterCodeTimerService;

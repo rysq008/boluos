@@ -1,6 +1,5 @@
 package com.delevin.boluolcs.utils;
 
-import android.graphics.Bitmap;
 
 /**
  * @author 李红涛E-mail:

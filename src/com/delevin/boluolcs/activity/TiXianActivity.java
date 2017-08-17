@@ -1,8 +1,10 @@
 package com.delevin.boluolcs.activity;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build.VERSION;
@@ -20,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.bean.BeanUrl;

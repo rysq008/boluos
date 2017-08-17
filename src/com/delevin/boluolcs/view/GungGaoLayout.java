@@ -1,6 +1,5 @@
 package com.delevin.boluolcs.view;
 
-import com.pusupanshi.boluolicai.R;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.pusupanshi.boluolicai.R;
 
 public class GungGaoLayout extends LinearLayout implements
 		android.view.View.OnClickListener {

@@ -1,13 +1,10 @@
 package com.delevin.boluolcs.utils;
 
+
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.RelativeLayout.LayoutParams;
 
 import com.delevin.boluolcs.view.CustomDialog;

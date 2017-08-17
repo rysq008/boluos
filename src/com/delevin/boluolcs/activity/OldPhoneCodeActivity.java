@@ -6,11 +6,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.R.mipmap;
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.text.TextUtils;
@@ -28,10 +24,8 @@ import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.interfaces.PhoneCodeCallBack;
 import com.delevin.boluolcs.utils.AndroidUtils;
 import com.delevin.boluolcs.utils.BoluoUtils;
-import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
-import com.delevin.boluolcs.utils.RegisterCodeTimer;
-import com.delevin.boluolcs.utils.RegisterCodeTimerService;
 import com.delevin.boluolcs.utils.CodeTimerUtils;
+import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.view.TitleView;
 import com.pusupanshi.boluolicai.R;
 

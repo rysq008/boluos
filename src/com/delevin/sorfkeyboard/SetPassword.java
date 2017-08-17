@@ -1,17 +1,15 @@
 package com.delevin.sorfkeyboard;
 
-import com.delevin.boluolcs.activity.MySafetyManagmentActivity;
-import com.delevin.boluolcs.activity.TiXianActivity;
-import com.delevin.sorfkeyboard.PayPasswordView.OnPayListener;
-import com.delevin.sorfkeyboard.SorfKeyBoard.keyboardCallBack;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.delevin.boluolcs.activity.MySafetyManagmentActivity;
+import com.delevin.sorfkeyboard.PayPasswordView.OnPayListener;
+import com.delevin.sorfkeyboard.SorfKeyBoard.keyboardCallBack;
 
 /**
  *     @author 李红涛  @version 创建时间：2017-1-4 上午10:40:00    类说明 

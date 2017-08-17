@@ -1,10 +1,10 @@
 package com.delevin.sorfkeyboard;
 
-import com.delevin.sorfkeyboard.SorfKeyBoard.keyboardCallBack;
-
 import android.app.Activity;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.delevin.sorfkeyboard.SorfKeyBoard.keyboardCallBack;
 
 /**
  *     @author 李红涛  @version 创建时间：2017-1-4 上午11:46:34    类说明 

@@ -2,61 +2,75 @@ package com.delevin.boluolcs.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
 public class MyScrollView extends ScrollView {
+	private static String TAG = MyScrollView.class.getName();
 
-	// 滚动监听接口
-	private OnScrollChangedListeneer onScrollChangedListeneer;
+	public void setScrollListener(ScrollListener scrollListener) {
+		this.mScrollListener = scrollListener;
+	}
+
+	private ScrollListener mScrollListener;
 
 	public MyScrollView(Context context) {
 		super(context);
-		// TODO Auto-generated constructor stub
 	}
 
 	public MyScrollView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		// TODO Auto-generated constructor stub
 	}
 
 	public MyScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
-		// TODO Auto-generated method stub
-		// 屏蔽touch事件,才能在监听其子控件的touch事件
-		super.onTouchEvent(ev);
-		return false;
-	}
 
-	@Override
-	public boolean onInterceptTouchEvent(MotionEvent event) {
-		// 屏蔽touch事件传递,才能在监听其子控件的touch事件
-		super.onInterceptTouchEvent(event);
-		return false;
-	}
+		switch (ev.getAction()) {
+		case MotionEvent.ACTION_MOVE:
 
-	@Override
-	protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-		// TODO Auto-generated method stub
-		super.onScrollChanged(l, t, oldl, oldt);
-		if (onScrollChangedListeneer != null) {
-			onScrollChangedListeneer.onScrollChanged(l, t, oldl, oldt);
+			if (mScrollListener != null) {
+				int contentHeight = getChildAt(0).getHeight();
+				int scrollHeight = getHeight();
+				Log.d(TAG, "scrollY:" + getScrollY() + "contentHeight:"
+						+ contentHeight + " scrollHeight" + scrollHeight
+						+ "object:" + this);
+
+				int scrollY = getScrollY();
+				mScrollListener.onScroll(scrollY);
+
+				if (scrollY + scrollHeight >= contentHeight
+						|| contentHeight <= scrollHeight) {
+					mScrollListener.onScrollToBottom();
+				} else {
+					mScrollListener.notBottom();
+				}
+
+				if (scrollY == 0) {
+					mScrollListener.onScrollToTop();
+				}
+
+			}
+
+			break;
 		}
+		boolean result = super.onTouchEvent(ev);
+		requestDisallowInterceptTouchEvent(false);
+
+		return result;
 	}
 
-	// 滚动事件监听，获取滚动的距离，用户处理一些其他事
-	public interface OnScrollChangedListeneer {
-		public void onScrollChanged(int l, int t, int oldl, int oldt);
-	}
+	public interface ScrollListener {
+		void onScrollToBottom();
 
-	public void setOnScrollChangedListeneer(
-			OnScrollChangedListeneer onScrollChangedListeneer) {
-		this.onScrollChangedListeneer = onScrollChangedListeneer;
-	}
+		void onScrollToTop();
 
+		void onScroll(int scrollY);
+
+		void notBottom();
+	}
 }

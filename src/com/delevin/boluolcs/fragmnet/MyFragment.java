@@ -26,7 +26,6 @@ import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.activity.AddNumberActivity;
-import com.delevin.boluolcs.activity.MyBankActivity;
 import com.delevin.boluolcs.activity.MyHeadPicActivity;
 import com.delevin.boluolcs.activity.MyMoreActivity;
 import com.delevin.boluolcs.activity.MySafetyManagmentActivity;
@@ -45,8 +44,6 @@ import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.utils.NetUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.ProessDilogs;
-import com.delevin.boluolcs.utils.PullToRefreshView;
-import com.delevin.boluolcs.utils.PullToRefreshView.OnHeaderRefreshListener;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.pusupanshi.boluolicai.R;
 

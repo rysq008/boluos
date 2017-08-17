@@ -9,12 +9,13 @@ import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.interfaces.PhoneCodeCallBack;
 import com.delevin.boluolcs.utils.AndroidUtils;

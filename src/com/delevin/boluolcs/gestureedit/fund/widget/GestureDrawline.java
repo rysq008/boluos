@@ -5,12 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.delevin.boluolcs.gestureedit.GestureCallBack;
-import com.delevin.boluolcs.gestureedit.fund.common.AppUtil;
-import com.delevin.boluolcs.gestureedit.fund.common.Constants;
-import com.delevin.boluolcs.gestureedit.fund.entity.GesturePoint;
-import com.pusupanshi.boluolicai.R;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -23,6 +17,12 @@ import android.os.Handler;
 import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.delevin.boluolcs.gestureedit.GestureCallBack;
+import com.delevin.boluolcs.gestureedit.fund.common.AppUtil;
+import com.delevin.boluolcs.gestureedit.fund.common.Constants;
+import com.delevin.boluolcs.gestureedit.fund.entity.GesturePoint;
+import com.pusupanshi.boluolicai.R;
 
 /**
  * 手势密码路径绘制

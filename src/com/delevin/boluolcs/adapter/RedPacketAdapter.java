@@ -1,6 +1,7 @@
 package com.delevin.boluolcs.adapter;
 
 import java.util.List;
+
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.delevin.boluolcs.activity.BidDetalsActivity;
 import com.delevin.boluolcs.base.adapter.MyBaseAdapter;
 import com.delevin.boluolcs.base.adapter.ViewHolder;

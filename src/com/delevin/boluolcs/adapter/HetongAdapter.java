@@ -1,13 +1,15 @@
 package com.delevin.boluolcs.adapter;
 
 import java.util.List;
+
+import android.content.Context;
+import android.widget.ImageView;
+
 import com.delevin.boluolcs.base.adapter.MyBaseAdapter;
 import com.delevin.boluolcs.base.adapter.ViewHolder;
 import com.delevin.boluolcs.bean.BeanjieKuan;
 import com.delevin.boluolcs.utils.AndroidUtils;
 import com.pusupanshi.boluolicai.R;
-import android.content.Context;
-import android.widget.ImageView;
 
 /**
  * @author 李红涛 E-mail:

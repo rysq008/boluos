@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#fff" >
+    android:background="#fff"
+    android:orientation="vertical" >
+
     <View
         android:id="@+id/statusBarview"
         style="@style/statusBar" />
@@ -13,37 +14,41 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" >
     </com.delevin.boluolcs.view.TitleView>
-<FrameLayout 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-    <WebView
-        android:id="@+id/js_webview_webview"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/js_webview_titleview" />
-     <LinearLayout
-                android:id="@+id/js_webview_visibility_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="#4b000000"
-                android:clickable="true"
-            	android:gravity="center"
-           		android:orientation="vertical"
-           	 	>
-                <ImageView
-                    android:id="@+id/js_webview_visibility_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/jiazai" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="bottom|center_horizontal"
-                    android:text="请稍后"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-</FrameLayout>
+        android:layout_height="match_parent" >
+
+        <WebView
+            android:id="@+id/js_webview_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/js_webview_titleview" />
+
+        <LinearLayout
+            android:id="@+id/js_webview_visibility_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#4b000000"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/js_webview_visibility_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/jiazai" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|center_horizontal"
+                android:text="请稍后"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </FrameLayout>
+
 </LinearLayout>

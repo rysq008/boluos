@@ -1,7 +1,5 @@
 package com.delevin.boluolcs.view;
 
-import com.pusupanshi.boluolicai.R;
-
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Instrumentation;
@@ -10,11 +8,12 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.pusupanshi.boluolicai.R;
 
 /**
  *     @author 李红涛  @version 创建时间：2016-12-15 下午1:41:15    类说明 

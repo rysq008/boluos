@@ -1,8 +1,5 @@
 package com.delevin.boluolcs.welcome;
 
-import com.delevin.boluolcs.base.fragment.BaseFragment;
-import com.delevin.boluolcs.main.MainActivity;
-import com.pusupanshi.boluolicai.R;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,6 +7,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.delevin.boluolcs.base.fragment.BaseFragment;
+import com.delevin.boluolcs.main.MainActivity;
+import com.pusupanshi.boluolicai.R;
 
 public class GuideFragment4 extends BaseFragment {
 

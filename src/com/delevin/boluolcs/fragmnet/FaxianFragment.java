@@ -1,18 +1,17 @@
 package com.delevin.boluolcs.fragmnet;
 
+import java.util.List;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v4.view.ViewCompat;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -21,7 +20,9 @@ import android.widget.TextView;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.delevin.application.Myapplication;
+import com.delevin.boluolcs.activity.TouziMeiTiActivity;
 import com.delevin.boluolcs.base.fragment.BaseFragment;
+import com.delevin.boluolcs.bean.BeanTJCP;
 import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.fragmentactivity.ShareYaoqingActivity;
 import com.delevin.boluolcs.utils.AndroidUtils;
@@ -32,7 +33,7 @@ import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.jsandroid.JSAndroidActivity;
 import com.pusupanshi.boluolicai.R;
-import com.pusupanshi.boluolicai.wxapi.ShareActivity;
+import com.pusupanshi.shenghuidai.wxapi.ShareActivity;
 
 /**
  *     @author 李红涛  @version 创建时间：2016-12-15 下午1:00:06    类说明 
@@ -45,9 +46,8 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 	private TextView tvFanli, tvYaoqing;
 	private String token;
 	private MaterialRefreshLayout pullToRefreshView;
-	private LinearLayout layout_V;
+	private LinearLayout layout_V, layout_meiti_content;
 	private ImageView img_V, img_mrqd, img_xydzp;
-	private GridView gridView;
 
 	@Override
 	protected View initView(LayoutInflater inflaters, ViewGroup container) {
@@ -64,7 +64,10 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 		img_V = (ImageView) view.findViewById(R.id.faxian_visibility_image);
 		img_mrqd = (ImageView) view.findViewById(R.id.faxian_mrqd_iv);
 		img_xydzp = (ImageView) view.findViewById(R.id.faxian_xydzp_iv);
-		gridView = (GridView) view.findViewById(R.id.faxian_shangcheng_adapter);
+		layout_meiti_content = (LinearLayout) view
+				.findViewById(R.id.faxian_meiti_content_layout);
+		LinearLayout layout_meiti_more = (LinearLayout) view
+				.findViewById(R.id.faxian_meiti_more_layout);
 		RelativeLayout layoutFanli = (RelativeLayout) view
 				.findViewById(R.id.faxian_ShareLeiji);
 		pullToRefreshView = (MaterialRefreshLayout) view
@@ -88,34 +91,15 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 					}
 				});
 
-		gridView.setOnScrollListener(new OnScrollListener() {
-
-			@Override
-			public void onScrollStateChanged(AbsListView view, int scrollState) {
-				// TODO Auto-generated method stub
-				if (scrollState == SCROLL_STATE_IDLE) {
-					if (!ViewCompat.canScrollVertically(gridView, 1)) {
-						pullToRefreshView.autoRefreshLoadMore();
-					}
-				}
-			}
-
-			@Override
-			public void onScroll(AbsListView view, int firstVisibleItem,
-					int visibleItemCount, int totalItemCount) {
-				// TODO Auto-generated method stub
-
-			}
-		});
 		RelativeLayout layoutFan = (RelativeLayout) view
 				.findViewById(R.id.faxian_ShareFan);
-		gridView = (GridView) view.findViewById(R.id.faxian_shangcheng_adapter);
 		// Button btQuyaoqinghaoyou = (Button)
 		// view.findViewById(R.id.open_share);
 		tvFanliShuoming = (TextView) view.findViewById(R.id.guize_bt);
 		linYaoQingHaoYou = (RelativeLayout) view
 				.findViewById(R.id.yaoqinghaoyou);
-		linAnQuanBaoZhang = (RelativeLayout) view.findViewById(R.id.anquanbaozhang);
+		linAnQuanBaoZhang = (RelativeLayout) view
+				.findViewById(R.id.anquanbaozhang);
 		linJifensShangcheng = (RelativeLayout) view
 				.findViewById(R.id.jifenshangcheng);
 		linHongdongZhongxin = (RelativeLayout) view
@@ -130,6 +114,7 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 		linAnQuanBaoZhang.setOnClickListener(this);
 		linJifensShangcheng.setOnClickListener(this);
 		linHongdongZhongxin.setOnClickListener(this);
+		layout_meiti_more.setOnClickListener(this);
 
 	}
 
@@ -177,6 +162,22 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 		});
 	}
 
+	@SuppressLint("InflateParams")
+	private void getLayoutRecommended(List<BeanTJCP> list, final Boolean b,
+			LinearLayout layouts) {
+		layouts.removeAllViews();
+		for (int i = 0; i < list.size(); i++) {
+			View view = null;
+			// Intent intent = new Intent(this,
+			// JSAndroidActivity.class);
+			// intent.putExtra("jsUrl", datas.get(arg2).getUrl());
+			// intent.putExtra("title", "媒体报道");
+			// intent.putExtra("js", "js");
+			// startActivity(intent);
+			layouts.addView(view);
+		}
+	}
+
 	@Override
 	public void onPause() {
 		super.onPause();
@@ -186,9 +187,7 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.faxian_ShareFan:
-
 			if (NetUtils.getNetWorkState(getActivity()) != -1) {
-
 				String tag = "0";
 				String check = "true";
 				Intent intent = new Intent(getActivity(),
@@ -196,7 +195,6 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 				intent.putExtra("tag", tag);
 				intent.putExtra("check", check);
 				startActivity(intent);
-
 			} else {
 				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
 						"确定");
@@ -211,6 +209,15 @@ public class FaxianFragment extends BaseFragment implements OnClickListener {
 				intentLeiji.putExtra("tag", tagLeiji);
 				intentLeiji.putExtra("check", checkLeiji);
 				startActivity(intentLeiji);
+			} else {
+				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
+						"确定");
+			}
+			break;
+		case R.id.faxian_meiti_more_layout:
+			if (NetUtils.getNetWorkState(getActivity()) != -1) {
+				startActivity(new Intent(getActivity(),
+						TouziMeiTiActivity.class));
 			} else {
 				BoluoUtils.getDilogDome(getActivity(), "温馨提示", "您当前的网络不可用",
 						"确定");

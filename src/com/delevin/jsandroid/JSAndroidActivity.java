@@ -34,7 +34,7 @@ import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.view.TitleView;
 import com.delevin.boluolcs.view.TitleView.OnRightButtonClickListener;
 import com.pusupanshi.boluolicai.R;
-import com.pusupanshi.boluolicai.wxapi.ShareActivity;
+import com.pusupanshi.shenghuidai.wxapi.ShareActivity;
 
 import de.greenrobot.event.EventBus;
 
@@ -78,7 +78,7 @@ public class JSAndroidActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		phone=BoluoUtils.getShareOneData(getApplicationContext(), "phone");
+		phone = BoluoUtils.getShareOneData(getApplicationContext(), "phone");
 		memberId = BoluoUtils.getShareOneData(getApplicationContext(),
 				"memberId");
 		setContentView(R.layout.activity_js_webview);
@@ -168,43 +168,43 @@ public class JSAndroidActivity extends Activity implements OnClickListener {
 					return super.shouldOverrideUrlLoading(view, url);
 				}
 
-//				@Override
-//				public void onPageStarted(WebView view, String url,
-//						Bitmap favicon) {
-//					// TODO Auto-generated method stub
-//					super.onPageStarted(view, url, favicon);
-//					// mTimer = new Timer();
-//					// TimerTask tt = new TimerTask() {
-//					// @Override
-//					// public void run() {
-//					// Message m = new Message();
-//					// m.what = MSG_PAGE_TIMEOUT ;
-//					// mHandler.sendMessage(m);
-//					//
-//					// mTimer.cancel();
-//					// mTimer.purge();
-//					// }
-//					// };
-//					// mTimer.schedule(tt, TIME_OUT);
-//				}
-//
-//				@Override
-//				public void onPageFinished(WebView view, String url) {
-//					// TODO Auto-generated method stub
-//					super.onPageFinished(view, url);
-//					// mTimer.cancel();
-//					// mTimer.purge();
-//				}
-//
-//				@Override
-//				public void onReceivedError(WebView view, int errorCode,
-//						String description, String failingUrl) {
-//					// TODO Auto-generated method stub
-//					super.onReceivedError(view, errorCode, description,
-//							failingUrl);
-//					Toast.makeText(JSAndroidActivity.this, "同步失败，请稍候再试",
-//							Toast.LENGTH_SHORT).show();
-//				}
+				// @Override
+				// public void onPageStarted(WebView view, String url,
+				// Bitmap favicon) {
+				// // TODO Auto-generated method stub
+				// super.onPageStarted(view, url, favicon);
+				// // mTimer = new Timer();
+				// // TimerTask tt = new TimerTask() {
+				// // @Override
+				// // public void run() {
+				// // Message m = new Message();
+				// // m.what = MSG_PAGE_TIMEOUT ;
+				// // mHandler.sendMessage(m);
+				// //
+				// // mTimer.cancel();
+				// // mTimer.purge();
+				// // }
+				// // };
+				// // mTimer.schedule(tt, TIME_OUT);
+				// }
+				//
+				// @Override
+				// public void onPageFinished(WebView view, String url) {
+				// // TODO Auto-generated method stub
+				// super.onPageFinished(view, url);
+				// // mTimer.cancel();
+				// // mTimer.purge();
+				// }
+				//
+				// @Override
+				// public void onReceivedError(WebView view, int errorCode,
+				// String description, String failingUrl) {
+				// // TODO Auto-generated method stub
+				// super.onReceivedError(view, errorCode, description,
+				// failingUrl);
+				// Toast.makeText(JSAndroidActivity.this, "同步失败，请稍候再试",
+				// Toast.LENGTH_SHORT).show();
+				// }
 			});
 		} catch (Exception e) {
 			// e.printStackTrace();
@@ -349,4 +349,5 @@ public class JSAndroidActivity extends Activity implements OnClickListener {
 		}
 
 	}
+
 }

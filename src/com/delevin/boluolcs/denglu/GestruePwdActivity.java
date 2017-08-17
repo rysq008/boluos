@@ -1,8 +1,5 @@
 package com.delevin.boluolcs.denglu;
 
-import com.delevin.boluolcs.base.activity.BaseActivity;
-import com.delevin.boluolcs.view.NinePointLineView;
-import com.pusupanshi.boluolicai.R;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -13,6 +10,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.delevin.boluolcs.base.activity.BaseActivity;
+import com.delevin.boluolcs.view.NinePointLineView;
+import com.pusupanshi.boluolicai.R;
 
 public class GestruePwdActivity extends BaseActivity {
 	private LinearLayout nine_con;// 九宫格容器

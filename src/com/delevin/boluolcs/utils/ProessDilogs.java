@@ -1,6 +1,5 @@
 package com.delevin.boluolcs.utils;
 
-import com.pusupanshi.boluolicai.R;
 
 import android.content.Context;
 import android.view.View;
@@ -11,6 +10,8 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.pusupanshi.boluolicai.R;
 
 public class ProessDilogs extends View {
 	public ProessDilogs(Context context) {

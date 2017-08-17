@@ -5,17 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.delevin.boluolcs.base.activity.BaseFragmentActivity;
-import com.delevin.boluolcs.denglu.ZhuActivity;
-import com.delevin.boluolcs.main.MainActivity;
-import com.delevin.boluolcs.utils.APPName;
-import com.delevin.boluolcs.utils.BoluoUtils;
-import com.pusupanshi.boluolicai.R;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -23,7 +14,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
+
+import com.delevin.boluolcs.base.activity.BaseFragmentActivity;
+import com.delevin.boluolcs.main.MainActivity;
+import com.delevin.boluolcs.utils.BoluoUtils;
+import com.pusupanshi.boluolicai.R;
 
 public class GuideActivity extends BaseFragmentActivity {
 

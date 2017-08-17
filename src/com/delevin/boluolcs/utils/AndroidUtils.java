@@ -15,16 +15,6 @@ import java.util.Map;
 
 import org.json.JSONObject;
 
-import com.bumptech.glide.Glide;
-import com.delevin.application.Myapplication;
-import com.delevin.boluolcs.bean.BeanUrl;
-import com.delevin.boluolcs.denglu.ZhuActivity;
-import com.delevin.boluolcs.interfaces.DilogCallBack;
-import com.delevin.boluolcs.interfaces.PhoneCodeCallBack;
-import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
-import com.delevin.boluolcs.view.CustomDialog;
-import com.pusupanshi.boluolicai.R;
-import com.squareup.picasso.Picasso;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -37,9 +27,19 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.RelativeLayout.LayoutParams;
+
+import com.bumptech.glide.Glide;
+import com.delevin.application.Myapplication;
+import com.delevin.boluolcs.bean.BeanUrl;
+import com.delevin.boluolcs.denglu.ZhuActivity;
+import com.delevin.boluolcs.interfaces.DilogCallBack;
+import com.delevin.boluolcs.interfaces.PhoneCodeCallBack;
+import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
+import com.delevin.boluolcs.view.CustomDialog;
+import com.pusupanshi.boluolicai.R;
 
 /**
  *     @author 李红涛  @version 创建时间：2016-12-23 上午11:48:54    类说明 

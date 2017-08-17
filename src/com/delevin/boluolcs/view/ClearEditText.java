@@ -1,6 +1,5 @@
 ﻿package com.delevin.boluolcs.view;
 
-import com.pusupanshi.boluolicai.R;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -14,6 +13,8 @@ import android.view.animation.Animation;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
+
+import com.pusupanshi.boluolicai.R;
 
 public class ClearEditText extends EditText implements OnFocusChangeListener,
 		TextWatcher {

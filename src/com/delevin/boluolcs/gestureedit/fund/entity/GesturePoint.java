@@ -1,9 +1,10 @@
 ﻿package com.delevin.boluolcs.gestureedit.fund.entity;
 
-import com.delevin.boluolcs.gestureedit.fund.common.Constants;
-import com.pusupanshi.boluolicai.R;
 
 import android.widget.ImageView;
+
+import com.delevin.boluolcs.gestureedit.fund.common.Constants;
+import com.pusupanshi.boluolicai.R;
 
 public class GesturePoint {
 	/**

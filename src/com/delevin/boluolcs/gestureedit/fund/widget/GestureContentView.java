@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import com.delevin.boluolcs.gestureedit.GestureCallBack;
 import com.delevin.boluolcs.gestureedit.fund.common.AppUtil;
 import com.delevin.boluolcs.gestureedit.fund.entity.GesturePoint;
 import com.pusupanshi.boluolicai.R;
+
 
 /**
  * 手势密码容器类

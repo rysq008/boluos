@@ -1,17 +1,17 @@
 package com.delevin.boluolcs.view;
 
-import com.pusupanshi.boluolicai.R;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+
+import com.pusupanshi.boluolicai.R;
 
 /**
  * 仿iphone带进度的进度条，线程安全的View，可直接在线程中更新进度

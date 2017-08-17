@@ -204,7 +204,7 @@
         <activity android:name="com.delevin.boluolcs.activity.BidBuyActivity" />
         <!-- 筛选红包 -->
         <activity android:name="com.delevin.boluolcs.activity.FilterRedPacketActivity" />
-        <activity android:name="com.pusupanshi.boluolicai.wxapi.ShareActivity" >
+        <activity android:name="com.pusupanshi.shenghuidai.wxapi.ShareActivity" >
         </activity>
         <!-- 邀请记录 -->
         <activity android:name="com.delevin.boluolcs.fragmentactivity.ShareYaoqingActivity" >

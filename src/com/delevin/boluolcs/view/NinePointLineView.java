@@ -1,9 +1,6 @@
 ﻿package com.delevin.boluolcs.view;
 
-import com.delevin.application.Myapplication;
-import com.delevin.boluolcs.denglu.GestruePwdActivity;
-import com.delevin.boluolcs.main.MainActivity;
-import com.pusupanshi.boluolicai.R;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -14,11 +11,16 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.graphics.Paint.Cap;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.delevin.application.Myapplication;
+import com.delevin.boluolcs.denglu.GestruePwdActivity;
+import com.delevin.boluolcs.main.MainActivity;
+import com.pusupanshi.boluolicai.R;
 
 /**
  * 作用：手势密码的九宫格 作者：ufnind 时间：2013年10月29日 09:34:52

@@ -1,11 +1,12 @@
 package com.delevin.boluolcs.activity;
 
+
 import android.content.Intent;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import com.delevin.boluolcs.base.activity.BaseActivity;

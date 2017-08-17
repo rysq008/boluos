@@ -1,26 +1,23 @@
 package com.delevin.boluolcs.welcome;
 import java.util.Map;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.telephony.TelephonyManager;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import cn.jpush.android.api.JPushInterface;
+
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.gestureedit.GestureEditActivity;
 import com.delevin.boluolcs.gestureedit.GestureVerifyActivity;
 import com.delevin.boluolcs.main.MainActivity;
 import com.delevin.boluolcs.utils.BoluoUtils;
-import com.delevin.boluolcs.utils.StatusBarUtil;
 import com.delevin.boluolcs.view.CountDownProgress;
 import com.pusupanshi.boluolicai.R;
 

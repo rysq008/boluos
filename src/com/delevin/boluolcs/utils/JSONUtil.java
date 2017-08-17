@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import com.alibaba.fastjson.JSON;
-
 import android.util.Log;
+
+import com.alibaba.fastjson.JSON;
 
 public class JSONUtil {
 

@@ -1,12 +1,5 @@
 package com.delevin.boluolcs.utils;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import android.util.Base64;
-import android.widget.TextView;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,6 +9,13 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.widget.TextView;
 
 import com.delevin.boluolcs.interfaces.PhoneCodeCallBack;
 

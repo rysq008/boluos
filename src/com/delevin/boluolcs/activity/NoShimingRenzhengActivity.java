@@ -1,12 +1,12 @@
 package com.delevin.boluolcs.activity;
 
+
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.view.View;
 import android.view.WindowManager;
 
 import com.delevin.boluolcs.base.activity.BaseActivity;
-import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.view.TitleView;
 import com.pusupanshi.boluolicai.R;
 

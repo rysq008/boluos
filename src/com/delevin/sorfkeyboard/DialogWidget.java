@@ -1,6 +1,5 @@
 ﻿package com.delevin.sorfkeyboard;
 
-import com.pusupanshi.boluolicai.R;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -9,6 +8,8 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
+
+import com.pusupanshi.boluolicai.R;
 
 /**
  * 提示Dialog

@@ -1,6 +1,7 @@
 package com.delevin.boluolcs.activity;
 
 import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -8,17 +9,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.delevin.application.Myapplication;
 import com.delevin.boluolcs.base.activity.BaseActivity;
-import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.bean.BeanFirstEvent;
+import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.utils.BoluoUtils;
 import com.delevin.boluolcs.utils.OkhttpManger.Funck4;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.view.TitleView;
 import com.pusupanshi.boluolicai.R;
+
 import de.greenrobot.event.EventBus;
 
 /**

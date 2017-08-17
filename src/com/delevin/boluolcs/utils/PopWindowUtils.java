@@ -1,6 +1,5 @@
 package com.delevin.boluolcs.utils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.view.View;

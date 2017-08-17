@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
+
 import com.delevin.boluolcs.base.activity.BaseActivity;
 import com.delevin.boluolcs.view.LayoutEditText;
 import com.delevin.boluolcs.view.TitleView;

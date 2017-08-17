@@ -1,10 +1,5 @@
 package com.delevin.boluolcs.fragmnet;
 
-import com.delevin.boluolcs.adapter.DescfRedPacketAdapter;
-import com.delevin.boluolcs.adapter.RedPacketAdapter;
-import com.delevin.boluolcs.base.activity.BaseActivity;
-import com.delevin.boluolcs.base.fragment.BaseFragment;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,16 +9,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
-import android.os.Build.VERSION;
-import android.os.Build.VERSION_CODES;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
@@ -33,6 +24,8 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.delevin.application.Myapplication;
+import com.delevin.boluolcs.adapter.DescfRedPacketAdapter;
+import com.delevin.boluolcs.base.fragment.BaseFragment;
 import com.delevin.boluolcs.bean.BeanRedPacket;
 import com.delevin.boluolcs.bean.BeanUrl;
 import com.delevin.boluolcs.utils.BoluoUtils;
@@ -41,7 +34,6 @@ import com.delevin.boluolcs.utils.ProessDilogs;
 import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.view.TitleView;
 import com.delevin.boluolcs.view.ListView.XListView;
-import com.delevin.boluolcs.view.ListView.XListView.IXListViewListener;
 import com.pusupanshi.boluolicai.R;
 
 /**

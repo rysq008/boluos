@@ -296,6 +296,7 @@
                         android:background="@color/gray_bg" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/my_bank_tv"
                         style="@style/my_touzi_list_item"
                         android:drawableLeft="@drawable/my_bank"

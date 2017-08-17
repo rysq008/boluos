@@ -2,6 +2,7 @@ package com.delevin.boluolcs.fragmentactivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.graphics.Color;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;

@@ -1,6 +1,6 @@
 ﻿package com.delevin.boluolcs.gestureedit.fund.widget;
 
-import com.pusupanshi.boluolicai.R;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.pusupanshi.boluolicai.R;
 
 /**
  * 手势密码图案提示

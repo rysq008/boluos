@@ -1,34 +1,19 @@
 package com.delevin.boluolcs.fragmentactivity;
 
-import java.util.ArrayList;
-import java.util.List;
-import android.annotation.SuppressLint;
-import android.app.Instrumentation;
+
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.delevin.boluolcs.base.activity.BaseFragmentActivity;
 import com.delevin.boluolcs.fragmnet.ShareYaoqingYaoqingFragment;
 import com.delevin.boluolcs.fragmnet.ShareYaoqingfanliFragment;
-import com.delevin.boluolcs.utils.QntUtils;
 import com.delevin.boluolcs.view.TitleView;
-import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.view.annotation.ViewInject;
 import com.pusupanshi.boluolicai.R;
 
 /**

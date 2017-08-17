@@ -314,6 +314,7 @@
                     android:background="#f4f4f4" />
 
                 <LinearLayout
+                    android:id="@+id/faxian_meiti_more_layout"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:gravity="center_vertical"
@@ -335,7 +336,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="积分商城"
+                        android:text="媒体新闻"
+                        android:textColor="#333"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="更多 "
                         android:textColor="#333"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -345,21 +355,16 @@
                     android:layout_height="1px"
                     android:background="#eee" />
 
-                <GridView
-                    android:id="@+id/faxian_shangcheng_adapter"
+                <LinearLayout
+                    android:id="@+id/faxian_meiti_content_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:columnWidth="187dp"
-                    android:horizontalSpacing="1dp"
-                    android:listSelector="@null"
-                    android:numColumns="2"
-                    android:stretchMode="columnWidth"
-                    android:verticalSpacing="1dp" />
+                    android:orientation="vertical" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:background="#eee" />
+                    android:layout_height="10dp"
+                    android:background="@color/huise" />
             </LinearLayout>
 
             <LinearLayout
@@ -371,7 +376,7 @@
                 android:clickable="true"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:visibility="gone" >
+                android:visibility="visible" >
 
                 <ImageView
                     android:id="@+id/faxian_visibility_image"
